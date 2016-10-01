@@ -251,11 +251,14 @@ function! CloseAllBuffersButCurrent()
 endfunction
 
 " 快捷键
-nnoremap <leader>c :call CloseAllBuffersButCurrent()<CR>
+nnoremap <leader>c :call CloseAllBuffersButCurrent()<cr>
 
 "-------------------------------------------------------------------------------
 " 插件
 "-------------------------------------------------------------------------------
+
+" a
+set runtimepath+=~/dotfiles/bundle/a.vim
 
 " mru
 set runtimepath+=~/dotfiles/bundle/mru
@@ -269,34 +272,31 @@ endif
 set runtimepath+=~/dotfiles/bundle/nerdtree
 let NERDTreeShowHidden = 1
 let NERDTreeQuitOnOpen = 1
-map <C-n> :NERDTreeToggle<CR>
+map <c-n> :NERDTreeToggle<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " supertab
 set runtimepath+=~/dotfiles/bundle/supertab
 let g:SuperTabCrMapping = 1
-let g:SuperTabDefaultCompletionType = "<C-n>"
-let g:SuperTabContextDefaultCompletionType = "<C-n>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 " vim-bookmarks
 function! g:BMWorkDirFileLocation()
     let bmw = FindInParent(".vim-bookmarks", WindowDir(), $HOME)
     if bmw == "Nothing"
-        let bmw = FindInParent("workspace.vim", WindowDir(), $HOME)
-        if bmw == "Nothing"
-            if isdirectory('.git') || isdirectory('.svn')
-                " Current work dir is git's work tree
-                let bmw = getcwd()
+        if isdirectory('.git') || isdirectory('.svn')
+            " Current work dir is git's work tree
+            let bmw = getcwd()
+        else
+            " Look upwards (at parents) for a directory named '.git'
+            let location = finddir('.git', '.;')
+            if len(location) > 0
+                let bmw = substitute(location, ".git", "", "")
             else
-                " Look upwards (at parents) for a directory named '.git'
-                let location = finddir('.git', '.;')
+                let location = finddir('.svn', '.;')
                 if len(location) > 0
-                    let bmw = substitute(location, ".git", "", "")
-                else
-                    let location = finddir('.svn', '.;')
-                    if len(location) > 0
-                        let bmw = substitute(location, ".svn", "", "")
-                    endif
+                    let bmw = substitute(location, ".svn", "", "")
                 endif
             endif
         endif
@@ -313,7 +313,7 @@ let g:bookmark_highlight_lines = 1
 let g:bookmark_save_per_working_dir = 1
 
 " ctrlp
-set runtimepath+=~/dotfiles/bundle/ctrlp
+set runtimepath+=~/dotfiles/bundle/ctrlp.vim
 let g:ctrlp_max_files = 0
 let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = {
@@ -343,4 +343,4 @@ if has("unix")
 elseif has("win32")
     let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_extra_conf_windows.py"
 endif
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jd :YcmCompleter GoTo<cr>
