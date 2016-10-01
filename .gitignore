@@ -1,0 +1,6 @@
+/tmp
+/undo
+/backup
+.netrwhist
+.DS_Store
+*.pyc
