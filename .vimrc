@@ -45,13 +45,13 @@ set expandtab
 set nowritebackup
 
 " 临时文件(file.swp)存放目录, 空表示不生成临时文件
-set directory=~/.vim/tmp
+set directory=~/dotfiles/tmp
 
 " 备份文件(file~)存放目录, 空表示不生成备份文件
-set backupdir=~/.vim/backup
+set backupdir=~/dotfiles/backup
 
 " 重做文件(.file.un~)存放目录, 空表示不生成重做文件
-set undodir=~/.vim/undo
+set undodir=~/dotfiles/undo
 
 " 允许在有未保存的修改时切换缓冲区
 set hidden
@@ -84,7 +84,7 @@ set backspace=indent,eol,start
 set fileformats=unix,dos
 
 " 设置字典
-"set dictionary+=~/.vim/dictionary/2+2gfreq.txt
+"set dictionary+=~/dotfiles/dictionary/2+2gfreq.txt
 
 " 从当前文件所在目录开始向上搜索tags, NOTE: ;代表了向上搜索
 set tags=tags;
@@ -254,191 +254,35 @@ endfunction
 nnoremap <leader>c :call CloseAllBuffersButCurrent()<CR>
 
 "-------------------------------------------------------------------------------
-" MRU
+" 插件
 "-------------------------------------------------------------------------------
 
-" 排除临时文件
+" mru
+set runtimepath+=~/dotfiles/bundle/mru
 if has("win32")
     let MRU_Exclude_Files = '*.svn\\.*|^C:\\Windows\\Temp\\.*'
 else
     let MRU_Exclude_Files = '*.svn/.*|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*'
 endif
 
-"-------------------------------------------------------------------------------
-" Tag List
-"-------------------------------------------------------------------------------
-
-" 打开获得焦点
-let Tlist_GainFocus_On_ToggleOpen = 1
-
-" 显示在右边
-let Tlist_Use_Right_Window = 1
-
-" 当只有Tag List窗口时退出
-let Tlist_Exit_OnlyWindow = 1
-
-" 只显示一个文件的Tag List
-let Tlist_Show_One_File = 1
-
-" 选择后关闭Tag List窗口
-let Tlist_Close_On_Select = 1
-
-" 切换Tag List显示
-nnoremap <leader>g :TlistToggle<CR>
-
-"-------------------------------------------------------------------------------
-" NERDTree
-"-------------------------------------------------------------------------------
-
-" 加载插件
-set runtimepath+=~/.vim/bundle/nerdtree
-
-" 显示隐藏文件
+" nerdtree
+set runtimepath+=~/dotfiles/bundle/nerdtree
 let NERDTreeShowHidden = 1
-
-" 打开文件时关闭NERDTree窗口
 let NERDTreeQuitOnOpen = 1
-
-" 快捷键
 map <C-n> :NERDTreeToggle<CR>
-
-" 当只有NERDTree窗口时退出
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-"-------------------------------------------------------------------------------
-" AutoComplPop
-"-------------------------------------------------------------------------------
-
-" 加载插件
-set runtimepath+=~/.vim/bundle/AutoComplPop
-
-"-------------------------------------------------------------------------------
-" YouCompleteMe
-"-------------------------------------------------------------------------------
-
-" 加载插件
-set runtimepath+=~/.vim/bundle/YouCompleteMe
-
-" 发现.ycm_extra_conf.py不用确定提示
-let g:ycm_confirm_extra_conf = 0
-
-" 错误或警告不高亮行
-let g:syntastic_enable_highlighting = 0
-
-if has("unix")
-    let s:uname = system("uname")
-    if s:uname == "Darwin\n"
-        " Do Mac stuff here
-        let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf_macos.py"
-
-        " 搜索路径
-        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1
-        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include
-        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
-        set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
-        set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
-    endif
-elseif has("win32")
-    let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf_windows.py"
-endif
-
-" 跳转到定义
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-
-"-------------------------------------------------------------------------------
-" cscope
-"-------------------------------------------------------------------------------
-
-" 快捷键
-silent! map <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-silent! map <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-silent! map <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-silent! map <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-silent! map <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-silent! map <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-silent! map <C-\>f :cs find f <C-R>=expand("<cword>")<CR><CR>
-silent! map <C-\>i :cs find i <C-R>=expand("<cword>")<CR><CR>
-
-"-------------------------------------------------------------------------------
-" autoload_cscope
-"-------------------------------------------------------------------------------
-
-" 不显示菜单
-let g:autocscope_menus = 0
-
-"-------------------------------------------------------------------------------
-" tasklist
-"-------------------------------------------------------------------------------
-
-" 任务列表显示在底部
-let g:tlWindowPosition = 1
-
-"-------------------------------------------------------------------------------
-" CCTree
-"-------------------------------------------------------------------------------
-
-" 加载插件
-set runtimepath+=~/.vim/bundle/CCTree
-
-" 最大调用深度
-let g:CCTreeRecursiveDepth = 5
-
-" 最小显示深度
-let g:CCTreeMinVisibleDepth = 5
-
-" 显示在右侧
-let g:CCTreeOrientation = "rightbelow"
-
-" 查看调用自己 Ctrl+\ r
-silent! map <C-\>r :CCTreeTraceReverse <C-R>=expand("<cword>")<CR><CR>
-
-" 加载CCTree数据(如果有的话)
-function! LoadCCTree()
-    if filereadable('cscope.out')
-        CCTreeLoadDB cscope.out
-    endif
-endfunc
-autocmd VimEnter * call LoadCCTree()
-
-" 加载CCTree数据, 向上查找
-function! LoadCCTreeParent()
-    let newcsdbpath = FindInParent("cscope.out",WindowDir(),$HOME)
-    if newcsdbpath != "Nothing"
-        let b:csdbpath = newcsdbpath
-        "CCTreeLoadDB b:csdbpath . "cscope.out"
-    endif
-endfunc
-
-" 自动加载CCTree数据
-augroup AutoLoadCCTree
-    au!
-    au BufEnter *.cc call LoadCCTreeParent()
-    au BufEnter *.[chly] call LoadCCTreeParent()
-augroup END
-
-"-------------------------------------------------------------------------------
-" SuperTab
-"-------------------------------------------------------------------------------
-
-" 加载插件
-set runtimepath+=~/.vim/bundle/supertab
-
-" 回车退出补全模式并保留当前文本
+" supertab
+set runtimepath+=~/dotfiles/bundle/supertab
 let g:SuperTabCrMapping = 1
-
-" 从上往下选择, NOTE: 默认是从下往上选择
 let g:SuperTabDefaultCompletionType = "<C-n>"
 let g:SuperTabContextDefaultCompletionType = "<C-n>"
 
-"-------------------------------------------------------------------------------
 " vim-bookmarks
-"-------------------------------------------------------------------------------
-
-" 获得工作目录的书签路径
 function! g:BMWorkDirFileLocation()
-    let bmw = FindInParent(".vim-bookmarks",WindowDir(),$HOME)
+    let bmw = FindInParent(".vim-bookmarks", WindowDir(), $HOME)
     if bmw == "Nothing"
-        let bmw = FindInParent("workspace.vim",WindowDir(),$HOME)
+        let bmw = FindInParent("workspace.vim", WindowDir(), $HOME)
         if bmw == "Nothing"
             if isdirectory('.git') || isdirectory('.svn')
                 " Current work dir is git's work tree
@@ -457,84 +301,46 @@ function! g:BMWorkDirFileLocation()
             endif
         endif
     endif
-
     if bmw == "Nothing"
         return g:bookmark_auto_save_file
     else
         return bmw . "/.vim-bookmarks"
     endif
 endfunction
-
-" 加载插件
-set runtimepath+=~/.vim/bundle/vim-bookmarks
-
-" 选择后关闭书签窗口
+set runtimepath+=~/dotfiles/bundle/vim-bookmarks
 let g:bookmark_auto_close = 1
-
-" 高亮书签所在行
 let g:bookmark_highlight_lines = 1
-
-" 保存到工作目录
 let g:bookmark_save_per_working_dir = 1
 
-"-------------------------------------------------------------------------------
 " ctrlp
-"-------------------------------------------------------------------------------
-
-" 加载插件
-set runtimepath+=~/.vim/bundle/ctrlp
-
-" 不限制搜索文件数
+set runtimepath+=~/dotfiles/bundle/ctrlp
 let g:ctrlp_max_files = 0
-
-" 搜索文件名, 默认是搜索路径
 let g:ctrlp_by_filename = 1
-
-" 自定义忽略
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$|Temp|Library',
   \ 'file': '\v\.(exe|so|dll|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
   \ }
 
-" UltiSnips
-"-------------------------------------------------------------------------------
-
-" 加载插件
-set runtimepath+=~/.vim/bundle/ultisnips
-
-" 展开片段
-let g:UltiSnipsExpandTrigger = "<C-j>"
-
-"-------------------------------------------------------------------------------
-" vim-snippets
-"-------------------------------------------------------------------------------
-
-" 加载插件
-set runtimepath+=~/.vim/bundle/vim-snippets
-
-"-------------------------------------------------------------------------------
-" vim-youdao-translater
-"-------------------------------------------------------------------------------
-
-" 快捷键
-vnoremap <silent> <C-t> :<C-u>Ydv<CR>
-nnoremap <silent> <C-t> :<C-u>Ydc<CR>
-noremap <leader>yd :<C-u>Yde<CR>
-
-"-------------------------------------------------------------------------------
 " vim-reveal-in-finder
-"-------------------------------------------------------------------------------
+set runtimepath+=~/dotfiles/bundle/vim-reveal-in-finder
+nnoremap <leader><cr> :Reveal<cr>
 
-" 快捷键
-nnoremap <leader><CR> :Reveal<CR>
-
-"-------------------------------------------------------------------------------
-" 最后处理
-"-------------------------------------------------------------------------------
-
-" 加载工程配置(如果有的话)
-call SourceInParent("workspace.vim")
-
-" 加载会话配置(如果有的话)
-call SourceInParent("session.vim")
+" YouCompleteMe
+set runtimepath+=~/dotfiles/bundle/YouCompleteMe
+let g:ycm_confirm_extra_conf = 0
+let g:syntastic_enable_highlighting = 0
+if has("unix")
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+        let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_extra_conf_macos.py"
+        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1
+        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include
+        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+        set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+        set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
+    endif
+elseif has("win32")
+    let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_extra_conf_windows.py"
+endif
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
