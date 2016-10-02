@@ -14,7 +14,7 @@ set showcmd
 " 忽略大小写
 set ignorecase
 
-" 高亮当前行, NOTE: 会导致画面重绘变慢
+" 高亮当前行, 会导致画面重绘变慢
 set cursorline
 
 " 使用老的正则表达式引擎, 能缓解画面重绘变慢
@@ -86,7 +86,7 @@ set fileformats=unix,dos
 " 设置字典
 "set dictionary+=~/dotfiles/dictionary/2+2gfreq.txt
 
-" 从当前文件所在目录开始向上搜索tags, NOTE: ;代表了向上搜索
+" 从当前文件所在目录开始向上搜索tags, ;代表了向上搜索
 set tags=tags;
 
 " 颜色数
@@ -95,12 +95,6 @@ set t_Co=256
 " 使用系统剪切板, tmux on macos need install https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
 set clipboard=unnamed
 
-" No annoying sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
-
 "-------------------------------------------------------------------------------
 " 杂项
 "-------------------------------------------------------------------------------
@@ -108,40 +102,47 @@ set tm=500
 " 打开语法高亮
 syntax on
 
+" 快速加载vimrc 
+map <silent> <leader>ss :source $MYVIMRC<cr>
+
+" 快速编辑vimrc 
+map <silent> <leader>ee :e $MYVIMRC<cr>
+
+" vimrc修改后马上加载
+autocmd! bufwritepost _vimrc source $MYVIMRC
+
+" 打开返回上次修改的位置
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \     exe "normal! g`\"" |
+  \ endif
+
+" protobuf语法高亮
+augroup filetype
+    au! BufRead,BufNewFile *.proto setfiletype proto
+augroup end
+
+" python脚本使用unix行尾方式, 为了支持#! /usr/bin/env python
+augroup filetype
+    au! BufRead,BufNewFile *.py set fileformat=unix
+augroup end
+
+" 启用文件类型插件和缩进
+filetype plugin indent on
+
 " 平台特性
 if has("win32")
     source $VIMRUNTIME/mswin.vim
     source $VIMRUNTIME/vimrc_example.vim
 
-    " set message language  
-    let $LANG='en'
-
-    " set menu's language of gvim. no spaces beside '=' 
-    set langmenu=en
-
-    behave mswin
-endif
-
-" 快速编辑vimrc
-if has("win32")
-    " 快速加载vimrc 
-    map <silent> <leader>ss :source ~/_vimrc<cr>
-    " 快速编辑vimrc 
-    map <silent> <leader>ee :e ~/_vimrc<cr>
-    " vimrc修改后马上加载
-    autocmd! bufwritepost _vimrc source ~/_vimrc
-else
-    " 快速加载vimrc 
-    map <silent> <leader>ss :source ~/.vimrc<cr>
-    " 快速编辑vimrc 
-    map <silent> <leader>ee :e ~/.vimrc<cr>
-    " vimrc 修改后马上加载
-    autocmd! bufwritepost .vimrc source ~/.vimrc
-endif
-
-if has("win32")
     " 最大化窗口
     au GUIEnter * simalt ~x 
+
+    " 消息语言
+    let $LANG="en"
+
+    " 菜单语言
+    set langmenu=en
 
     " 解决控制台中文乱码
     set termencoding=chinese
@@ -155,46 +156,16 @@ if has("win32")
     set path+=$BOOST_ROOT
     set path+=$PROTOBUF_ROOT\\src
 
-    if has('gui_running')
-        " 不显示菜单栏、工具栏
+    if has("gui_running")
+        " 不显示菜单栏和工具栏
         set guioptions=""
 
         " 字体
         set guifont=Source\ Code\ Pro,Consolas
-        
-        " 配色方案
-        "set background=dark
-        "set background=light
-
-        " 不用斜体
-        "let g:solarized_italic = 0
-        "colorscheme solarized
-
-        "colorscheme molokai
-        "colorscheme PaperColor
     endif
 else
     set path+=/usr/local/include
 endif
-
-" Return to last edit position when opening files (You want this!)
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-
-" protobuf语法高亮
-augroup filetype
-    au! BufRead,BufNewFile *.proto setfiletype proto
-augroup end
-
-" python脚本使用unix行尾方式, NOTE: 为了支持#! /usr/bin/env python
-augroup filetype
-    au! BufRead,BufNewFile *.py set fileformat=unix
-augroup end
-
-" 启用文件类型插件和缩进
-filetype plugin indent on
 
 "-------------------------------------------------------------------------------
 " 工具函数
@@ -205,9 +176,9 @@ function! WindowDir()
     if winbufnr(0) == -1
         let unislash = getcwd()
     else 
-        let unislash = fnamemodify(bufname(winbufnr(0)), ':p:h')
+        let unislash = fnamemodify(bufname(winbufnr(0)), ":p:h")
     endif
-    return tr(unislash, '\', '/')
+    return tr(unislash, "\\", "/")
 endfunc
 
 " 向上查找文件
@@ -217,12 +188,10 @@ function! FindInParent(fln, flsrt, flstp)
         if filereadable(here . "/" . a:fln)
             return here
         endif
-
         let fr = match(here, "/[^/]*$")
         if fr == -1
             break
         endif
-
         let here = strpart(here, 0, fr)
         if here == a:flstp
             break
@@ -231,26 +200,13 @@ function! FindInParent(fln, flsrt, flstp)
     return "Nothing"
 endfunc
 
-" 向上加载文件(如果有的话)
-function! SourceInParent(fln)
-    let dir = FindInParent(a:fln, WindowDir(), $HOME)
-    if dir != "Nothing"
-        let file = dir . "/" . a:fln
-        if filereadable(file)
-	        execute 'source ' . file
-        endif
-    endif
-endfunc
-
 " 关闭其他所有缓冲区
 function! CloseAllBuffersButCurrent()
     let curr = bufnr("%")
     let last = bufnr("$")
-    if curr > 1    | silent! execute "1,".(curr-1)."bd"     | endif
-    if curr < last | silent! execute (curr+1).",".last."bd" | endif
+    if curr > 1 | silent! execute "1," . (curr - 1) . "bd" | endif
+    if curr < last | silent! execute (curr + 1) . "," . last . "bd" | endif
 endfunction
-
-" 快捷键
 nnoremap <leader>c :call CloseAllBuffersButCurrent()<cr>
 
 "-------------------------------------------------------------------------------
@@ -263,9 +219,9 @@ set runtimepath+=~/dotfiles/bundle/a.vim
 " mru
 set runtimepath+=~/dotfiles/bundle/mru
 if has("win32")
-    let MRU_Exclude_Files = '*.svn\\.*|^C:\\Windows\\Temp\\.*'
+    let MRU_Exclude_Files = "*.svn\\.*|^C:\\Windows\\Temp\\.*"
 else
-    let MRU_Exclude_Files = '*.svn/.*|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*'
+    let MRU_Exclude_Files = "*.svn/.*|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*"
 endif
 
 " nerdtree
@@ -285,21 +241,16 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 function! g:BMWorkDirFileLocation()
     let bmw = FindInParent(".vim-bookmarks", WindowDir(), $HOME)
     if bmw == "Nothing"
-        if isdirectory('.git') || isdirectory('.svn')
-            " Current work dir is git's work tree
-            let bmw = getcwd()
-        else
-            " Look upwards (at parents) for a directory named '.git'
-            let location = finddir('.git', '.;')
-            if len(location) > 0
-                let bmw = substitute(location, ".git", "", "")
+        for root in [".git", ".svn"]
+            if isdirectory(root)
+                let bmw = getcwd()
             else
-                let location = finddir('.svn', '.;')
+                let location = finddir(root, ".;")
                 if len(location) > 0
-                    let bmw = substitute(location, ".svn", "", "")
+                    let bmw = substitute(location, ".git", "", "")
                 endif
             endif
-        endif
+        endfor
     endif
     if bmw == "Nothing"
         return g:bookmark_auto_save_file
@@ -317,10 +268,10 @@ set runtimepath+=~/dotfiles/bundle/ctrlp.vim
 let g:ctrlp_max_files = 0
 let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$|Temp|Library',
-  \ 'file': '\v\.(exe|so|dll|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db)$',
-  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-  \ }
+ \ "dir":  "\v[\/]\.(git|hg|svn)$|Temp|Library",
+ \ "file": "\v\.(exe|so|dll|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db)$",
+ \ "link": "SOME_BAD_SYMBOLIC_LINKS",
+ \ }
 
 " vim-reveal-in-finder
 set runtimepath+=~/dotfiles/bundle/vim-reveal-in-finder
@@ -329,6 +280,7 @@ nnoremap <leader><cr> :Reveal<cr>
 " YouCompleteMe
 set runtimepath+=~/dotfiles/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_use_ultisnips_completer = 0
 let g:syntastic_enable_highlighting = 0
 if has("unix")
     let s:uname = system("uname")
