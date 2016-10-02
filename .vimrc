@@ -171,43 +171,14 @@ endif
 " 工具函数
 "-------------------------------------------------------------------------------
 
-" 窗口目录
-function! WindowDir()
-    if winbufnr(0) == -1
-        let unislash = getcwd()
-    else 
-        let unislash = fnamemodify(bufname(winbufnr(0)), ":p:h")
-    endif
-    return tr(unislash, "\\", "/")
-endfunc
-
-" 向上查找文件
-function! FindInParent(fln, flsrt, flstp)
-    let here = a:flsrt
-    while (strlen(here) > 0)
-        if filereadable(here . "/" . a:fln)
-            return here
-        endif
-        let fr = match(here, "/[^/]*$")
-        if fr == -1
-            break
-        endif
-        let here = strpart(here, 0, fr)
-        if here == a:flstp
-            break
-        endif
-    endwhile
-    return "Nothing"
-endfunc
-
 " 关闭其他所有缓冲区
-function! CloseAllBuffersButCurrent()
+function! G_close_all_buffers_but_current()
     let curr = bufnr("%")
     let last = bufnr("$")
     if curr > 1 | silent! execute "1," . (curr - 1) . "bd" | endif
     if curr < last | silent! execute (curr + 1) . "," . last . "bd" | endif
 endfunction
-nnoremap <leader>c :call CloseAllBuffersButCurrent()<cr>
+nnoremap <leader>c :call G_close_all_buffers_but_current()<cr>
 
 "-------------------------------------------------------------------------------
 " 插件
@@ -239,20 +210,32 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 " vim-bookmarks
 function! g:BMWorkDirFileLocation()
-    let bmw = FindInParent(".vim-bookmarks", WindowDir(), $HOME)
-    if bmw == "Nothing"
-        for root in [".git", ".svn"]
-            let location = finddir(root, ".;")
-            if len(location) > 0
-                let bmw = substitute(location, ".git", "", "")
-                break
-            endif
-        endfor
-    endif
-    if bmw == "Nothing"
-        return g:bookmark_auto_save_file
+    if filereadable(".vim-bookmarks")
+        let work_dir = getcwd()
     else
-        return bmw . "/.vim-bookmarks"
+        let hint_path = findfile(".vim-bookmarks", ".;")
+        if len(hint_path) > 0
+            let work_dir = substitute(hint_path, ".vim-bookmarks", "", "")
+        else
+            let work_dir = ""
+            for hint in [".git", ".svn"]
+                if isdirectory(hint)
+                    let work_dir = getcwd()
+                    break
+                else
+                    let hint_path = finddir(hint, ".;")
+                    if len(hint_path) > 0
+                        let work_dir = substitute(hint_path, hint, "", "")
+                        break
+                    endif
+                endif
+            endfor
+        endif
+    endif
+    if len(work_dir) > 0
+        return work_dir . "/.vim-bookmarks"
+    else
+        return g:bookmark_auto_save_file
     endif
 endfunction
 set runtimepath+=~/dotfiles/bundle/vim-bookmarks
