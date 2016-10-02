@@ -112,7 +112,7 @@ map <silent> <leader>ss :source $MYVIMRC<cr>
 map <silent> <leader>ee :e $MYVIMRC<cr>
 
 " vimrc修改后马上加载
-autocmd! bufwritepost _vimrc source $MYVIMRC
+autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
 " 打开返回上次修改的位置
 autocmd BufReadPost *
