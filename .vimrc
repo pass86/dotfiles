@@ -95,6 +95,9 @@ set t_Co=256
 " 使用系统剪切板, tmux on macos need install https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
 set clipboard=unnamed
 
+" 运行时文件搜索目录
+set runtimepath=~/dotfiles,$VIMRUNTIME
+
 "-------------------------------------------------------------------------------
 " 杂项
 "-------------------------------------------------------------------------------
@@ -146,9 +149,6 @@ if has("win32")
 
     " 解决控制台中文乱码
     set termencoding=chinese
-
-    " Windows默认设置到了$HOME/vimfiles, 统一设置到$HOME/.vim
-    set runtimepath=~/.vim,$VIMRUNTIME
 
     " 搜索路径
     set path+=C:\\Program\\\ Files\\\ (x86)\\Microsoft\\\ Visual\\\ Studio\\\ 14.0\\VC\\include
