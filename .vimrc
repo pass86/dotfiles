@@ -178,7 +178,7 @@ function! G_close_all_buffers_but_current()
     if curr > 1 | silent! execute "1," . (curr - 1) . "bd" | endif
     if curr < last | silent! execute (curr + 1) . "," . last . "bd" | endif
 endfunction
-nnoremap <leader>c :call G_close_all_buffers_but_current()<cr>
+nnoremap <leader>co :call G_close_all_buffers_but_current()<cr>
 
 "-------------------------------------------------------------------------------
 " 插件
@@ -201,6 +201,9 @@ let NERDTreeShowHidden = 1
 let NERDTreeQuitOnOpen = 1
 map <c-n> :NERDTreeToggle<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" nerdcommenter
+set runtimepath+=~/dotfiles/bundle/nerdcommenter
 
 " supertab
 set runtimepath+=~/dotfiles/bundle/supertab
@@ -256,6 +259,9 @@ let g:ctrlp_custom_ignore = {
 " vim-reveal-in-finder
 set runtimepath+=~/dotfiles/bundle/vim-reveal-in-finder
 nnoremap <leader><cr> :Reveal<cr>
+
+" vim-airline
+set runtimepath+=~/dotfiles/bundle/vim-airline
 
 " YouCompleteMe
 set runtimepath+=~/dotfiles/bundle/YouCompleteMe
