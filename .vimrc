@@ -263,10 +263,13 @@ nnoremap <leader><cr> :Reveal<cr>
 " vim-airline
 set runtimepath+=~/dotfiles/bundle/vim-airline
 
+" ultisnips
+set runtimepath+=~/dotfiles/bundle/ultisnips
+let g:UltiSnipsExpandTrigger = "<c-j>"
+
 " YouCompleteMe
 set runtimepath+=~/dotfiles/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_use_ultisnips_completer = 0
 let g:syntastic_enable_highlighting = 0
 if has("unix")
     let s:uname = system("uname")
