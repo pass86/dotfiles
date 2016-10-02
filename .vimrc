@@ -242,13 +242,10 @@ function! g:BMWorkDirFileLocation()
     let bmw = FindInParent(".vim-bookmarks", WindowDir(), $HOME)
     if bmw == "Nothing"
         for root in [".git", ".svn"]
-            if isdirectory(root)
-                let bmw = getcwd()
-            else
-                let location = finddir(root, ".;")
-                if len(location) > 0
-                    let bmw = substitute(location, ".git", "", "")
-                endif
+            let location = finddir(root, ".;")
+            if len(location) > 0
+                let bmw = substitute(location, ".git", "", "")
+                break
             endif
         endfor
     endif
