@@ -266,6 +266,7 @@ set runtimepath+=~/dotfiles/bundle/vim-airline
 " ultisnips
 set runtimepath+=~/dotfiles/bundle/ultisnips
 let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsSnippetDirectories=["snippet"]
 
 " YouCompleteMe
 set runtimepath+=~/dotfiles/bundle/YouCompleteMe

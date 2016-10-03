@@ -1,0 +1,20 @@
+extends c
+
+snippet class
+class ${1} {
+  public:
+    $1();
+    ~$1();
+	${0}
+};
+endsnippet
+
+snippet constructor
+${1:foo}::$1() {
+}
+
+$1::~$1() {
+}
+endsnippet
+
+# vim:ft=snippets:

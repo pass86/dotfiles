@@ -1,0 +1,88 @@
+snippet if
+if (${1}) {
+    ${2}
+}
+endsnippet
+
+snippet ifelse
+if (${1}) {
+    ${2}
+} else {
+    ${3}
+}
+endsnippet
+
+snippet ifelseif
+if (${1}) {
+    ${2}
+} else if (${3}) {
+    ${4}
+} else {
+    ${5}
+}
+endsnippet
+
+snippet for
+for (${1}; ${2}; ${3}) {
+    ${4}
+}
+endsnippet
+
+snippet fori
+for (${1:int} ${2:i} = ${3:0}; $2 < ${4:count}; ${5}++$2) {
+    ${6}
+}
+endsnippet
+
+snippet switch
+switch (${1}) {
+case ${2}:
+    ${3}
+    break;
+default:
+    ${4}
+    break;
+}
+endsnippet
+
+snippet case
+case ${1}:
+    ${2}
+    break;
+endsnippet
+
+snippet while
+while (${1}) {
+    ${2}
+}
+endsnippet
+
+snippet do
+do {
+    ${1}
+} while (${2});
+endsnippet
+
+snippet return
+return ${0};
+endsnippet
+
+snippet func
+${1:pubilc} ${2:void} ${3:foo}(${4}) {
+    ${0}
+}
+endsnippet
+
+snippet struct
+class ${1} {
+    ${0}
+}
+
+endsnippet
+snippet class
+class ${1} {
+    ${0}
+}
+endsnippet
+
+# vim:ft=snippets:
