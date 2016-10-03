@@ -45,13 +45,13 @@ set expandtab
 set nowritebackup
 
 " 临时文件(file.swp)存放目录, 空表示不生成临时文件
-set directory=~/dotfiles/tmp
+set directory=~/dotfiles/vim/tmp
 
 " 备份文件(file~)存放目录, 空表示不生成备份文件
-set backupdir=~/dotfiles/backup
+set backupdir=~/dotfiles/vim/backup
 
 " 重做文件(.file.un~)存放目录, 空表示不生成重做文件
-set undodir=~/dotfiles/undo
+set undodir=~/dotfiles/vim/undo
 
 " 允许在有未保存的修改时切换缓冲区
 set hidden
@@ -84,7 +84,7 @@ set backspace=indent,eol,start
 set fileformats=unix,dos
 
 " 设置字典
-"set dictionary+=~/dotfiles/dictionary/2+2gfreq.txt
+"set dictionary+=~/dotfiles/vim/dictionary/2+2gfreq.txt
 
 " 从当前文件所在目录开始向上搜索tags, ;代表了向上搜索
 set tags=tags;
@@ -96,7 +96,7 @@ set t_Co=256
 set clipboard=unnamed
 
 " 运行时文件搜索目录
-set runtimepath=~/dotfiles,$VIMRUNTIME
+set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 
 "-------------------------------------------------------------------------------
 " 杂项
@@ -185,10 +185,10 @@ nnoremap <leader>co :call G_close_all_buffers_but_current()<cr>
 "-------------------------------------------------------------------------------
 
 " a
-set runtimepath+=~/dotfiles/bundle/a.vim
+set runtimepath+=~/dotfiles/vim/bundle/a.vim
 
 " mru
-set runtimepath+=~/dotfiles/bundle/mru
+set runtimepath+=~/dotfiles/vim/bundle/mru
 if has("win32")
     let MRU_Exclude_Files = "*.svn\\.*|^C:\\Windows\\Temp\\.*"
 else
@@ -196,17 +196,17 @@ else
 endif
 
 " nerdtree
-set runtimepath+=~/dotfiles/bundle/nerdtree
+set runtimepath+=~/dotfiles/vim/bundle/nerdtree
 let NERDTreeShowHidden = 1
 let NERDTreeQuitOnOpen = 1
 map <c-n> :NERDTreeToggle<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " nerdcommenter
-set runtimepath+=~/dotfiles/bundle/nerdcommenter
+set runtimepath+=~/dotfiles/vim/bundle/nerdcommenter
 
 " supertab
-set runtimepath+=~/dotfiles/bundle/supertab
+set runtimepath+=~/dotfiles/vim/bundle/supertab
 let g:SuperTabCrMapping = 1
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
@@ -241,13 +241,13 @@ function! g:BMWorkDirFileLocation()
         return g:bookmark_auto_save_file
     endif
 endfunction
-set runtimepath+=~/dotfiles/bundle/vim-bookmarks
+set runtimepath+=~/dotfiles/vim/bundle/vim-bookmarks
 let g:bookmark_auto_close = 1
 let g:bookmark_highlight_lines = 1
 let g:bookmark_save_per_working_dir = 1
 
 " ctrlp
-set runtimepath+=~/dotfiles/bundle/ctrlp.vim
+set runtimepath+=~/dotfiles/vim/bundle/ctrlp.vim
 let g:ctrlp_max_files = 0
 let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = {
@@ -257,19 +257,19 @@ let g:ctrlp_custom_ignore = {
  \ }
 
 " vim-reveal-in-finder
-set runtimepath+=~/dotfiles/bundle/vim-reveal-in-finder
+set runtimepath+=~/dotfiles/vim/bundle/vim-reveal-in-finder
 nnoremap <leader><cr> :Reveal<cr>
 
 " vim-airline
-set runtimepath+=~/dotfiles/bundle/vim-airline
+set runtimepath+=~/dotfiles/vim/bundle/vim-airline
 
 " ultisnips
-set runtimepath+=~/dotfiles/bundle/ultisnips
+set runtimepath+=~/dotfiles/vim/bundle/ultisnips
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsSnippetDirectories=["snippet"]
 
 " YouCompleteMe
-set runtimepath+=~/dotfiles/bundle/YouCompleteMe
+set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
 let g:syntastic_enable_highlighting = 0
 if has("unix")
