@@ -10,7 +10,7 @@ import subprocess
 def tags(root): 
     precwd = os.getcwd()
     os.chdir(root)
-    subprocess.call(["cscope", "-Rb"])
+    #subprocess.call(["cscope", "-Rb"])
     subprocess.call(["ctags", "-R", "."])
     os.chdir(precwd)
 
