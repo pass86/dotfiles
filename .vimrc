@@ -195,6 +195,27 @@ else
     let MRU_Exclude_Files = "*.svn/.*|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*"
 endif
 
+" supertab
+set runtimepath+=~/dotfiles/vim/bundle/supertab
+let g:SuperTabCrMapping = 1
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
+
+" ctrlp
+set runtimepath+=~/dotfiles/vim/bundle/ctrlp.vim
+let g:ctrlp_max_files = 0
+let g:ctrlp_by_filename = 1
+let g:ctrlp_custom_ignore = {
+ \ "dir":  "\v[\/]\.(git|hg|svn)$|Temp|Library",
+ \ "file": "\v\.(exe|so|dll|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db)$",
+ \ "link": "SOME_BAD_SYMBOLIC_LINKS",
+ \ }
+
+" ultisnips
+set runtimepath+=~/dotfiles/vim/bundle/ultisnips
+let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsSnippetDirectories=["snippet"]
+
 " nerdtree
 set runtimepath+=~/dotfiles/vim/bundle/nerdtree
 let NERDTreeShowHidden = 1
@@ -204,12 +225,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " nerdcommenter
 set runtimepath+=~/dotfiles/vim/bundle/nerdcommenter
-
-" supertab
-set runtimepath+=~/dotfiles/vim/bundle/supertab
-let g:SuperTabCrMapping = 1
-let g:SuperTabDefaultCompletionType = "<c-n>"
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 " vim-bookmarks
 function! g:BMWorkDirFileLocation()
@@ -246,16 +261,6 @@ let g:bookmark_auto_close = 1
 let g:bookmark_highlight_lines = 1
 let g:bookmark_save_per_working_dir = 1
 
-" ctrlp
-set runtimepath+=~/dotfiles/vim/bundle/ctrlp.vim
-let g:ctrlp_max_files = 0
-let g:ctrlp_by_filename = 1
-let g:ctrlp_custom_ignore = {
- \ "dir":  "\v[\/]\.(git|hg|svn)$|Temp|Library",
- \ "file": "\v\.(exe|so|dll|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db)$",
- \ "link": "SOME_BAD_SYMBOLIC_LINKS",
- \ }
-
 " vim-reveal-in-finder
 set runtimepath+=~/dotfiles/vim/bundle/vim-reveal-in-finder
 nnoremap <leader><cr> :Reveal<cr>
@@ -263,10 +268,8 @@ nnoremap <leader><cr> :Reveal<cr>
 " vim-airline
 set runtimepath+=~/dotfiles/vim/bundle/vim-airline
 
-" ultisnips
-set runtimepath+=~/dotfiles/vim/bundle/ultisnips
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsSnippetDirectories=["snippet"]
+" vim-startify
+set runtimepath+=~/dotfiles/vim/bundle/vim-startify
 
 " YouCompleteMe
 set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe

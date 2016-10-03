@@ -1,6 +1,6 @@
-/tmp
-/undo
-/backup
+/vim/tmp
+/vim/undo
+/vim/backup
 .netrwhist
 .DS_Store
 *.pyc
