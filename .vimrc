@@ -229,6 +229,9 @@ set runtimepath+=~/dotfiles/vim/bundle/ultisnips
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsSnippetDirectories=["snippet"]
 
+" auto-pairs
+set runtimepath+=~/dotfiles/vim/bundle/auto-pairs
+
 " nerdtree
 set runtimepath+=~/dotfiles/vim/bundle/nerdtree
 let NERDTreeShowHidden = 1
