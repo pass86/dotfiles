@@ -187,6 +187,19 @@ nnoremap <leader>co :call G_close_all_buffers_but_current()<cr>
 " a
 set runtimepath+=~/dotfiles/vim/bundle/a.vim
 
+" ack
+set runtimepath+=~/dotfiles/vim/bundle/ack.vim
+let g:ackpreview = 1
+let g:ackhighlight = 1
+let g:ack_autoclose = 1
+if executable("ag")
+    let g:ackprg = "ag --vimgrep --smart-case"
+endif
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
+
 " mru
 set runtimepath+=~/dotfiles/vim/bundle/mru
 if has("win32")
