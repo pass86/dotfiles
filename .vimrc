@@ -146,8 +146,8 @@ if has("win32")
     set termencoding=chinese
 
     " 搜索路径
-    set path+=C:\\Program\\\ Files\\\ (x86)\\Microsoft\\\ Visual\\\ Studio\\\ 14.0\\VC\\include
-    set path+=C:\\Program\\\ Files\\\ (x86)\\Microsoft\\\ SDKs\\Windows\\v7.1A\\Include
+    set path+=$VC_INCLUDE_DIR
+    set path+=$SDK_INCLUDE_DIR
     set path+=$BOOST_ROOT
     set path+=$PROTOBUF_ROOT\\src
 

@@ -40,8 +40,8 @@ flags = [
 '-std=c++11',
 '-xc++',
 '-I.',
-'-I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include"',
-'-I"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include"',
+'-I' + os.getenv('VC_INCLUDE_DIR'),
+'-I' + os.getenv('SDK_INCLUDE_DIR'),
 '-I' + os.getenv('BOOST_ROOT'),
 '-I' + os.getenv('PROTOBUF_ROOT') + '\\src',
 ]
