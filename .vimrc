@@ -120,11 +120,6 @@ autocmd BufReadPost *
   \     exe "normal! g`\"" |
   \ endif
 
-" protobuf语法高亮
-augroup filetype
-    au! BufRead,BufNewFile *.proto setfiletype proto
-augroup end
-
 " python脚本使用unix行尾方式, 为了支持#!/usr/bin/env python
 augroup filetype
     au! BufRead,BufNewFile *.py set fileformat=unix
