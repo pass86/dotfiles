@@ -120,9 +120,9 @@ autocmd BufReadPost *
   \     exe "normal! g`\"" |
   \ endif
 
-" python脚本使用unix行尾方式, 为了支持#!/usr/bin/env python
+" 新建文件使用unix行尾方式
 augroup filetype
-    au! BufRead,BufNewFile *.py set fileformat=unix
+    au! BufNewFile * set fileformat=unix
 augroup end
 
 " 启用文件类型插件和缩进
