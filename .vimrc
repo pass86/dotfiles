@@ -198,9 +198,9 @@ cnoreabbrev AG Ack
 " mru
 set runtimepath+=~/dotfiles/vim/bundle/mru
 if has("win32")
-    let MRU_Exclude_Files = "*.svn\\.*|^C:\\Windows\\Temp\\.*"
+    let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
 else
-    let MRU_Exclude_Files = "*.svn/.*|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*"
+    let MRU_Exclude_Files = '.*/.svn/.*\|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*'
 endif
 
 " supertab
@@ -282,6 +282,7 @@ set runtimepath+=~/dotfiles/vim/bundle/vim-airline
 
 " vim-startify
 set runtimepath+=~/dotfiles/vim/bundle/vim-startify
+let g:startify_skiplist = [MRU_Exclude_Files]
 
 " YouCompleteMe
 set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
