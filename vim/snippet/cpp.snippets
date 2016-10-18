@@ -4,7 +4,7 @@ snippet try
 try {
     ${0}
 } catch (${1:std::exception& e}) {
-    ${2}
+    ${2:std::cerr << e.what() << std::endl;}
 }
 endsnippet
 
