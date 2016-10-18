@@ -1,6 +1,6 @@
 snippet if
 if (${1}) {
-    ${2}
+    ${0}
 }
 endsnippet
 
@@ -8,7 +8,7 @@ snippet ifelse
 if (${1}) {
     ${2}
 } else {
-    ${3}
+    ${0}
 }
 endsnippet
 
@@ -18,19 +18,19 @@ if (${1}) {
 } else if (${3}) {
     ${4}
 } else {
-    ${5}
+    ${0}
 }
 endsnippet
 
 snippet for
 for (${1}; ${2}; ${3}) {
-    ${4}
+    ${0}
 }
 endsnippet
 
 snippet fori
 for (${1:int} ${2:i} = ${3:0}; $2 < ${4:count}; ${5}++$2) {
-    ${6}
+    ${0}
 }
 endsnippet
 
@@ -40,27 +40,27 @@ case ${2}:
     ${3}
     break;
 default:
-    ${4}
+    ${0}
     break;
 }
 endsnippet
 
 snippet case
 case ${1}:
-    ${2}
+    ${0}
     break;
 endsnippet
 
 snippet while
 while (${1}) {
-    ${2}
+    ${0}
 }
 endsnippet
 
 snippet do
 do {
-    ${1}
-} while (${2});
+    ${0}
+} while (${1});
 endsnippet
 
 snippet return
@@ -75,9 +75,9 @@ endsnippet
 
 snippet try
 try {
-    ${1}
-} catch (${2}) {
-    ${3}
+    ${0}
+} catch (${1:Exception e}) {
+    ${2}
 }
 endsnippet
 

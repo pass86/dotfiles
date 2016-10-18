@@ -2,9 +2,9 @@ extends c
 
 snippet try
 try {
-    ${1}
-} catch (${2}) {
-    ${3}
+    ${0}
+} catch (${1:std::exception& e}) {
+    ${2}
 }
 endsnippet
 
@@ -12,7 +12,7 @@ snippet class
 class ${1} {
   public:
     $1();
-    ~$1();
+    virtual ~$1();
 	${0}
 };
 endsnippet
