@@ -214,9 +214,9 @@ set runtimepath+=~/dotfiles/vim/bundle/ctrlp.vim
 let g:ctrlp_max_files = 0
 let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = {
- \ "dir":  "\v[\/]\.(git|hg|svn)$|Temp|Library",
- \ "file": "\v\.(exe|so|dll|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db)$",
- \ "link": "SOME_BAD_SYMBOLIC_LINKS",
+ \ "dir": '\v[\/]\.(git|hg|svn)$|Temp|Library',
+ \ "file": '\v\.(exe|so|dll|obj|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db)$',
+ \ "link": 'SOME_BAD_SYMBOLIC_LINKS',
  \ }
 
 " ultisnips
