@@ -227,6 +227,10 @@ let g:UltiSnipsSnippetDirectories=["snippet"]
 " auto-pairs
 set runtimepath+=~/dotfiles/vim/bundle/auto-pairs
 
+" gundo.vim
+set runtimepath+=~/dotfiles/vim/bundle/gundo.vim
+nnoremap <F5> :GundoToggle<CR>
+
 " nerdtree
 set runtimepath+=~/dotfiles/vim/bundle/nerdtree
 let NERDTreeShowHidden = 1
