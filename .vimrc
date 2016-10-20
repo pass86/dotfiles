@@ -229,14 +229,14 @@ set runtimepath+=~/dotfiles/vim/bundle/auto-pairs
 
 " gundo.vim
 set runtimepath+=~/dotfiles/vim/bundle/gundo.vim
-nnoremap <F5> :GundoToggle<CR>
+let g:gundo_preview_bottom = 1
+nnoremap <leader>u :GundoToggle<cr>
 
 " nerdtree
 set runtimepath+=~/dotfiles/vim/bundle/nerdtree
 let NERDTreeShowHidden = 1
 let NERDTreeQuitOnOpen = 1
 map <c-n> :NERDTreeToggle<cr>
-nnoremap <leader>e :buffer NERD_tree_1<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " nerdcommenter
