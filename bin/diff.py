@@ -7,8 +7,8 @@ import os
 DIFF = "/usr/local/bin/vimdiff"
 
 # Subversion provides the paths we need as the last two parameters.
-LEFT = sys.argv[-2]
-RIGHT = sys.argv[-1]
+LEFT = sys.argv[-1]
+RIGHT = sys.argv[-2]
 
 # Call the diff command (change the following line to make sense for your diff program).
 cmd = [DIFF, LEFT, RIGHT]
