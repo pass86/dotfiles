@@ -230,6 +230,7 @@ set runtimepath+=~/dotfiles/vim/bundle/auto-pairs
 " gundo.vim
 set runtimepath+=~/dotfiles/vim/bundle/gundo.vim
 let g:gundo_preview_bottom = 1
+let g:gundo_close_on_revert = 1
 nnoremap <leader>u :GundoToggle<cr>
 
 " nerdtree
