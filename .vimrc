@@ -1,161 +1,87 @@
 "-------------------------------------------------------------------------------
-" 基础
+" basic
 "-------------------------------------------------------------------------------
-
-" 不自动换行
 set nowrap
-
-" 显示行号
 set number
-
-" 显示命令
 set showcmd
-
-" 忽略大小写
 set ignorecase
-
-" 高亮当前行, 会导致画面重绘变慢
 set cursorline
-
-" 使用老的正则表达式引擎, 能缓解画面重绘变慢
+" less draw calls
 set regexpengine=1
-
-" 有输入才重绘, 能缓解画面重绘变慢
 set lazyredraw
-
-" 显示状态栏
 set laststatus=2
-
-" 实时搜索
 set incsearch
-
-" 搜索时高亮显示被找到的文本
 set hlsearch
-
-" 自动缩进使用的空格数
 set shiftwidth=4
-
-" Tab转换为空格的个数
 set tabstop=4
-
-" 插入的Tab用tabstop个的空格替换
 set expandtab
-
-" 不进行写备份
 set nowritebackup
-
-" 临时文件(file.swp)存放目录, 空表示不生成临时文件
 set directory=~/dotfiles/vim/tmp
-
-" 备份文件(file~)存放目录, 空表示不生成备份文件
 set backupdir=~/dotfiles/vim/backup
-
-" 重做文件(.file.un~)存放目录, 空表示不生成重做文件
 set undodir=~/dotfiles/vim/undo
-
-" 允许在有未保存的修改时切换缓冲区
 set hidden
-
-" 自动设当前编辑的文件所在目录为当前工作路径
 set autochdir
-
-" cscope结果输出到quickfix窗口
 set cscopequickfix=s-,c-,d-,i-,t-,e-
-
-" 默认编码
 set encoding=utf-8
-
-" 文件编码识别顺序
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-
-" 不显示preview窗口, 因为会导致界面下拉而抖动
 set completeopt=longest,menu 
-
-" 自动加载被修改的文件
 set autoread
-
-" 设置状态栏, 额外显示文件全路径, 文件编码格式, 行尾方式, 文件类型
+" full path, file encoding, line ending, file type
 set statusline=%<%F\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}\ [%{&ff}]\ %y\ %k\ %-14.(%l,%c%V%)\ %P
-
-" 解决插入模式Backspace无效的问题
+" fix insert mode backspace
 set backspace=indent,eol,start
-
-" 行尾方式识别顺序
 set fileformats=unix,dos
-
-" 设置字典
-"set dictionary+=~/dotfiles/vim/dictionary/2+2gfreq.txt
-
-" 从当前文件所在目录开始向上搜索tags, ;代表了向上搜索
+" search tags upwards
 set tags=tags;
-
-" 颜色数
 set t_Co=256
-
-" 使用系统剪切板, tmux on macos need install https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
+" system clipboard, tmux on macos need install https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
 set clipboard=unnamed
-
-" 运行时文件搜索目录
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 
 "-------------------------------------------------------------------------------
-" 杂项
+" misc
 "-------------------------------------------------------------------------------
-
-" 打开语法高亮
 syntax on
 
-" 快速加载vimrc 
+" fast load edit and apply vimrc
 map <silent> <leader>ss :source $MYVIMRC<cr>
-
-" 快速编辑vimrc 
 map <silent> <leader>ee :e $MYVIMRC<cr>
-
-" vimrc修改后马上加载
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
-" 打开返回上次修改的位置
+" return to last edit position when open
 autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \     exe "normal! g`\"" |
   \ endif
 
-" 新建文件使用unix行尾方式
 augroup filetype
     au! BufNewFile * set fileformat=unix
 augroup end
 
-" 启用文件类型插件和缩进
 filetype plugin indent on
 
-" 平台特性
 if has("win32")
     source $VIMRUNTIME/mswin.vim
     source $VIMRUNTIME/vimrc_example.vim
 
-    " 最大化窗口
+    " maximize window
     au GUIEnter * simalt ~x 
 
-    " 消息语言
     let $LANG="en"
 
-    " 菜单语言
     set langmenu=en
 
-    " 解决控制台中文乱码
+    " fix console ecoding messy
     set termencoding=chinese
 
-    " 搜索路径
     set path+=$VC_INCLUDE_DIR
     set path+=$SDK_INCLUDE_DIR
     set path+=$BOOST_ROOT
     set path+=$PROTOBUF_ROOT\\src
 
     if has("gui_running")
-        " 不显示菜单栏和工具栏
+        " hide menubar and toolbar
         set guioptions=""
-
-        " 字体
         set guifont=Source\ Code\ Pro,Consolas
     endif
 else
@@ -163,10 +89,9 @@ else
 endif
 
 "-------------------------------------------------------------------------------
-" 工具函数
+" utility
 "-------------------------------------------------------------------------------
 
-" 关闭其他所有缓冲区
 function! G_close_all_buffers_but_current()
     let curr = bufnr("%")
     let last = bufnr("$")
@@ -176,7 +101,7 @@ endfunction
 nnoremap <leader>co :call G_close_all_buffers_but_current()<cr>
 
 "-------------------------------------------------------------------------------
-" 插件
+" plugin
 "-------------------------------------------------------------------------------
 
 " a
