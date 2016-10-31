@@ -6,6 +6,20 @@ cd ~
 mkdir code
 mkdir repo
 
+# git
+git config --global user.name pass86
+git config --global diff.tool vimdiff
+git config --global difftool.prompt false
+git config --global merge.tool vimdiff
+git config --global core.editor vim
+git config --global push.default simple
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.last 'log -1 HEAD'
+git config --global alias.unstage 'reset HEAD --'
+
 # dotfiles
 cd ~
 git clone https://github.com/pass86/dotfiles.git
