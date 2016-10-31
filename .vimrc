@@ -113,7 +113,7 @@ let g:ackpreview = 1
 let g:ackhighlight = 1
 let g:ack_autoclose = 1
 if executable("ag")
-    let g:ackprg = "ag --vimgrep --smart-case"
+    let g:ackprg = "ag --vimgrep --smart-case --ignore tags"
 endif
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
@@ -139,8 +139,8 @@ set runtimepath+=~/dotfiles/vim/bundle/ctrlp.vim
 let g:ctrlp_max_files = 0
 let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = {
- \ "dir": '\v[\/]\.(git|hg|svn)$|Temp|Library',
- \ "file": '\v\.(exe|so|dll|obj|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db)$',
+ \ "dir": '\v[\/]\.(git|hg|svn)$|Temp|Library|build',
+ \ "file": '\v\.(exe|so|dll|obj|o|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db)$|tags',
  \ "link": 'SOME_BAD_SYMBOLIC_LINKS',
  \ }
 
