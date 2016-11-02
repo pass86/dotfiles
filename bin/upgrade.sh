@@ -12,3 +12,6 @@ git submodule update --remote vim/bundle/vim-airline
 git submodule update --remote vim/bundle/vim-bookmarks
 git submodule update --remote vim/bundle/vim-reveal-in-finder
 git submodule update --remote vim/bundle/vim-startify
+git submodule update --remote tmux/plugins/tpm
+git submodule update --remote tmux/plugins/tmux-cpu
+git submodule update --remote tmux/plugins/tmux-battery
