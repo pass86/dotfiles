@@ -9,6 +9,7 @@ git submodule update --init vim/bundle/nerdtree
 git submodule update --init vim/bundle/supertab
 git submodule update --init vim/bundle/ultisnips
 git submodule update --init vim/bundle/vim-airline
+git submodule update --init vim/bundle/vim-airline-themes
 git submodule update --init vim/bundle/vim-bookmarks
 git submodule update --init vim/bundle/vim-reveal-in-finder
 git submodule update --init vim/bundle/vim-startify
