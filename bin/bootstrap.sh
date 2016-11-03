@@ -40,7 +40,8 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 #sudo make install
 
 # plugin
-#cd ~/dotfiles
+cd ~/dotfiles
+./bin/update.sh
 #git submodule update --init --recursive
 
 # ycm
