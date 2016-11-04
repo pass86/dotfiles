@@ -1,5 +1,5 @@
 # package
-sudo yum install -y git zsh tmux tree psmisc net-tools wget bzip2 unzip autoconf automake libtool gcc-c++ ncurses-devel python-devel zlib-devel bzip2-devel libquadmath-devel libevent-devel
+sudo yum install -y git zsh tmux tree psmisc ctags net-tools wget bzip2 unzip autoconf automake libtool gcc-c++ ncurses-devel python-devel zlib-devel bzip2-devel libquadmath-devel libevent-devel
 
 # dir
 mkdir -p ~/code
