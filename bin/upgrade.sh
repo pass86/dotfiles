@@ -16,3 +16,4 @@ git submodule update --remote vim/bundle/vim-startify
 git submodule update --remote tmux/plugins/tpm
 git submodule update --remote tmux/plugins/tmux-cpu
 git submodule update --remote tmux/plugins/tmux-battery
+git submodule update --remote tmux/plugins/tmux-online-status
