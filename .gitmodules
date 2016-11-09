@@ -61,3 +61,6 @@
 [submodule "vim/bundle/ShaderHighLight"]
 	path = vim/bundle/ShaderHighLight
 	url = https://github.com/vim-scripts/ShaderHighLight.git
+[submodule "tmux/plugins/tmux-resurrect"]
+	path = tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
