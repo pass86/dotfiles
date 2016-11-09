@@ -11,7 +11,7 @@ def tags(root):
     precwd = os.getcwd()
     os.chdir(root)
     #subprocess.call(["cscope", "-Rb"])
-    subprocess.call(["ctags", "-R", "."])
+    subprocess.call(["ctags", "-R", "--languages=-SQL", "."])
     os.chdir(precwd)
 
 tags(sys.argv[1])
