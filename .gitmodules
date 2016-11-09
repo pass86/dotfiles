@@ -58,3 +58,6 @@
 [submodule "tmux/plugins/tmux-online-status"]
 	path = tmux/plugins/tmux-online-status
 	url = https://github.com/tmux-plugins/tmux-online-status
+[submodule "vim/bundle/ShaderHighLight"]
+	path = vim/bundle/ShaderHighLight
+	url = https://github.com/vim-scripts/ShaderHighLight.git

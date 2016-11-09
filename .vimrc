@@ -168,6 +168,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " nerdcommenter
 set runtimepath+=~/dotfiles/vim/bundle/nerdcommenter
 
+" ShaderHighLight
+set runtimepath+=~/dotfiles/vim/bundle/ShaderHighLight
+
 " vim-bookmarks
 function! g:BMWorkDirFileLocation()
     if filereadable(".vim-bookmarks")
