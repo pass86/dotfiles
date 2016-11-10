@@ -18,3 +18,4 @@ git submodule update --init tmux/plugins/tpm
 git submodule update --init tmux/plugins/tmux-cpu
 git submodule update --init tmux/plugins/tmux-battery
 git submodule update --init tmux/plugins/tmux-online-status
+git submodule update --init tmux/plugins/tmux-resurrect
