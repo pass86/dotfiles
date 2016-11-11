@@ -78,6 +78,7 @@ if has("win32")
     set path+=$SDK_INCLUDE_DIR
     set path+=$BOOST_ROOT
     set path+=$PROTOBUF_ROOT\\src
+    set path+=$MYSQL_ROOT\\include
 
     if has("gui_running")
         " hide menubar and toolbar
