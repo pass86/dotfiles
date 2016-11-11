@@ -86,6 +86,7 @@ if has("win32")
     endif
 else
     set path+=/usr/local/include
+    set path+=/usr/local/mysql/include
 endif
 
 "-------------------------------------------------------------------------------
