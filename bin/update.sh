@@ -13,6 +13,9 @@ git submodule update --init vim/bundle/vim-airline-themes
 git submodule update --init vim/bundle/vim-bookmarks
 git submodule update --init vim/bundle/vim-reveal-in-finder
 git submodule update --init vim/bundle/vim-startify
+git submodule update --init vim/bundle/ShaderHighLight
 git submodule update --init tmux/plugins/tpm
 git submodule update --init tmux/plugins/tmux-cpu
 git submodule update --init tmux/plugins/tmux-battery
+git submodule update --init tmux/plugins/tmux-online-status
+git submodule update --init tmux/plugins/tmux-resurrect

@@ -1,10 +1,9 @@
 # package
-sudo yum install -y git zsh tmux psmisc net-tools wget bzip2 unzip autoconf automake libtool gcc-c++ ncurses-devel python-devel zlib-devel bzip2-devel libquadmath-devel
+sudo yum install -y epel-release git zsh tmux the_silver_searcher tree psmisc htop iftop dstat ctags net-tools wget bzip2 unzip autoconf automake libtool gcc-c++ ncurses-devel python-devel zlib-devel bzip2-devel libquadmath-devel libevent-devel
 
 # dir
-cd ~
-mkdir code
-mkdir repo
+mkdir -p ~/code
+mkdir -p ~/repo
 
 # git
 git config --global user.name pass86
@@ -21,21 +20,28 @@ git config --global alias.last 'log -1 HEAD'
 git config --global alias.unstage 'reset HEAD --'
 
 # dotfiles
-cd ~
-git clone https://github.com/pass86/dotfiles.git
+git clone https://github.com/pass86/dotfiles.git ~
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 # vim
-#cd ~/code
-#git clone https://github.com/vim/vim.git
-#cd vim
+#git clone https://github.com/vim/vim.git ~/code
+#cd ~/code/vim
 #./configure --enable-pythoninterp=yes --without-python-config-dir
 #make
 #sudo make install
 
+# tmux
+#git clone https://github.com/tmux/tmux.git ~/code
+#cd ~/code/tmux
+#./autogen.sh
+#./configure 
+#make
+#sudo make install
+
 # plugin
-#cd ~/dotfiles
+cd ~/dotfiles
+./bin/update.sh
 #git submodule update --init --recursive
 
 # ycm
@@ -44,5 +50,4 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-#cd ~/.oh-my-zsh/custom/plugins
-#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins

@@ -55,3 +55,12 @@
 [submodule "vim/bundle/vim-airline-themes"]
 	path = vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "tmux/plugins/tmux-online-status"]
+	path = tmux/plugins/tmux-online-status
+	url = https://github.com/tmux-plugins/tmux-online-status
+[submodule "vim/bundle/ShaderHighLight"]
+	path = vim/bundle/ShaderHighLight
+	url = https://github.com/vim-scripts/ShaderHighLight.git
+[submodule "tmux/plugins/tmux-resurrect"]
+	path = tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect

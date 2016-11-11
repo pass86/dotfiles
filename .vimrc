@@ -87,6 +87,7 @@ if has("win32")
     endif
 else
     set path+=/usr/local/include
+    set path+=/usr/local/mysql/include
 endif
 
 "-------------------------------------------------------------------------------
@@ -121,19 +122,8 @@ cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
 
-" mru
-set runtimepath+=~/dotfiles/vim/bundle/mru
-if has("win32")
-    let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
-else
-    let MRU_Exclude_Files = '.*/.svn/.*\|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*'
-endif
-
-" supertab
-set runtimepath+=~/dotfiles/vim/bundle/supertab
-let g:SuperTabCrMapping = 1
-let g:SuperTabDefaultCompletionType = "<c-n>"
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
+" auto-pairs
+set runtimepath+=~/dotfiles/vim/bundle/auto-pairs
 
 " ctrlp
 set runtimepath+=~/dotfiles/vim/bundle/ctrlp.vim
@@ -145,19 +135,19 @@ let g:ctrlp_custom_ignore = {
  \ "link": 'SOME_BAD_SYMBOLIC_LINKS',
  \ }
 
-" ultisnips
-set runtimepath+=~/dotfiles/vim/bundle/ultisnips
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsSnippetDirectories=["snippet"]
-
-" auto-pairs
-set runtimepath+=~/dotfiles/vim/bundle/auto-pairs
-
 " gundo.vim
 set runtimepath+=~/dotfiles/vim/bundle/gundo.vim
 let g:gundo_preview_bottom = 1
 let g:gundo_close_on_revert = 1
 nnoremap <leader>u :GundoToggle<cr>
+
+" mru
+set runtimepath+=~/dotfiles/vim/bundle/mru
+if has("win32")
+    let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
+else
+    let MRU_Exclude_Files = '.*/.svn/.*\|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*'
+endif
 
 " nerdtree
 set runtimepath+=~/dotfiles/vim/bundle/nerdtree
@@ -168,6 +158,20 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " nerdcommenter
 set runtimepath+=~/dotfiles/vim/bundle/nerdcommenter
+
+" supertab
+set runtimepath+=~/dotfiles/vim/bundle/supertab
+let g:SuperTabCrMapping = 1
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
+
+" ShaderHighLight
+set runtimepath+=~/dotfiles/vim/bundle/ShaderHighLight
+
+" ultisnips
+set runtimepath+=~/dotfiles/vim/bundle/ultisnips
+let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsSnippetDirectories=["snippet"]
 
 " vim-bookmarks
 function! g:BMWorkDirFileLocation()
