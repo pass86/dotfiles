@@ -60,7 +60,20 @@ augroup end
 
 filetype plugin indent on
 
-if has("win32")
+if has("unix")
+    set path+=/usr/local/include
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1
+        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include
+        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+        set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+        set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
+        set path+=/usr/local/mysql/include
+    else
+        set path+=/usr/include/mysql
+    endif
+elseif has("win32")
     source $VIMRUNTIME/mswin.vim
     source $VIMRUNTIME/vimrc_example.vim
 
@@ -85,8 +98,6 @@ if has("win32")
         set guioptions=""
         set guifont=Source\ Code\ Pro,Consolas
     endif
-else
-    set path+=/usr/local/include
 endif
 
 "-------------------------------------------------------------------------------
@@ -142,10 +153,10 @@ nnoremap <leader>u :GundoToggle<cr>
 
 " mru
 set runtimepath+=~/dotfiles/vim/bundle/mru
-if has("win32")
-    let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
-else
+if has("unix")
     let MRU_Exclude_Files = '.*/.svn/.*\|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*'
+elseif has("win32")
+    let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
 endif
 
 " nerdtree
@@ -234,15 +245,8 @@ if has("unix")
     let s:uname = system("uname")
     if s:uname == "Darwin\n"
         let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_extra_conf_macos.py"
-        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1
-        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include
-        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
-        set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
-        set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
-        set path+=/usr/local/mysql/include
     else
         let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_extra_conf_linux.py"
-        set path+=/usr/include/mysql
     endif
 elseif has("win32")
     let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_extra_conf_windows.py"
