@@ -224,6 +224,9 @@ let g:airline_theme='light'
 set runtimepath+=~/dotfiles/vim/bundle/vim-startify
 let g:startify_skiplist = [MRU_Exclude_Files]
 
+" vimwiki
+set runtimepath+=~/dotfiles/vim/bundle/vimwiki
+
 " YouCompleteMe
 set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
