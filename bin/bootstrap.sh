@@ -24,6 +24,9 @@ git clone https://github.com/pass86/dotfiles.git ~
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
+# vimwiki
+git clone https://github.com/pass86/vimwiki.git ~
+
 # vim
 #git clone https://github.com/vim/vim.git ~/code
 #cd ~/code/vim
