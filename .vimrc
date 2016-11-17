@@ -70,6 +70,7 @@ if has("unix")
         set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
         set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
         set path+=/usr/local/mysql/include
+        hi CursorLine cterm=NONE ctermbg=254 ctermfg=NONE
     else
         set path+=/usr/include/mysql
     endif
