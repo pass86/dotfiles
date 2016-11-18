@@ -93,6 +93,7 @@ elseif has("win32")
     set path+=$BOOST_ROOT
     set path+=$PROTOBUF_ROOT\\src
     set path+=$MYSQL_ROOT\\include
+    set path+=$OPENSSL_ROOT_DIR\\include
 
     if has("gui_running")
         " hide menubar and toolbar
