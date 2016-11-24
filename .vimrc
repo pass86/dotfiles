@@ -60,6 +60,8 @@ augroup end
 
 filetype plugin indent on
 
+set path=.,,
+
 if has("unix")
     set path+=/usr/local/include
     let s:uname = system("uname")
@@ -74,6 +76,7 @@ if has("unix")
     else
         set path+=/usr/include/mysql
     endif
+    set path+=/usr/include
 elseif has("win32")
     source $VIMRUNTIME/mswin.vim
     source $VIMRUNTIME/vimrc_example.vim
