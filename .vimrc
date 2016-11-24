@@ -238,6 +238,7 @@ let g:startify_skiplist = [MRU_Exclude_Files]
 
 " vimwiki
 set runtimepath+=~/dotfiles/vim/bundle/vimwiki
+let g:vimwiki_conceallevel = 0
 
 " YouCompleteMe
 set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
