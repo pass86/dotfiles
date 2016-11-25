@@ -38,6 +38,7 @@ set t_Co=256
 set clipboard=unnamed
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 set shortmess=A
+set cmdheight=2
 
 "-------------------------------------------------------------------------------
 " misc
