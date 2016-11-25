@@ -231,7 +231,7 @@ nnoremap <leader><cr> :Reveal<cr>
 " vim-airline
 set runtimepath+=~/dotfiles/vim/bundle/vim-airline
 
-" vim-airline
+" vim-airline-themes
 set runtimepath+=~/dotfiles/vim/bundle/vim-airline-themes
 let g:airline_theme='light'
 
