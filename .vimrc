@@ -16,7 +16,7 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set nowritebackup
-set directory=~/dotfiles/vim/tmp
+set directory=~/dotfiles/vim/swap
 set backupdir=~/dotfiles/vim/backup
 set undodir=~/dotfiles/vim/undo
 set hidden
