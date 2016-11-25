@@ -37,6 +37,7 @@ set t_Co=256
 " system clipboard, tmux on macos need install https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
 set clipboard=unnamed
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
+set shortmess=A
 
 "-------------------------------------------------------------------------------
 " misc
