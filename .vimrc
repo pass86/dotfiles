@@ -133,7 +133,7 @@ let g:ackpreview = 1
 let g:ackhighlight = 1
 let g:ack_autoclose = 1
 if executable("ag")
-    let g:ackprg = "ag --cpp --vimgrep --smart-case --ignore tags"
+    let g:ackprg = "ag --cpp --csharp --python --java --js --objc --sql --shell --lua --php --markdown --vim --vimgrep --smart-case --ignore tags"
 endif
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
