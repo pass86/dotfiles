@@ -24,7 +24,7 @@ set autochdir
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set completeopt=longest,menu 
+set completeopt=longest,menu
 set autoread
 " full path, file encoding, line ending, file type
 set statusline=%<%F\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}\ [%{&ff}]\ %y\ %k\ %-14.(%l,%c%V%)\ %P
@@ -38,7 +38,7 @@ set t_Co=256
 set clipboard=unnamed
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 set shortmess=A
-set cmdheight=2
+set cmdheight=1
 
 "-------------------------------------------------------------------------------
 " misc
@@ -85,7 +85,7 @@ elseif has("win32")
     source $VIMRUNTIME/vimrc_example.vim
 
     " maximize window
-    au GUIEnter * simalt ~x 
+    au GUIEnter * simalt ~x
 
     let $LANG="en"
 
