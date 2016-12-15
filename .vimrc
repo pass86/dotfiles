@@ -39,6 +39,7 @@ set clipboard=unnamed
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 set shortmess=A
 set cmdheight=1
+map <f7> :make<cr><cr><cr>
 
 "-------------------------------------------------------------------------------
 " misc
