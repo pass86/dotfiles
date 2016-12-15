@@ -23,6 +23,8 @@ git config --global alias.unstage 'reset HEAD --'
 git clone https://github.com/pass86/dotfiles.git ~
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+rm ~/dotfiles/.bash_profile
+ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 
 # vimwiki
 git clone https://github.com/pass86/vimwiki.git ~
