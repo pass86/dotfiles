@@ -168,6 +168,7 @@ if has("unix")
 elseif has("win32")
     let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
 endif
+map <c-l> :MRU<cr>
 
 " nerdtree
 set runtimepath+=~/dotfiles/vim/bundle/nerdtree
