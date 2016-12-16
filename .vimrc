@@ -245,6 +245,7 @@ let g:airline_theme='light'
 " vim-startify
 set runtimepath+=~/dotfiles/vim/bundle/vim-startify
 let g:startify_skiplist = [MRU_Exclude_Files]
+" fix autochdir failed in ctrlp
 let g:startify_change_to_dir = 0
 
 " vimwiki
