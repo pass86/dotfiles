@@ -1,5 +1,5 @@
 # package
-sudo yum install -y epel-release git zsh tmux the_silver_searcher tree psmisc htop iotop iftop dstat ctags net-tools wget bzip2 unzip autoconf automake libtool gcc-c++ ncurses-devel python-devel zlib-devel bzip2-devel libquadmath-devel libevent-devel openssl-devel
+sudo yum install -y epel-release git zsh tmux the_silver_searcher tree psmisc htop iotop iftop dstat ctags net-tools wget bzip2 unzip p7zip autoconf automake libtool gcc-c++ ncurses-devel python-devel zlib-devel bzip2-devel libquadmath-devel libevent-devel openssl-devel
 
 # dir
 mkdir -p ~/code
