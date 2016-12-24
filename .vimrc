@@ -129,6 +129,7 @@ nnoremap <leader>co :call G_close_all_buffers_but_current()<cr>
 
 " a
 set runtimepath+=~/dotfiles/vim/bundle/a.vim
+map <c-g> :A<cr>
 
 " ack
 set runtimepath+=~/dotfiles/vim/bundle/ack.vim
