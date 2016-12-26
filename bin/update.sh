@@ -20,3 +20,4 @@ git submodule update --init tmux/plugins/tmux-cpu
 git submodule update --init tmux/plugins/tmux-battery
 git submodule update --init tmux/plugins/tmux-online-status
 git submodule update --init tmux/plugins/tmux-resurrect
+git submodule update --init zsh/plugins/zsh-syntax-highlighting

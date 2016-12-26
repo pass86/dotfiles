@@ -20,3 +20,4 @@ git submodule update --remote tmux/plugins/tmux-cpu
 git submodule update --remote tmux/plugins/tmux-battery
 git submodule update --remote tmux/plugins/tmux-online-status
 git submodule update --remote tmux/plugins/tmux-resurrect
+git submodule update --remote zsh/plugins/zsh-syntax-highlighting
