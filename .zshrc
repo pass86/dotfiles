@@ -49,7 +49,7 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git svn osx cp web-search colored-man-pages zsh-syntax-highlighting extract)
+plugins=(git svn osx cp web-search colored-man-pages extract zsh-syntax-highlighting zsh-autosuggestions)
 
 # User configuration
 
