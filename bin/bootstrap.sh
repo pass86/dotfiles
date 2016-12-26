@@ -40,7 +40,7 @@ git config --global alias.unstage 'reset HEAD --'
 #git clone https://github.com/tmux/tmux.git ~/code
 #cd ~/code/tmux
 #./autogen.sh
-#./configure 
+#./configure
 #make
 #sudo make install
 
@@ -55,4 +55,3 @@ git config --global alias.unstage 'reset HEAD --'
 
 # oh my zsh
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins
