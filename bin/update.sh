@@ -15,6 +15,7 @@ git submodule update --init vim/bundle/vim-reveal-in-finder
 git submodule update --init vim/bundle/vim-startify
 git submodule update --init vim/bundle/vimwiki
 git submodule update --init vim/bundle/ShaderHighLight
+git submodule update --init vim/bundle/vim-youdao-translater
 git submodule update --init tmux/plugins/tpm
 git submodule update --init tmux/plugins/tmux-cpu
 git submodule update --init tmux/plugins/tmux-battery

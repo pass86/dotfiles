@@ -249,6 +249,12 @@ let g:startify_skiplist = [MRU_Exclude_Files]
 " fix autochdir failed in ctrlp
 let g:startify_change_to_dir = 0
 
+" vim-youdao-translater
+set runtimepath+=~/dotfiles/vim/bundle/vim-youdao-translater
+vnoremap <silent> <c-t> :<c-u>Ydv<cr>
+nnoremap <silent> <c-t> :<c-u>Ydc<cr>
+noremap <leader>yd :<c-u>Yde<cr>
+
 " vimwiki
 set runtimepath+=~/dotfiles/vim/bundle/vimwiki
 let g:vimwiki_conceallevel = 0
