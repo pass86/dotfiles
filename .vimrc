@@ -141,7 +141,7 @@ let g:ackpreview = 1
 let g:ackhighlight = 1
 let g:ack_autoclose = 1
 if executable("ag")
-    let g:ackprg = "ag --ignore tags --ignore Makefile --ignore CMakeFiles"
+    let g:ackprg = "ag --ignore tags --ignore Makefile --ignore CMakeFiles --ignore CMakeCache.txt"
 endif
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
