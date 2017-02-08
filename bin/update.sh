@@ -1,25 +1,6 @@
-git submodule update --init vim/bundle/a.vim
-git submodule update --init vim/bundle/ack.vim
-git submodule update --init vim/bundle/auto-pairs
-git submodule update --init vim/bundle/ctrlp.vim
-git submodule update --init vim/bundle/gundo.vim
-git submodule update --init vim/bundle/mru
-git submodule update --init vim/bundle/nerdcommenter
-git submodule update --init vim/bundle/nerdtree
-git submodule update --init vim/bundle/supertab
-git submodule update --init vim/bundle/ultisnips
-git submodule update --init vim/bundle/vim-airline
-git submodule update --init vim/bundle/vim-airline-themes
-git submodule update --init vim/bundle/vim-bookmarks
-git submodule update --init vim/bundle/vim-reveal-in-finder
-git submodule update --init vim/bundle/vim-startify
-git submodule update --init vim/bundle/vimwiki
-git submodule update --init vim/bundle/ShaderHighLight
-git submodule update --init vim/bundle/vim-youdao-translater
-git submodule update --init tmux/plugins/tpm
-git submodule update --init tmux/plugins/tmux-cpu
-git submodule update --init tmux/plugins/tmux-battery
-git submodule update --init tmux/plugins/tmux-online-status
-git submodule update --init tmux/plugins/tmux-resurrect
-git submodule update --init zsh/plugins/zsh-syntax-highlighting
-git submodule update --init zsh/plugins/zsh-autosuggestions
+source $(dirname "$0")/module.sh
+for mod in $module
+do
+    echo $mod
+    git submodule update --init $mod
+done

@@ -1,0 +1,25 @@
+module="vim/bundle/a.vim
+    vim/bundle/ack.vim
+    vim/bundle/auto-pairs
+    vim/bundle/ctrlp.vim
+    vim/bundle/gundo.vim
+    vim/bundle/mru
+    vim/bundle/nerdcommenter
+    vim/bundle/nerdtree
+    vim/bundle/supertab
+    vim/bundle/ultisnips
+    vim/bundle/vim-airline
+    vim/bundle/vim-airline-themes
+    vim/bundle/vim-bookmarks
+    vim/bundle/vim-reveal-in-finder
+    vim/bundle/vim-startify
+    vim/bundle/vimwiki
+    vim/bundle/ShaderHighLight
+    vim/bundle/vim-youdao-translater
+    tmux/plugins/tpm
+    tmux/plugins/tmux-cpu
+    tmux/plugins/tmux-battery
+    tmux/plugins/tmux-online-status
+    tmux/plugins/tmux-resurrect
+    zsh/plugins/zsh-syntax-highlighting
+    zsh/plugins/zsh-autosuggestions"
