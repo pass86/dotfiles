@@ -180,7 +180,6 @@ set runtimepath+=~/dotfiles/vim/bundle/nerdtree
 let NERDTreeShowHidden = 1
 let NERDTreeQuitOnOpen = 1
 map <c-n> :NERDTreeToggle<cr>
-map <c-k> :e .<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " nerdcommenter
