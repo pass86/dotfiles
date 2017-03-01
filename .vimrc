@@ -159,6 +159,7 @@ let g:ctrlp_custom_ignore = {
  \ "file": '\v\.(exe|so|dll|obj|a|o|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db|cmake|sln|filters|vcxproj|opendb|user)$|tags|CMakeCache\.txt',
  \ "link": 'SOME_BAD_SYMBOLIC_LINKS',
  \ }
+map <c-l> :CtrlPMRU<cr>
 
 " gundo.vim
 set runtimepath+=~/dotfiles/vim/bundle/gundo.vim
@@ -173,7 +174,6 @@ if has("unix")
 elseif has("win32")
     let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
 endif
-map <c-l> :MRU<cr>
 
 " nerdtree
 set runtimepath+=~/dotfiles/vim/bundle/nerdtree
