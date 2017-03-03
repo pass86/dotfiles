@@ -232,6 +232,7 @@ function! g:BMWorkDirFileLocation()
 endfunction
 set runtimepath+=~/dotfiles/vim/bundle/vim-bookmarks
 let g:bookmark_auto_close = 1
+let g:bookmark_disable_ctrlp = 1
 let g:bookmark_highlight_lines = 1
 let g:bookmark_save_per_working_dir = 1
 
