@@ -150,6 +150,14 @@ cnoreabbrev AG Ack
 " auto-pairs
 set runtimepath+=~/dotfiles/vim/bundle/auto-pairs
 
+" mru
+set runtimepath+=~/dotfiles/vim/bundle/mru
+if has("unix")
+    let MRU_Exclude_Files = '.*/.svn/.*\|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*'
+elseif has("win32")
+    let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
+endif
+
 " ctrlp
 set runtimepath+=~/dotfiles/vim/bundle/ctrlp.vim
 let g:ctrlp_max_files = 0
@@ -159,6 +167,7 @@ let g:ctrlp_custom_ignore = {
  \ "file": '\v\.(exe|so|dll|obj|a|o|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db|cmake|sln|filters|vcxproj|opendb|user)$|tags|CMakeCache\.txt',
  \ "link": 'SOME_BAD_SYMBOLIC_LINKS',
  \ }
+let g:ctrlp_mruf_exclude = MRU_Exclude_Files 
 map <c-l> :CtrlPMRU<cr>
 
 " gundo.vim
@@ -166,14 +175,6 @@ set runtimepath+=~/dotfiles/vim/bundle/gundo.vim
 let g:gundo_preview_bottom = 1
 let g:gundo_close_on_revert = 1
 nnoremap <leader>u :GundoToggle<cr>
-
-" mru
-set runtimepath+=~/dotfiles/vim/bundle/mru
-if has("unix")
-    let MRU_Exclude_Files = '.*/.svn/.*\|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*'
-elseif has("win32")
-    let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
-endif
 
 " nerdtree
 set runtimepath+=~/dotfiles/vim/bundle/nerdtree
