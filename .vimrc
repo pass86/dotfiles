@@ -266,7 +266,12 @@ let g:vimwiki_conceallevel = 0
 " YouCompleteMe
 set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
-let g:syntastic_enable_highlighting = 0
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_filter_diagnostics = {
+  \ "cs": {
+  \     "level": "warning"
+  \   }
+  \ }
 if has("unix")
     let s:uname = system("uname")
     if s:uname == "Darwin\n"
