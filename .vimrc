@@ -118,6 +118,21 @@ endif
 " utility
 "-------------------------------------------------------------------------------
 
+function! Goto_jump()
+  jumps
+  let j = input("Please select your jump: ")
+  if j != ''
+    let pattern = '\v\c^\+'
+    if j =~ pattern
+      let j = substitute(j, pattern, '', 'g')
+      execute "normal " . j . "\<c-i>"
+    else
+      execute "normal " . j . "\<c-o>"
+    endif
+  endif
+endfunction
+nmap <leader>j :call Goto_jump()<cr>
+
 function! G_close_all_buffers_but_current()
     let curr = bufnr("%")
     let last = bufnr("$")
