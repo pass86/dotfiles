@@ -6,6 +6,7 @@ module="vim/bundle/a.vim
     vim/bundle/mru
     vim/bundle/nerdcommenter
     vim/bundle/nerdtree
+    vim/bundle/open-browser.vim
     vim/bundle/supertab
     vim/bundle/ultisnips
     vim/bundle/vim-airline

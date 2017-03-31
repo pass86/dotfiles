@@ -145,11 +145,11 @@ nnoremap <leader>co :call G_close_all_buffers_but_current()<cr>
 " plugin
 "-------------------------------------------------------------------------------
 
-" a
+" a.vim
 set runtimepath+=~/dotfiles/vim/bundle/a.vim
 map <c-g> :A<cr>
 
-" ack
+" ack.vim
 set runtimepath+=~/dotfiles/vim/bundle/ack.vim
 let g:ackpreview = 1
 let g:ackhighlight = 1
@@ -173,7 +173,7 @@ elseif has("win32")
     let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
 endif
 
-" ctrlp
+" ctrlp.vim
 set runtimepath+=~/dotfiles/vim/bundle/ctrlp.vim
 let g:ctrlp_max_files = 0
 let g:ctrlp_by_filename = 1
@@ -199,6 +199,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " nerdcommenter
 set runtimepath+=~/dotfiles/vim/bundle/nerdcommenter
+
+" open-browser.vim
+set runtimepath+=~/dotfiles/vim/bundle/open-browser.vim
+" disable netrw's gx mapping
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
 
 " supertab
 set runtimepath+=~/dotfiles/vim/bundle/supertab

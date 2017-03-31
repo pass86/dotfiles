@@ -76,3 +76,6 @@
 [submodule "vim/bundle/vim-youdao-translater"]
 	path = vim/bundle/vim-youdao-translater
 	url = https://github.com/ianva/vim-youdao-translater.git
+[submodule "vim/bundle/open-browser.vim"]
+	path = vim/bundle/open-browser.vim
+	url = https://github.com/tyru/open-browser.vim.git
