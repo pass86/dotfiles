@@ -11,6 +11,7 @@ module="vim/bundle/a.vim
     vim/bundle/ultisnips
     vim/bundle/vim-airline
     vim/bundle/vim-airline-themes
+    vim/bundle/vim-autoread
     vim/bundle/vim-bookmarks
     vim/bundle/vim-reveal-in-finder
     vim/bundle/vim-startify

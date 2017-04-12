@@ -221,6 +221,9 @@ set runtimepath+=~/dotfiles/vim/bundle/ultisnips
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsSnippetDirectories=["snippet"]
 
+" vim-autoread
+set runtimepath+=~/dotfiles/vim/bundle/vim-autoread
+
 " vim-bookmarks
 function! g:BMWorkDirFileLocation()
     if filereadable(".vim-bookmarks")
