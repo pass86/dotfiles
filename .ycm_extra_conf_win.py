@@ -44,7 +44,7 @@ flags = [
 '-I' + os.getenv('SDK_INCLUDE_DIR'),
 '-I' + os.getenv('BOOST_ROOT'),
 '-I' + os.getenv('PROTOBUF_ROOT') + '\\src',
-'-I' + os.getenv('OPENSSL_ROOT_DIR') + '\\include',
+'-I' + os.getenv('OPENSSL_ROOT') + '\\include',
 ]
 
 
