@@ -307,3 +307,11 @@ elseif has("win32")
     let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_extra_conf_win.py"
 endif
 nnoremap <leader>jd :YcmCompleter GoTo<cr>
+
+"-------------------------------------------------------------------------------
+" finally 
+"-------------------------------------------------------------------------------
+set nobackup
+set nowritebackup
+set noswapfile
+set noundofile
