@@ -19,6 +19,10 @@ set nowritebackup
 set directory=~/dotfiles/vim/swap
 set backupdir=~/dotfiles/vim/backup
 set undodir=~/dotfiles/vim/undo
+set nobackup
+set nowritebackup
+set noswapfile
+set noundofile
 set hidden
 set autochdir
 set cscopequickfix=s-,c-,d-,i-,t-,e-
@@ -85,19 +89,12 @@ if has("unix")
     endif
     set path+=/usr/include
 elseif has("win32")
-    source $VIMRUNTIME/mswin.vim
-    source $VIMRUNTIME/vimrc_example.vim
-
     " maximize window
     au GUIEnter * simalt ~x
-
     let $LANG="en"
-
     set langmenu=en
-
     " fix console ecoding messy
     set termencoding=chinese
-
     set path+=$VC_INCLUDE_DIR
     set path+=$SDK_INCLUDE_DIR
     set path+=$BOOST_ROOT
@@ -106,7 +103,6 @@ elseif has("win32")
     set path+=$OPENSSL_ROOT_DIR\\include
     set path+=$CPPJIEBA_ROOT\\include
     set path+=$LIMONP_ROOT\\include
-
     if has("gui_running")
         " hide menubar and toolbar
         set guioptions=""
@@ -133,13 +129,13 @@ function! Goto_jump()
 endfunction
 nmap <leader>j :call Goto_jump()<cr>
 
-function! G_close_all_buffers_but_current()
+function! Close_all_buffers_but_current()
     let curr = bufnr("%")
     let last = bufnr("$")
     if curr > 1 | silent! execute "1," . (curr - 1) . "bd" | endif
     if curr < last | silent! execute (curr + 1) . "," . last . "bd" | endif
 endfunction
-nnoremap <leader>co :call G_close_all_buffers_but_current()<cr>
+nnoremap <leader>co :call Close_all_buffers_but_current()<cr>
 
 "-------------------------------------------------------------------------------
 " plugin
@@ -307,11 +303,3 @@ elseif has("win32")
     let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_extra_conf_win.py"
 endif
 nnoremap <leader>jd :YcmCompleter GoTo<cr>
-
-"-------------------------------------------------------------------------------
-" finally 
-"-------------------------------------------------------------------------------
-set nobackup
-set nowritebackup
-set noswapfile
-set noundofile
