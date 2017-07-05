@@ -1,1 +1,1 @@
-brew install autojump the_silver_searcher
+brew install autojump the_silver_searcher ctags
