@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os 
+import os
 import sys
 import codecs
 import shutil
 import subprocess
 
-def tags(root): 
+def tags(root):
     precwd = os.getcwd()
     os.chdir(root)
     #subprocess.call(["cscope", "-Rb"])
