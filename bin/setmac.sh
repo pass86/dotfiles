@@ -1,1 +1,1 @@
-brew install autojump the_silver_searcher ctags colordiff dos2unix
+brew install autojump the_silver_searcher ctags colordiff dos2unix p7zip
