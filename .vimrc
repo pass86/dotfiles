@@ -282,6 +282,8 @@ noremap <leader>yd :<c-u>Yde<cr>
 " vimwiki
 set runtimepath+=~/dotfiles/vim/bundle/vimwiki
 let g:vimwiki_conceallevel = 0
+nmap <Leader>tt <Plug>VimwikiToggleListItem
+vmap <Leader>tt <Plug>VimwikiToggleListItem
 
 " YouCompleteMe
 set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
