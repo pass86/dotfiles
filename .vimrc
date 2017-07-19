@@ -143,6 +143,8 @@ nnoremap <leader>co :call Close_all_buffers_but_current()<cr>
 
 " a.vim
 set runtimepath+=~/dotfiles/vim/bundle/a.vim
+let g:alternateExtensions_h = "cpp,cxx,cc,CC,c"
+let g:alternateExtensions_H = "CPP,CXX,CC,C"
 map <c-g> :A<cr>
 
 " ack.vim
