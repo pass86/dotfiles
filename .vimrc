@@ -1,5 +1,5 @@
 "-------------------------------------------------------------------------------
-" basic
+" setting
 "-------------------------------------------------------------------------------
 set nowrap
 set number
@@ -42,12 +42,13 @@ set t_Co=256
 set clipboard=unnamed
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 set shortmess=A
-map <f7> :make<cr><cr><cr>
+set path=.,,
 
 "-------------------------------------------------------------------------------
 " misc
 "-------------------------------------------------------------------------------
-syntax on
+
+map <f7> :make<cr><cr><cr>
 
 " fast load edit and apply vimrc
 map <silent> <leader>ss :source $MYVIMRC<cr>
@@ -66,7 +67,11 @@ augroup end
 
 filetype plugin indent on
 
-set path=.,,
+syntax on
+
+"-------------------------------------------------------------------------------
+" platform
+"-------------------------------------------------------------------------------
 
 if has("unix")
     set path+=/usr/local/include
