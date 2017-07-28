@@ -1,6 +1,3 @@
-"-------------------------------------------------------------------------------
-" setting
-"-------------------------------------------------------------------------------
 set nowrap
 set number
 set showcmd
@@ -44,10 +41,6 @@ set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 set shortmess=A
 set path=.,,
 
-"-------------------------------------------------------------------------------
-" misc
-"-------------------------------------------------------------------------------
-
 map <f7> :make<cr><cr><cr>
 
 " fast load edit and apply vimrc
@@ -68,10 +61,6 @@ augroup end
 filetype plugin indent on
 
 syntax on
-
-"-------------------------------------------------------------------------------
-" platform
-"-------------------------------------------------------------------------------
 
 if has("unix")
     set path+=/usr/local/include
@@ -115,10 +104,6 @@ elseif has("win32")
     endif
 endif
 
-"-------------------------------------------------------------------------------
-" utility
-"-------------------------------------------------------------------------------
-
 function! Goto_jump()
   jumps
   let j = input("Please select your jump: ")
@@ -141,10 +126,6 @@ function! Close_all_buffers_but_current()
     if curr < last | silent! execute (curr + 1) . "," . last . "bd" | endif
 endfunction
 nnoremap <leader>co :call Close_all_buffers_but_current()<cr>
-
-"-------------------------------------------------------------------------------
-" plugin
-"-------------------------------------------------------------------------------
 
 " a.vim
 set runtimepath+=~/dotfiles/vim/bundle/a.vim
