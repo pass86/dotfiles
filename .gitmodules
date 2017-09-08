@@ -82,3 +82,6 @@
 [submodule "vim/bundle/vim-autoread"]
 	path = vim/bundle/vim-autoread
 	url = https://github.com/djoshea/vim-autoread.git
+[submodule "awesome/vicious"]
+	path = awesome/vicious
+	url = https://github.com/Mic92/vicious.git

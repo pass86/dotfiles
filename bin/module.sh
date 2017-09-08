@@ -24,4 +24,5 @@ module="vim/bundle/a.vim
     tmux/plugins/tmux-online-status
     tmux/plugins/tmux-resurrect
     zsh/plugins/zsh-syntax-highlighting
-    zsh/plugins/zsh-autosuggestions"
+    zsh/plugins/zsh-autosuggestions
+    awesome/vicious"
