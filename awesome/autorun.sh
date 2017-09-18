@@ -8,4 +8,4 @@ function run {
 }
 
 run fcitx
-run compton -b
+run compton -b --no-fading-openclose
