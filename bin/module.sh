@@ -19,7 +19,6 @@ module="vim/bundle/a.vim
     vim/bundle/ShaderHighLight
     vim/bundle/vim-youdao-translater
     tmux/plugins/tpm
-    tmux/plugins/tmux-cpu
     tmux/plugins/tmux-resurrect
     zsh/plugins/zsh-syntax-highlighting
     zsh/plugins/zsh-autosuggestions
