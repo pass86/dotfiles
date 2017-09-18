@@ -8,4 +8,4 @@ function run {
 }
 
 run fcitx
-run compton -c
+run compton -b
