@@ -9,3 +9,4 @@ function run {
 
 run nm-applet
 run fcitx
+run compton -c
