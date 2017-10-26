@@ -79,7 +79,7 @@ if has("unix")
         hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
     else
         set path+=/usr/include/mysql
-        hi CursorLine cterm=NONE ctermbg=254 ctermfg=NONE
+        hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
     endif
     set path+=/usr/include
 elseif has("win32")
