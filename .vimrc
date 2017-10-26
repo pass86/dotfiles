@@ -40,6 +40,9 @@ set clipboard=unnamed
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 set shortmess=A
 set path=.,,
+" disable beep and flash
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 map <f7> :make<cr><cr><cr>
 
@@ -74,7 +77,7 @@ if has("unix")
         set path+=/usr/local/mysql/include
         "set path+=$CPPJIEBA_ROOT/include
         "set path+=$LIMONP_ROOT/include
-        hi CursorLine cterm=NONE ctermbg=254 ctermfg=NONE
+        hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
     elseif s:uname == "CYGWIN_NT-10.0-WOW\n"
         hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
     else
