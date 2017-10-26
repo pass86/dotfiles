@@ -255,7 +255,7 @@ set runtimepath+=~/dotfiles/vim/bundle/vim-airline
 
 " vim-airline-themes
 set runtimepath+=~/dotfiles/vim/bundle/vim-airline-themes
-let g:airline_theme='light'
+let g:airline_theme='dark'
 
 " vim-startify
 set runtimepath+=~/dotfiles/vim/bundle/vim-startify
