@@ -276,6 +276,10 @@ let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}
 nmap <Leader>tt <Plug>VimwikiToggleListItem
 vmap <Leader>tt <Plug>VimwikiToggleListItem
 
+" dash.vim
+set runtimepath+=~/dotfiles/vim/bundle/dash.vim
+nmap <silent> <leader>d <Plug>DashSearch
+
 " YouCompleteMe
 set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0

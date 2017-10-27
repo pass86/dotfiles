@@ -76,3 +76,6 @@
 [submodule "awesome/vicious"]
 	path = awesome/vicious
 	url = https://github.com/Mic92/vicious.git
+[submodule "vim/bundle/dash.vim"]
+	path = vim/bundle/dash.vim
+	url = https://github.com/rizzatti/dash.vim.git

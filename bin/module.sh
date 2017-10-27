@@ -16,6 +16,7 @@ module="vim/bundle/a.vim
     vim/bundle/vim-reveal-in-finder
     vim/bundle/vim-startify
     vim/bundle/vimwiki
+    vim/bundle/dash.vim
     vim/bundle/ShaderHighLight
     vim/bundle/vim-youdao-translater
     tmux/plugins/tpm
