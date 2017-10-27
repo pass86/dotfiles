@@ -280,6 +280,10 @@ vmap <Leader>tt <Plug>VimwikiToggleListItem
 set runtimepath+=~/dotfiles/vim/bundle/dash.vim
 nmap <silent> <leader>d <Plug>DashSearch
 
+" dracula-theme
+set runtimepath+=~/dotfiles/vim/bundle/vim
+color dracula
+
 " YouCompleteMe
 set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
