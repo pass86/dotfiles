@@ -82,3 +82,6 @@
 [submodule "vim/bundle/vim"]
 	path = vim/bundle/vim
 	url = https://github.com/dracula/vim.git
+[submodule "zsh/themes/zsh"]
+	path = zsh/themes/zsh
+	url = https://github.com/dracula/zsh.git

@@ -1,0 +1,1 @@
+/Users/jimmy/dotfiles/zsh/themes/zsh/dracula.zsh-theme
