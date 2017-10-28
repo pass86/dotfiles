@@ -284,6 +284,9 @@ nmap <silent> <leader>d <Plug>DashSearch
 set runtimepath+=~/dotfiles/vim/bundle/vim
 color dracula
 
+" zeavim.vim
+set runtimepath+=~/dotfiles/vim/bundle/zeavim.vim
+
 " YouCompleteMe
 set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
