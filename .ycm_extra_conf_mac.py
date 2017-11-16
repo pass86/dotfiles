@@ -41,7 +41,8 @@ flags = [
 '-xc++',
 '-I.',
 '-I/usr/local/include',
-'-I/usr/local/mysql/include',
+'-I/usr/local/include/mysql',
+'-I/usr/local/opt/openssl/include',
 # echo | clang -stdlib=libc++ -v -E -x c++ -
 '-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1',
 '-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include',
