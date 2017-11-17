@@ -1,5 +1,4 @@
 set nowrap
-set number
 set showcmd
 set ignorecase
 set cursorline
