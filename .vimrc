@@ -46,7 +46,7 @@ autocmd GUIEnter * set visualbell t_vb=
 " fast load edit and apply vimrc
 map <silent> <leader>ss :source $MYVIMRC<cr>
 map <silent> <leader>ee :e $MYVIMRC<cr>
-autocmd! bufwritepost $MYVIMRC source $MYVIMRC
+"autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
 " return to last edit position when open
 autocmd BufReadPost *
