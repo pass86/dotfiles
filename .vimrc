@@ -73,8 +73,8 @@ if has("unix")
         set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
         set path+=/usr/local/include/mysql
         set path+=/usr/local/opt/openssl/include
-        "set path+=$CPPJIEBA_ROOT/include
-        "set path+=$LIMONP_ROOT/include
+        set path+=$CPPJIEBA_ROOT/include
+        set path+=$LIMONP_ROOT/include
         hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
     elseif s:uname == "CYGWIN_NT-10.0-WOW\n"
         hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
