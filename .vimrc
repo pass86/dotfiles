@@ -73,8 +73,8 @@ if has("unix")
         set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
         set path+=/usr/local/include/mysql
         set path+=/usr/local/opt/openssl/include
-        "set path+=$CPPJIEBA_ROOT/include
-        "set path+=$LIMONP_ROOT/include
+        set path+=$CPPJIEBA_ROOT/include
+        set path+=$LIMONP_ROOT/include
         hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
     elseif s:uname == "CYGWIN_NT-10.0-WOW\n"
         hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
@@ -303,11 +303,11 @@ let g:ycm_filter_diagnostics = {
 if has("unix")
     let s:uname = system("uname")
     if s:uname == "Darwin\n"
-        let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_extra_conf_mac.py"
+        let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_mac.py"
     else
-        let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_extra_conf_lin.py"
+        let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_lin.py"
     endif
 elseif has("win32")
-    let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_extra_conf_win.py"
+    let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_win.py"
 endif
 nnoremap <leader>jd :YcmCompleter GoTo<cr>
