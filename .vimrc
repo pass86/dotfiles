@@ -253,6 +253,8 @@ nnoremap <leader><cr> :Reveal<cr>
 set runtimepath+=~/dotfiles/vim/bundle/vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tab_nr = 0
 
 " vim-airline-themes
 set runtimepath+=~/dotfiles/vim/bundle/vim-airline-themes
