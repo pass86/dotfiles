@@ -103,6 +103,8 @@ elseif has("win32")
         set guioptions=""
         set guifont=Source\ Code\ Pro,Source\ Han\ Sans\ SC,Consolas
     endif
+    " fix vim-airline glyphs
+    set rop=type:directx
 endif
 
 function! Goto_jump()
