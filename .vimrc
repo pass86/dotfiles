@@ -3,6 +3,7 @@ set showcmd
 set ignorecase
 set cursorline
 " less draw calls
+set lazyredraw
 set regexpengine=1
 set laststatus=2
 set incsearch
@@ -62,7 +63,6 @@ filetype plugin indent on
 syntax on
 
 if has("unix")
-    set lazyredraw
     set path+=/usr/local/include
     let s:uname = system("uname")
     if s:uname == "Darwin\n"
@@ -103,8 +103,6 @@ elseif has("win32")
         set guioptions=""
         set guifont=Source\ Code\ Pro,Source\ Han\ Sans\ SC,Consolas
     endif
-    " fix vim-airline glyphs
-    set rop=type:directx
 endif
 
 function! Goto_jump()
