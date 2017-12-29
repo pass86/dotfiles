@@ -4,7 +4,6 @@ set ignorecase
 set cursorline
 " less draw calls
 set regexpengine=1
-set lazyredraw
 set laststatus=2
 set incsearch
 set hlsearch
@@ -63,6 +62,7 @@ filetype plugin indent on
 syntax on
 
 if has("unix")
+    set lazyredraw
     set path+=/usr/local/include
     let s:uname = system("uname")
     if s:uname == "Darwin\n"
