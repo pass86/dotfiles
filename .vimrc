@@ -169,7 +169,7 @@ let g:ctrlp_custom_ignore = {
   \ "file": '\v\.(exe|so|dll|obj|a|o|d|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db|cmake|sln|filters|vcxproj|opendb|user)$|tags$|CMakeCache\.txt$',
   \ }
 let g:ctrlp_mruf_exclude = MRU_Exclude_Files
-let g:ctrlp_root_markers = ['tags', '.vim-bookmarks', 'Assets']
+let g:ctrlp_root_markers = ['.git', '.svn', 'tags', '.vim-bookmarks', 'Assets']
 map <c-l> :CtrlPMRU<cr>
 
 " gundo.vim
@@ -222,7 +222,7 @@ function! g:BMWorkDirFileLocation()
             let work_dir = substitute(hint_path, ".vim-bookmarks", "", "")
         else
             let work_dir = ""
-            for hint in [".git", ".svn"]
+            for hint in ["Assets", ".git", ".svn"]
                 if isdirectory(hint)
                     let work_dir = getcwd()
                     break
