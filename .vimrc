@@ -101,7 +101,7 @@ elseif has("win32")
     if has("gui_running")
         " hide menubar and toolbar
         set guioptions=""
-        set guifont=Source\ Code\ Pro,Source\ Han\ Sans\ SC,Consolas
+        set guifont=Source\ Code\ Pro:h9,Source\ Han\ Sans\ SC:h9,Consolas:h9
     endif
 endif
 
