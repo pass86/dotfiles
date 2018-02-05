@@ -72,7 +72,7 @@ if has("unix")
         set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
         set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
         set path+=/usr/local/include/mysql
-        set path+=/usr/local/opt/openssl/include
+        set path+=/usr/local/opt/openssl@1.1/include
         set path+=$CPPJIEBA_ROOT/include
         set path+=$LIMONP_ROOT/include
         hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
