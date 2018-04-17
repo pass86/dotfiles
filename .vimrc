@@ -83,6 +83,7 @@ if has("unix")
         hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
     endif
     set path+=/usr/include
+    set guifont=Source\ Code\ Pro,Source\ Han\ Sans\ SC,Consolas
 elseif has("win32")
     " maximize window
     au GUIEnter * simalt ~x
@@ -98,12 +99,11 @@ elseif has("win32")
     set path+=$OPENSSL_ROOT_DIR\\include
     set path+=$CPPJIEBA_ROOT\\include
     set path+=$LIMONP_ROOT\\include
-    if has("gui_running")
-        " hide menubar and toolbar
-        set guioptions=""
-        set guifont=Source\ Code\ Pro:h9,Source\ Han\ Sans\ SC:h9,Consolas:h9
-    endif
+    set guifont=Source\ Code\ Pro:h9,Source\ Han\ Sans\ SC:h9,Consolas:h9
 endif
+
+" hide menubar and toolbar
+set guioptions=
 
 function! Goto_jump()
   jumps
@@ -303,6 +303,7 @@ endif
 " YouCompleteMe
 set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_filter_diagnostics = {
   \ "cs": {
