@@ -49,8 +49,6 @@ flags = [
 '-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
 '-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include',
 '-isystem/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks',
-'-I' + os.getenv('CPPJIEBA_ROOT') + '/include',
-'-I' + os.getenv('LIMONP_ROOT') + '/include',
 ]
 
 
