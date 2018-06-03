@@ -41,6 +41,7 @@ flags = [
 '-xc++',
 '-I.',
 '-I/usr/local/include',
+'-I/usr/local/include/lua',
 '-I/usr/local/include/mysql',
 '-I/usr/local/opt/openssl@1.1/include',
 # echo | clang -stdlib=libc++ -v -E -x c++ -
