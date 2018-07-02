@@ -169,7 +169,7 @@ let g:ctrlp_custom_ignore = {
   \ "file": '\v\.(exe|so|dll|obj|a|o|d|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db|cmake|sln|filters|vcxproj|opendb|user)$|tags$|CMakeCache\.txt$',
   \ }
 let g:ctrlp_mruf_exclude = MRU_Exclude_Files
-let g:ctrlp_root_markers = ['.git', '.svn', 'tags', '.vim-bookmarks', 'Assets']
+let g:ctrlp_root_markers = [ ".git", ".svn", "tags", ".vim-bookmarks", "Assets" ]
 map <c-l> :CtrlPMRU<cr>
 
 " gundo.vim
@@ -207,7 +207,7 @@ set runtimepath+=~/dotfiles/vim/bundle/ShaderHighLight
 " ultisnips
 set runtimepath+=~/dotfiles/vim/bundle/ultisnips
 let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsSnippetDirectories=["snippet"]
+let g:UltiSnipsSnippetDirectories = [ "snippet" ]
 
 " vim-autoread
 set runtimepath+=~/dotfiles/vim/bundle/vim-autoread
@@ -258,11 +258,11 @@ let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#fnamemod = ":t"
 
 " vim-airline-themes
 set runtimepath+=~/dotfiles/vim/bundle/vim-airline-themes
-let g:airline_theme='dark'
+let g:airline_theme = "dark"
 
 " vim-startify
 set runtimepath+=~/dotfiles/vim/bundle/vim-startify
@@ -279,7 +279,7 @@ noremap <leader>yd :<c-u>Yde<cr>
 " vimwiki
 set runtimepath+=~/dotfiles/vim/bundle/vimwiki
 let g:vimwiki_conceallevel = 0
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{ "path": "~/vimwiki/", "syntax": "markdown", "ext": ".md" }]
 nmap <Leader>tt <Plug>VimwikiToggleListItem
 vmap <Leader>tt <Plug>VimwikiToggleListItem
 
@@ -295,7 +295,7 @@ color dracula
 " zeavim.vim
 set runtimepath+=~/dotfiles/vim/bundle/zeavim.vim
 let g:zv_file_types = {
-  \ 'cs' : 'unity3d',
+  \ "cs": "unity3d",
   \ }
 if has("win32")
     let g:zv_zeal_executable = 'C:\Program Files\Zeal\zeal.exe'
@@ -307,12 +307,12 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_filetype_whitelist = {
-  \ 'c': 1,
-  \ 'cpp': 1,
-  \ 'cs': 1,
-  \ 'go': 1,
-  \ 'lua': 1,
-  \ 'python': 1
+  \ "c": 1,
+  \ "cpp": 1,
+  \ "cs": 1,
+  \ "go": 1,
+  \ "lua": 1,
+  \ "python": 1
   \ }
 let g:ycm_filter_diagnostics = {
   \ "cs": {
