@@ -306,6 +306,14 @@ set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_filetype_whitelist = {
+  \ 'c': 1,
+  \ 'cpp': 1,
+  \ 'cs': 1,
+  \ 'go': 1,
+  \ 'lua': 1,
+  \ 'python': 1
+  \ }
 let g:ycm_filter_diagnostics = {
   \ "cs": {
   \     "level": "warning"
