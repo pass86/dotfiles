@@ -1,1 +1,1 @@
-ctags -R --languages=-SQL
+ctags -R --languages=C,C++,C#,Lua
