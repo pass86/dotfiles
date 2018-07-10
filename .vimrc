@@ -84,7 +84,7 @@ if has("unix")
         hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
     endif
     set path+=/usr/include
-    set guifont=Source\ Code\ Pro,Source\ Han\ Sans\ SC,Consolas
+    set guifont=Source\ Code\ Pro:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
 elseif has("win32")
     " maximize window
     au GUIEnter * simalt ~x
