@@ -43,8 +43,8 @@ set path=.,,
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" enter jump to tag
-nmap <cr> <c-]>
+" enter jump to tag except quickfix
+nmap <expr> <cr> &buftype ==# "quickfix" ? "<cr>" : "<c-]>"
 
 " fast load edit and apply vimrc
 map <silent> <leader>ss :source $MYVIMRC<cr>
