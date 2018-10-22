@@ -293,6 +293,7 @@ nmap <silent> <leader>d <Plug>DashSearch
 " dracula-theme
 set runtimepath+=~/dotfiles/vim/bundle/vim
 let g:dracula_italic = 0
+let g:dracula_colorterm = 0
 color dracula
 
 " zeavim.vim
