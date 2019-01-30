@@ -267,15 +267,6 @@ let g:dracula_italic = 0
 let g:dracula_colorterm = 0
 color dracula
 
-" zeavim.vim
-set runtimepath+=~/dotfiles/vim/bundle/zeavim.vim
-let g:zv_file_types = {
-  \ "cs": "unity3d",
-  \ }
-if has("win32")
-    let g:zv_zeal_executable = 'C:\Program Files\Zeal\zeal.exe'
-endif
-
 " YouCompleteMe
 set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0

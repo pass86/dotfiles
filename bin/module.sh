@@ -18,7 +18,6 @@ module="vim/bundle/a.vim
     vim/bundle/vimwiki
     vim/bundle/dash.vim
     vim/bundle/vim
-    vim/bundle/zeavim.vim
     vim/bundle/ShaderHighLight
     vim/bundle/vim-youdao-translater
     tmux/plugins/tpm
