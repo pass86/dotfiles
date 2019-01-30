@@ -34,7 +34,7 @@ set fileformats=unix,dos
 " search tags upwards
 set tags=tags;
 set t_Co=256
-" system clipboard, tmux on macos need install https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
+" system clipboard, need +clipboard, tmux on macos need install https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
 set clipboard=unnamed
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 set shortmess=A
@@ -49,7 +49,6 @@ nmap <expr> <cr> &buftype ==# "quickfix" ? "<cr>" : "<c-]>"
 " fast load edit and apply vimrc
 map <silent> <leader>ss :source $MYVIMRC<cr>
 map <silent> <leader>ee :e $MYVIMRC<cr>
-"autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
 " return to last edit position when open
 autocmd BufReadPost *
