@@ -66,26 +66,7 @@ syntax on
 
 if has("unix")
     set path+=/usr/local/include
-    let s:uname = system("uname")
-    if s:uname == "Darwin\n"
-        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1
-        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include
-        set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
-        set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
-        set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
-        set path+=/usr/local/include/lua
-        set path+=/usr/local/include/mysql
-        set path+=/usr/local/opt/openssl@1.1/include
-        set path+=$CPPJIEBA_ROOT/include
-        set path+=$LIMONP_ROOT/include
-        hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
-    elseif s:uname == "CYGWIN_NT-10.0-WOW\n"
-        hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
-    else
-        set path+=/usr/include/mysql
-        hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
-    endif
-    set path+=/usr/include
+    hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
     set guifont=Source\ Code\ Pro:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
 elseif has("win32")
     " maximize window
@@ -94,16 +75,10 @@ elseif has("win32")
     set langmenu=en
     " fix console ecoding messy
     set termencoding=chinese
-    set path+=$VC_INCLUDE_DIR
-    set path+=$SDK_INCLUDE_DIR
-    set path+=$BOOST_ROOT
-    set path+=$PROTOBUF_ROOT\\src
-    set path+=$MYSQL_ROOT\\include
-    set path+=$OPENSSL_ROOT_DIR\\include
-    set path+=$CPPJIEBA_ROOT\\include
-    set path+=$LIMONP_ROOT\\include
     set guifont=Source\ Code\ Pro:h9,Source\ Han\ Sans\ SC:h9,Consolas:h9
 endif
+
+set path+=$VIM_PATH
 
 " hide menubar and toolbar
 set guioptions=
