@@ -22,6 +22,9 @@ module="vim/bundle/a.vim
     vim/bundle/vim-youdao-translater
     tmux/plugins/tpm
     tmux/plugins/tmux-resurrect
+    tmux/plugins/tmux-copycat
+    tmux/plugins/tmux-open
+    tmux/plugins/tmux-yank
     zsh/plugins/zsh-syntax-highlighting
     zsh/plugins/zsh-autosuggestions
     zsh/themes/zsh"

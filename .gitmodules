@@ -82,3 +82,12 @@
 [submodule "zsh/themes/zsh"]
 	path = zsh/themes/zsh
 	url = https://github.com/dracula/zsh.git
+[submodule "tmux/plugins/tmux-copycat"]
+	path = tmux/plugins/tmux-copycat
+	url = https://github.com/tmux-plugins/tmux-copycat.git
+[submodule "tmux/plugins/tmux-open"]
+	path = tmux/plugins/tmux-open
+	url = https://github.com/tmux-plugins/tmux-open.git
+[submodule "tmux/plugins/tmux-yank"]
+	path = tmux/plugins/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank.git
