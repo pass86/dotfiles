@@ -40,11 +40,6 @@ flags = [
 '-std=c++11',
 '-xc++',
 '-I.',
-'-I' + os.getenv('VC_INCLUDE_DIR'),
-'-I' + os.getenv('SDK_INCLUDE_DIR'),
-'-I' + os.getenv('BOOST_ROOT'),
-'-I' + os.getenv('PROTOBUF_ROOT') + '\\src',
-'-I' + os.getenv('OPENSSL_ROOT') + '\\include',
 ]
 
 
