@@ -143,8 +143,12 @@ let g:ctrlp_custom_ignore = {
   \ "file": '\v\.(exe|so|dll|obj|a|o|d|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db|cmake|sln|filters|vcxproj|opendb|user)$|tags$|CMakeCache\.txt$',
   \ }
 let g:ctrlp_mruf_exclude = MRU_Exclude_Files
-let g:ctrlp_root_markers = [ ".git", ".svn", "tags", ".vim-bookmarks", "Assets" ]
+let g:ctrlp_root_markers = [ ".ctrlp" ]
 map <c-l> :CtrlPMRU<cr>
+
+" vim-gutentags
+set runtimepath+=~/dotfiles/vim/bundle/vim-gutentags
+let g:gutentags_add_default_project_roots = 0
 
 " gundo.vim
 set runtimepath+=~/dotfiles/vim/bundle/gundo.vim

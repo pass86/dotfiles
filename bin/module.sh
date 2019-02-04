@@ -13,6 +13,7 @@ module="vim/bundle/a.vim
     vim/bundle/vim-airline-themes
     vim/bundle/vim-autoread
     vim/bundle/vim-bookmarks
+    vim/bundle/vim-gutentags
     vim/bundle/vim-reveal-in-finder
     vim/bundle/vim-startify
     vim/bundle/vimwiki
