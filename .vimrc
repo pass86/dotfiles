@@ -64,7 +64,7 @@ syntax on
 if has("unix")
     set path+=/usr/local/include
     hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
-    set guifont=Source\ Code\ Pro:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
+    set guifont=Hack:h12,Source\ Code\ Pro:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
 elseif has("win32")
     " maximize window
     au GUIEnter * simalt ~x
@@ -72,7 +72,7 @@ elseif has("win32")
     set langmenu=en
     " fix console ecoding messy
     set termencoding=chinese
-    set guifont=Source\ Code\ Pro:h9,Source\ Han\ Sans\ SC:h9,Consolas:h9
+    set guifont=Hack:h9,Source\ Code\ Pro:h9,Source\ Han\ Sans\ SC:h9,Consolas:h9
 endif
 
 set path+=$VIM_PATH
