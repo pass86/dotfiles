@@ -1,4 +1,4 @@
-module="vim/bundle/a.vim
+submodules="vim/bundle/a.vim
     vim/bundle/ack.vim
     vim/bundle/auto-pairs
     vim/bundle/ctrlp.vim
