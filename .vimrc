@@ -257,7 +257,7 @@ noremap <leader>yd :<c-u>Yde<cr>
 " vimwiki
 set runtimepath+=~/dotfiles/vim/bundle/vimwiki
 let g:vimwiki_conceallevel = 0
-let g:vimwiki_list = [{ "path": "~/vimwiki/", "syntax": "markdown", "ext": ".md" }]
+let g:vimwiki_list = [{ "path": "~/wiki/", "syntax": "markdown", "ext": ".md" }]
 nmap <Leader>tt <Plug>VimwikiToggleListItem
 vmap <Leader>tt <Plug>VimwikiToggleListItem
 
