@@ -15,12 +15,12 @@ git clone https://github.com/pass86/dotfiles.git
 ~/dotfiles/bin/submodules_init.sh
 ```
 
-# Install YouCompleteMe
+# Install [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 ```sh
 ~/dotfiles/bin/ycm_init.sh
 ```
 
-# Install omnisharp-vim
+# Install [omnisharp-vim](https://github.com/OmniSharp/omnisharp-vim)
 ```sh
 ~/dotfiles/bin/omnisharp_init.sh
 ```
