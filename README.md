@@ -1,5 +1,6 @@
 # Setup macOS
 ```sh
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 brew install vim ctags tmux reattach-to-user-namespace libuv
 ```
