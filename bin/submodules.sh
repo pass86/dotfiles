@@ -1,3 +1,5 @@
+#!/bin/bash
+
 SUBMODULES="vim/bundle/a.vim
     vim/bundle/ack.vim
     vim/bundle/ale
