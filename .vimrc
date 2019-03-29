@@ -139,7 +139,7 @@ let g:ctrlp_regexp = 1
 let g:ctrlp_max_files = 0
 let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = {
-  \ "dir": '\v\.(git|hg|svn)$|Temp$|Library$|build$|bin$|lib$|CMakeFiles$|Debug$|xcuserdata$|Resources$|ArtSource$',
+  \ "dir": '\v\.(git|hg|svn)$|Temp$|Library$|build$|bin$|lib$|CMakeFiles$|Debug$|xcuserdata$',
   \ "file": '\v\.(exe|so|dll|obj|a|o|d|meta|png|jpg|prefab|mat|unity|mp3|mp4|wav|anim|fbx|asset|csproj|bytes|db|cmake|sln|filters|vcxproj|opendb|user)$|tags$|CMakeCache\.txt$',
   \ }
 let g:ctrlp_mruf_exclude = MRU_Exclude_Files
