@@ -184,23 +184,11 @@ function! g:BMWorkDirFileLocation()
     if filereadable(".vim-bookmarks")
         let work_dir = getcwd()
     else
-        let hint_path = findfile(".vim-bookmarks", ".;")
-        if len(hint_path) > 0
-            let work_dir = substitute(hint_path, ".vim-bookmarks", "", "")
+        let up_path = findfile(".vim-bookmarks", ".;")
+        if len(up_path) > 0
+            let work_dir = substitute(up_path, ".vim-bookmarks", "", "")
         else
             let work_dir = ""
-            for hint in ["Assets", ".git", ".svn"]
-                if isdirectory(hint)
-                    let work_dir = getcwd()
-                    break
-                else
-                    let hint_path = finddir(hint, ".;")
-                    if len(hint_path) > 0
-                        let work_dir = substitute(hint_path, hint, "", "")
-                        break
-                    endif
-                endif
-            endfor
         endif
     endif
     if len(work_dir) > 0
