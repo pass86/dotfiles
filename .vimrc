@@ -261,10 +261,6 @@ let g:vimwiki_list = [{ "path": "~/wiki/", "index": "README", "syntax": "markdow
 nmap <Leader>tt <Plug>VimwikiToggleListItem
 vmap <Leader>tt <Plug>VimwikiToggleListItem
 
-" dash.vim
-set runtimepath+=~/dotfiles/vim/bundle/dash.vim
-nmap <silent> <leader>d <Plug>DashSearch
-
 " dracula-theme
 set runtimepath+=~/dotfiles/vim/bundle/vim
 let g:dracula_italic = 0
