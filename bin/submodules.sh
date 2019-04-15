@@ -2,7 +2,6 @@
 
 SUBMODULES="vim/bundle/a.vim
     vim/bundle/ack.vim
-    vim/bundle/ale
     vim/bundle/auto-pairs
     vim/bundle/ctrlp.vim
     vim/bundle/gundo.vim

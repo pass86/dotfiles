@@ -97,6 +97,3 @@
 [submodule "vim/bundle/omnisharp-vim"]
 	path = vim/bundle/omnisharp-vim
 	url = https://github.com/OmniSharp/omnisharp-vim.git
-[submodule "vim/bundle/ale"]
-	path = vim/bundle/ale
-	url = https://github.com/w0rp/ale.git

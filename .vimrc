@@ -334,6 +334,3 @@ if filereadable("~/dotfiles/vim/bundle/omnisharp-vim/README.md")
     nnoremap <Leader>ss :OmniSharpStartServer<CR>
     nnoremap <Leader>sp :OmniSharpStopServer<CR>
 endif
-
-" ale
-set runtimepath+=~/dotfiles/vim/bundle/ale
