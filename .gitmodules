@@ -94,6 +94,3 @@
 [submodule "vim/bundle/vim-gutentags"]
 	path = vim/bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
-[submodule "vim/bundle/omnisharp-vim"]
-	path = vim/bundle/omnisharp-vim
-	url = https://github.com/OmniSharp/omnisharp-vim.git
