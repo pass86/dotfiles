@@ -182,11 +182,6 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 " ShaderHighLight
 set runtimepath+=~/dotfiles/vim/bundle/ShaderHighLight
 
-" ultisnips
-set runtimepath+=~/dotfiles/vim/bundle/ultisnips
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsSnippetDirectories = [ "snippet" ]
-
 " vim-autoread
 set runtimepath+=~/dotfiles/vim/bundle/vim-autoread
 
