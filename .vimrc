@@ -150,12 +150,6 @@ map <c-l> :CtrlPMRU<cr>
 set runtimepath+=~/dotfiles/vim/bundle/vim-gutentags
 let g:gutentags_add_default_project_roots = 0
 
-" gundo.vim
-set runtimepath+=~/dotfiles/vim/bundle/gundo.vim
-let g:gundo_preview_bottom = 1
-let g:gundo_close_on_revert = 1
-nnoremap <leader>u :GundoToggle<cr>
-
 " nerdtree
 set runtimepath+=~/dotfiles/vim/bundle/nerdtree
 let NERDTreeShowHidden = 1
@@ -182,11 +176,6 @@ let g:SuperTabContextDefaultCompletionType = "<c-n>"
 " ShaderHighLight
 set runtimepath+=~/dotfiles/vim/bundle/ShaderHighLight
 
-" ultisnips
-set runtimepath+=~/dotfiles/vim/bundle/ultisnips
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsSnippetDirectories = [ "snippet" ]
-
 " vim-autoread
 set runtimepath+=~/dotfiles/vim/bundle/vim-autoread
 
@@ -195,23 +184,11 @@ function! g:BMWorkDirFileLocation()
     if filereadable(".vim-bookmarks")
         let work_dir = getcwd()
     else
-        let hint_path = findfile(".vim-bookmarks", ".;")
-        if len(hint_path) > 0
-            let work_dir = substitute(hint_path, ".vim-bookmarks", "", "")
+        let up_path = findfile(".vim-bookmarks", ".;")
+        if len(up_path) > 0
+            let work_dir = substitute(up_path, ".vim-bookmarks", "", "")
         else
             let work_dir = ""
-            for hint in ["Assets", ".git", ".svn"]
-                if isdirectory(hint)
-                    let work_dir = getcwd()
-                    break
-                else
-                    let hint_path = finddir(hint, ".;")
-                    if len(hint_path) > 0
-                        let work_dir = substitute(hint_path, hint, "", "")
-                        break
-                    endif
-                endif
-            endfor
         endif
     endif
     if len(work_dir) > 0
@@ -261,10 +238,6 @@ let g:vimwiki_list = [{ "path": "~/wiki/", "index": "README", "syntax": "markdow
 nmap <Leader>tt <Plug>VimwikiToggleListItem
 vmap <Leader>tt <Plug>VimwikiToggleListItem
 
-" dash.vim
-set runtimepath+=~/dotfiles/vim/bundle/dash.vim
-nmap <silent> <leader>d <Plug>DashSearch
-
 " dracula-theme
 set runtimepath+=~/dotfiles/vim/bundle/vim
 let g:dracula_italic = 0
@@ -300,40 +273,3 @@ elseif has("win32")
     let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_win.py"
 endif
 nnoremap <leader>jd :YcmCompleter GoTo<cr>
-
-" omnisharp-vim
-set runtimepath+=~/dotfiles/vim/bundle/omnisharp-vim
-if filereadable("~/dotfiles/vim/bundle/omnisharp-vim/README.md")
-    let g:OmniSharp_timeout = 5
-    let g:ale_linters = { 'cs': ['OmniSharp'] }
-    let g:OmniSharp_highlight_types = 1
-    augroup omnisharp_commands
-        autocmd!
-        autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
-        autocmd InsertLeave *.cs call OmniSharp#HighlightBuffer()
-        autocmd FileType cs nnoremap <buffer> <Leader>th :OmniSharpHighlightTypes<CR>
-        autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
-        autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
-        autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
-        autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
-        autocmd FileType cs nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
-        autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
-        autocmd FileType cs nnoremap <buffer> <Leader>tt :OmniSharpTypeLookup<CR>
-        autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
-        autocmd FileType cs nnoremap <buffer> <C-\> :OmniSharpSignatureHelp<CR>
-        autocmd FileType cs inoremap <buffer> <C-\> <C-o>:OmniSharpSignatureHelp<CR>
-        autocmd FileType cs nnoremap <buffer> <C-k> :OmniSharpNavigateUp<CR>
-        autocmd FileType cs nnoremap <buffer> <C-j> :OmniSharpNavigateDown<CR>
-    augroup END
-    nnoremap <Leader><Space> :OmniSharpGetCodeActions<CR>
-    xnoremap <Leader><Space> :call OmniSharp#GetCodeActions('visual')<CR>
-    nnoremap <Leader>nm :OmniSharpRename<CR>
-    nnoremap <F2> :OmniSharpRename<CR>
-    command! -nargs=1 Rename :call OmniSharp#RenameTo("<args>")
-    nnoremap <Leader>cf :OmniSharpCodeFormat<CR>
-    nnoremap <Leader>ss :OmniSharpStartServer<CR>
-    nnoremap <Leader>sp :OmniSharpStopServer<CR>
-endif
-
-" ale
-"set runtimepath+=~/dotfiles/vim/bundle/ale
