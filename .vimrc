@@ -72,7 +72,7 @@ elseif has("win32")
     set langmenu=en
     " fix console ecoding messy
     set termencoding=chinese
-    set guifont=Hack:h9,Source\ Code\ Pro:h9,Source\ Han\ Sans\ SC:h9,Consolas:h9
+    set guifont=Hack:h8,Source\ Code\ Pro:h8,Source\ Han\ Sans\ SC:h8,Consolas:h8
 endif
 
 set path+=$VIM_PATH
