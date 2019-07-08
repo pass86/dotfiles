@@ -40,6 +40,8 @@ set path=.,,
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
 " enter jump to tag except quickfix
 nmap <expr> <cr> &buftype ==# "quickfix" ? "<cr>" : "<c-]>"
 
