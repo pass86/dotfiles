@@ -87,3 +87,6 @@ source $ZSH/oh-my-zsh.sh
 if [[ -f ~/.bashrc ]]; then
     source ~/.bashrc
 fi
+
+# Fix -bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+export LANG=en_US.UTF-8
