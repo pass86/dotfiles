@@ -1,0 +1,19 @@
+{
+    "csharp.referencesCodeLens.enabled": false,
+    "editor.detectIndentation": false,
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "editor.lineNumbers": "off",
+    "problems.decorations.enabled": false,
+    "files.exclude": {
+        "**/.vscode": true,
+        "**/*.csproj": true,
+        "**/*.meta": true,
+        "**/*.rsp": true,
+        "**/*.sln": true,
+        "**/*.unityproj": true
+    },
+    "editor.minimap.enabled": false,
+    "window.restoreWindows": "none"
+}
