@@ -1,6 +1,5 @@
 set nowrap
 set showcmd
-set ignorecase
 set cursorline
 " less draw calls
 set lazyredraw
