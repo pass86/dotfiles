@@ -1,6 +1,7 @@
 set nowrap
 set showcmd
 set cursorline
+set ignorecase
 " less draw calls
 set lazyredraw
 set regexpengine=1
