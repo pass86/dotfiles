@@ -267,11 +267,11 @@ let g:ycm_filter_diagnostics = {
 if has("unix")
     let s:uname = system("uname")
     if s:uname == "Darwin\n"
-        let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_mac.py"
+        let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_macos.py"
     else
-        let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_lin.py"
+        let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_linux.py"
     endif
 elseif has("win32")
-    let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_win.py"
+    let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_windows.py"
 endif
 nnoremap <leader>jd :YcmCompleter GoTo<cr>
