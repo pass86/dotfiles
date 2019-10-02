@@ -1,55 +1,110 @@
+" Only part of long lines will be displayed
 set nowrap
-set showcmd
-set cursorline
-set ignorecase
-" less draw calls
-set lazyredraw
-set regexpengine=1
-set laststatus=2
-set incsearch
-set hlsearch
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set nowritebackup
-set nobackup
-set nowritebackup
-set noswapfile
-set noundofile
-set hidden
-set autochdir
-set cscopequickfix=s-,c-,d-,i-,t-,e-
-set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set completeopt=longest,menu
-set autoread
-" full path, file encoding, line ending, file type
-set statusline=%<%F\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}\ [%{&ff}]\ %y\ %k\ %-14.(%l,%c%V%)\ %P
-" fix insert mode backspace
-set backspace=indent,eol,start
-set fileformats=unix,dos
-" search tags upwards
-set tags=tags;
-set t_Co=256
-" system clipboard, need +clipboard, tmux on macos need install https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
-set clipboard=unnamed
-set runtimepath=~/dotfiles/vim,$VIMRUNTIME
-set shortmess=A
-set path=.,,
-" disable beep and flash
-set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
 
+" Show (partial) command in the last line of the screen
+set showcmd
+
+" Highlight the screen line of the cursor with CursorLine
+set cursorline
+
+" The case of normal letters is ignored
+set ignorecase
+
+" Override the 'ignorecase' option if the search pattern contains upper case characters
+set smartcase
+
+" The screen will not be redrawn while executing macros, registers and other commands that have not been typed
+set lazyredraw
+
+" Always a status line
+set laststatus=2
+
+" While typing a search command, show where the pattern, as it was typed so far, matches
+set incsearch
+
+" When there is a previous search pattern, highlight all its matches
+set hlsearch
+
+" Number of spaces to use for each step of (auto)indent
+set shiftwidth=4
+
+" Number of spaces that a <Tab> in the file counts for
+set tabstop=4
+
+" JavaScript's indent
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
-" enter jump to tag except quickfix
-nmap <expr> <cr> &buftype ==# "quickfix" ? "<cr>" : "<c-]>"
+" In Insert mode: Use the appropriate number of spaces to insert a <Tab>
+set expandtab
 
-" fast load edit and apply vimrc
-map <silent> <leader>ss :source $MYVIMRC<cr>
+" No backup made
+set nobackup
+set nowritebackup
+
+" No swapfile for the buffer
+set noswapfile
+
+" No undofile for the buffer
+set noundofile
+
+" Hide buffers instead of closing them
+set hidden
+
+" Change the current working directory whenever you open a file, switch buffers, delete a buffer or open/close a window
+set autochdir
+
+" Specifies whether to use quickfix window to show cscope results
+set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+
+" Sets the character encoding used inside Vim
+set encoding=utf-8
+
+" This is a list of character encodings considered when starting to edit an existing file
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+
+" A comma separated list of options for Insert mode completion
+set completeopt=longest,menu
+
+" When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again
+set autoread
+
+" Determines the content of the status line. Full path, File encoding, Line ending, File type, Line, Column, Percentage
+set statusline=%<%F\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}\ [%{&ff}]\ %y\ %k\ %-14.(%l,%c%V%)\ %P
+
+" Allow backspace
+set backspace=indent,eol,start
+
+" Gives the end-of-line (<EOL>) formats that will be tried when starting to edit a new buffer and when reading a file into an existing buffer
+set fileformats=unix,dos
+
+" Search tags upwards
+set tags=tags;
+
+" Use system clipboard
+set clipboard=unnamed,unnamedplus
+
+" Avoid the hit-enter prompts caused by file messages
+set shortmess=AF
+
+" A list of directories which will be searched when using the gf and other commands
+set path=.,,
+
+" Disable beep and flash
+set visualbell t_vb=
+
+" Set terminal's number of colors
+set t_Co=256
+
+" Edit $MYVIMRC
 map <silent> <leader>ee :e $MYVIMRC<cr>
 
-" return to last edit position when open
+" Load $MYVIMRC
+map <silent> <leader>ss :source $MYVIMRC<cr>
+
+" Enter jump to tag except quickfix
+nmap <expr> <cr> &buftype ==# "quickfix" ? "<cr>" : "<c-]>"
+
+" Return to last edit position when open
 autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \     exe "normal! g`\"" |
@@ -72,14 +127,12 @@ elseif has("win32")
     au GUIEnter * simalt ~x
     let $LANG="en"
     set langmenu=en
-    " fix console ecoding messy
+    " Fix console encoding messy
     set termencoding=chinese
     set guifont=Hack:h8,Source\ Code\ Pro:h8,Source\ Han\ Sans\ SC:h8,Consolas:h8
 endif
 
-set path+=$VIM_PATH
-
-" hide menubar and toolbar
+" Hide menubar and toolbar
 set guioptions=
 
 function! Goto_jump()
@@ -105,9 +158,12 @@ function! Close_all_buffers_but_current()
 endfunction
 nnoremap <leader>co :call Close_all_buffers_but_current()<cr>
 
+" A list of directories which will be searched for runtime files
+set runtimepath=~/dotfiles/vim,$VIMRUNTIME
+
 " a.vim
 set runtimepath+=~/dotfiles/vim/bundle/a.vim
-let g:alternateExtensions_h = "cpp,cxx,cc,CC,c"
+let g:alternateExtensions_h = "cpp,cxx,cc,c"
 let g:alternateExtensions_H = "CPP,CXX,CC,C"
 map <c-g> :A<cr>
 
