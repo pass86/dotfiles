@@ -1,20 +1,11 @@
 " Only part of long lines will be displayed
 set nowrap
 
-" Show (partial) command in the last line of the screen
-set showcmd
-
-" Highlight the screen line of the cursor with CursorLine
-set cursorline
-
 " The case of normal letters is ignored
 set ignorecase
 
 " Override the 'ignorecase' option if the search pattern contains upper case characters
 set smartcase
-
-" The screen will not be redrawn while executing macros, registers and other commands that have not been typed
-set lazyredraw
 
 " Always a status line
 set laststatus=2
@@ -59,7 +50,7 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 " Sets the character encoding used inside Vim
 set encoding=utf-8
 
-" This is a list of character encodings considered when starting to edit an existing file
+" A list of character encodings considered when starting to edit an existing file
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 " A comma separated list of options for Insert mode completion
@@ -92,8 +83,18 @@ set path=.,,
 " Disable beep and flash
 set visualbell t_vb=
 
+" Hide menubar and toolbar
+set guioptions=
+
 " Set terminal's number of colors
 set t_Co=256
+
+" Smooth scroll settings
+set lazyredraw " The screen will not be redrawn while executing macros, registers and other commands that have not been typed
+set regexpengine=1 " Selects the default regexp engine
+set noshowcmd " Show (partial) command in the last line of the screen
+set ttyfast " Indicates a fast terminal connection
+set synmaxcol=200 " Maximum column in which to search for syntax items
 
 " Edit $MYVIMRC
 map <silent> <leader>ee :e $MYVIMRC<cr>
@@ -101,14 +102,11 @@ map <silent> <leader>ee :e $MYVIMRC<cr>
 " Load $MYVIMRC
 map <silent> <leader>ss :source $MYVIMRC<cr>
 
-" Enter jump to tag except quickfix
+" Use enter jump to tag except quickfix
 nmap <expr> <cr> &buftype ==# "quickfix" ? "<cr>" : "<c-]>"
 
-" Return to last edit position when open
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \     exe "normal! g`\"" |
-  \ endif
+" Return to last edit position after read
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 augroup filetype
     au! BufNewFile * set fileformat=unix
@@ -132,31 +130,13 @@ elseif has("win32")
     set guifont=Hack:h8,Source\ Code\ Pro:h8,Source\ Han\ Sans\ SC:h8,Consolas:h8
 endif
 
-" Hide menubar and toolbar
-set guioptions=
-
-function! Goto_jump()
-  jumps
-  let j = input("Please select your jump: ")
-  if j != ''
-    let pattern = '\v\c^\+'
-    if j =~ pattern
-      let j = substitute(j, pattern, '', 'g')
-      execute "normal " . j . "\<c-i>"
-    else
-      execute "normal " . j . "\<c-o>"
-    endif
-  endif
-endfunction
-nmap <leader>j :call Goto_jump()<cr>
-
-function! Close_all_buffers_but_current()
+function! CloseOtherBuffers()
     let curr = bufnr("%")
     let last = bufnr("$")
     if curr > 1 | silent! execute "1," . (curr - 1) . "bd" | endif
     if curr < last | silent! execute (curr + 1) . "," . last . "bd" | endif
 endfunction
-nnoremap <leader>co :call Close_all_buffers_but_current()<cr>
+nnoremap <leader>co :call CloseOtherBuffers()<cr>
 
 " A list of directories which will be searched for runtime files
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
