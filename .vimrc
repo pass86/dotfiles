@@ -7,26 +7,11 @@ set ignorecase
 " Override the 'ignorecase' option if the search pattern contains upper case characters
 set smartcase
 
-" Always a status line
-set laststatus=2
-
 " While typing a search command, show where the pattern, as it was typed so far, matches
 set incsearch
 
 " When there is a previous search pattern, highlight all its matches
 set hlsearch
-
-" Number of spaces to use for each step of (auto)indent
-set shiftwidth=4
-
-" Number of spaces that a <Tab> in the file counts for
-set tabstop=4
-
-" JavaScript's indent
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-
-" In Insert mode: Use the appropriate number of spaces to insert a <Tab>
-set expandtab
 
 " No backup made
 set nobackup
@@ -53,20 +38,26 @@ set encoding=utf-8
 " A list of character encodings considered when starting to edit an existing file
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
+" Gives the end-of-line (<EOL>) formats that will be tried when starting to edit a new buffer and when reading a file into an existing buffer
+set fileformats=unix,dos
+
+" This gives the <EOL> of the current buffer, which is used for reading/writing the buffer from/to a file
+set fileformat=unix
+
 " A comma separated list of options for Insert mode completion
 set completeopt=longest,menu
 
 " When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again
 set autoread
 
+" Always a status line
+set laststatus=2
+
 " Determines the content of the status line. Full path, File encoding, Line ending, File type, Line, Column, Percentage
 set statusline=%<%F\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}\ [%{&ff}]\ %y\ %k\ %-14.(%l,%c%V%)\ %P
 
 " Allow backspace
 set backspace=indent,eol,start
-
-" Gives the end-of-line (<EOL>) formats that will be tried when starting to edit a new buffer and when reading a file into an existing buffer
-set fileformats=unix,dos
 
 " Search tags upwards
 set tags=tags;
@@ -77,9 +68,6 @@ set clipboard=unnamed,unnamedplus
 " Avoid the hit-enter prompts caused by file messages
 set shortmess=AF
 
-" A list of directories which will be searched when using the gf and other commands
-set path=.,,
-
 " Disable beep and flash
 set visualbell t_vb=
 
@@ -89,6 +77,21 @@ set guioptions=
 " Set terminal's number of colors
 set t_Co=256
 
+" In Insert mode: Use the appropriate number of spaces to insert a <Tab>
+set expandtab
+
+" Number of spaces to use for each step of (auto)indent
+set shiftwidth=4
+
+" Number of spaces that a <Tab> in the file counts for
+set tabstop=4
+
+" Vim's indent
+autocmd FileType vim setlocal shiftwidth=2 tabstop=2
+
+" JavaScript's indent
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
 " Smooth scroll settings
 set lazyredraw " The screen will not be redrawn while executing macros, registers and other commands that have not been typed
 set regexpengine=1 " Selects the default regexp engine
@@ -96,47 +99,17 @@ set noshowcmd " Show (partial) command in the last line of the screen
 set ttyfast " Indicates a fast terminal connection
 set synmaxcol=200 " Maximum column in which to search for syntax items
 
-" Edit $MYVIMRC
-map <silent> <leader>ee :e $MYVIMRC<cr>
-
-" Load $MYVIMRC
-map <silent> <leader>ss :source $MYVIMRC<cr>
-
-" Use enter jump to tag except quickfix
-nmap <expr> <cr> &buftype ==# "quickfix" ? "<cr>" : "<c-]>"
-
-" Return to last edit position after read
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-augroup filetype
-    au! BufNewFile * set fileformat=unix
-augroup end
-
+" Enable file type detection
 filetype plugin indent on
 
+" To switch syntax highlighting on according to the current value of the 'filetype' option
 syntax on
 
+" A list of directories which will be searched when using the gf and other commands
+set path=.,,
 if has("unix")
-    set path+=/usr/local/include
-    hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
-    set guifont=Hack:h12,Source\ Code\ Pro:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
-elseif has("win32")
-    " maximize window
-    au GUIEnter * simalt ~x
-    let $LANG="en"
-    set langmenu=en
-    " Fix console encoding messy
-    set termencoding=chinese
-    set guifont=Hack:h8,Source\ Code\ Pro:h8,Source\ Han\ Sans\ SC:h8,Consolas:h8
+  set path+=/usr/local/include
 endif
-
-function! CloseOtherBuffers()
-    let curr = bufnr("%")
-    let last = bufnr("$")
-    if curr > 1 | silent! execute "1," . (curr - 1) . "bd" | endif
-    if curr < last | silent! execute (curr + 1) . "," . last . "bd" | endif
-endfunction
-nnoremap <leader>co :call CloseOtherBuffers()<cr>
 
 " A list of directories which will be searched for runtime files
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
@@ -153,7 +126,7 @@ let g:ackpreview = 1
 let g:ackhighlight = 1
 let g:ack_autoclose = 1
 if executable("ag")
-    let g:ackprg = "ag --ignore tags --ignore Makefile --ignore CMakeFiles --ignore CMakeCache.txt -Q"
+  let g:ackprg = "ag --ignore tags --ignore Makefile --ignore CMakeFiles --ignore CMakeCache.txt -Q"
 endif
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
@@ -166,9 +139,9 @@ set runtimepath+=~/dotfiles/vim/bundle/auto-pairs
 " mru
 set runtimepath+=~/dotfiles/vim/bundle/mru
 if has("unix")
-    let MRU_Exclude_Files = '.*/.svn/.*\|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*'
+  let MRU_Exclude_Files = '.*/.svn/.*\|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*'
 elseif has("win32")
-    let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
+  let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
 endif
 
 " ctrlp.vim
@@ -193,14 +166,13 @@ set runtimepath+=~/dotfiles/vim/bundle/nerdtree
 let NERDTreeShowHidden = 1
 let NERDTreeQuitOnOpen = 1
 map <c-n> :NERDTreeToggle<cr>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " nerdcommenter
 set runtimepath+=~/dotfiles/vim/bundle/nerdcommenter
 
 " open-browser.vim
 set runtimepath+=~/dotfiles/vim/bundle/open-browser.vim
-" disable netrw's gx mapping
 let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
@@ -219,21 +191,21 @@ set runtimepath+=~/dotfiles/vim/bundle/vim-autoread
 
 " vim-bookmarks
 function! g:BMWorkDirFileLocation()
-    if filereadable(".vim-bookmarks")
-        let work_dir = getcwd()
+  if filereadable(".vim-bookmarks")
+    let work_dir = getcwd()
+  else
+    let up_path = findfile(".vim-bookmarks", ".;")
+    if len(up_path) > 0
+      let work_dir = substitute(up_path, ".vim-bookmarks", "", "")
     else
-        let up_path = findfile(".vim-bookmarks", ".;")
-        if len(up_path) > 0
-            let work_dir = substitute(up_path, ".vim-bookmarks", "", "")
-        else
-            let work_dir = ""
-        endif
+      let work_dir = ""
     endif
-    if len(work_dir) > 0
-        return work_dir . "/.vim-bookmarks"
-    else
-        return g:bookmark_auto_save_file
-    endif
+  endif
+  if len(work_dir) > 0
+    return work_dir . "/.vim-bookmarks"
+  else
+    return g:bookmark_auto_save_file
+  endif
 endfunction
 set runtimepath+=~/dotfiles/vim/bundle/vim-bookmarks
 let g:bookmark_auto_close = 1
@@ -260,8 +232,7 @@ let g:airline_theme = "dark"
 " vim-startify
 set runtimepath+=~/dotfiles/vim/bundle/vim-startify
 let g:startify_skiplist = [MRU_Exclude_Files]
-" fix autochdir failed in ctrlp
-let g:startify_change_to_dir = 0
+let g:startify_change_to_dir = 0 " Fix autochdir failed in ctrlp
 
 " vim-youdao-translater
 set runtimepath+=~/dotfiles/vim/bundle/vim-youdao-translater
@@ -297,8 +268,45 @@ let g:ycm_filetype_whitelist = {
   \ }
 let g:ycm_filter_diagnostics = {
   \ "cs": {
-  \     "level": "warning"
+  \   "level": "warning"
   \   }
   \ }
 let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_conf.py"
 nnoremap <leader>jd :YcmCompleter GoTo<cr>
+
+" Edit $MYVIMRC
+map <silent> <leader>ee :e $MYVIMRC<cr>
+
+" Load $MYVIMRC
+map <silent> <leader>ss :source $MYVIMRC<cr>
+
+" Use enter jump to tag except quickfix
+nmap <expr> <cr> &buftype ==# "quickfix" ? "<cr>" : "<c-]>"
+
+" Quick close other buffers
+function! CloseOtherBuffers()
+  let curr = bufnr("%")
+  let last = bufnr("$")
+  if curr > 1 | silent! execute "1," . (curr - 1) . "bd" | endif
+  if curr < last | silent! execute (curr + 1) . "," . last . "bd" | endif
+endfunction
+nnoremap <leader>co :call CloseOtherBuffers()<cr>
+
+" Return to last edit position after read
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+if has("unix")
+  "hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
+  " A list of fonts which will be used for the GUI version of Vim
+  set guifont=Hack:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
+elseif has("win32")
+  " Maximize window
+  autocmd GUIEnter * simalt ~x
+  let $LANG = "en"
+  " Language to use for menu translation
+  set langmenu=en
+  " Fix console encoding messy
+  set termencoding=chinese
+  " A list of fonts which will be used for the GUI version of Vim
+  set guifont=Hack:h8,Source\ Han\ Sans\ SC:h8,Consolas:h8
+endif
