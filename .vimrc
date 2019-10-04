@@ -86,12 +86,6 @@ set shiftwidth=4
 " Number of spaces that a <Tab> in the file counts for
 set tabstop=4
 
-" Vim's indent
-autocmd FileType vim setlocal shiftwidth=2 tabstop=2
-
-" JavaScript's indent
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-
 " Smooth scroll settings
 set lazyredraw " The screen will not be redrawn while executing macros, registers and other commands that have not been typed
 set regexpengine=1 " Selects the default regexp engine
@@ -273,6 +267,12 @@ let g:ycm_filter_diagnostics = {
   \ }
 let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_conf.py"
 nnoremap <leader>jd :YcmCompleter GoTo<cr>
+
+" Vim's indent
+autocmd FileType vim setlocal shiftwidth=2 tabstop=2
+
+" JavaScript's indent
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " Edit $MYVIMRC
 map <silent> <leader>ee :e $MYVIMRC<cr>
