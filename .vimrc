@@ -287,6 +287,9 @@ let g:dracula_italic = 0
 let g:dracula_colorterm = 0
 color dracula
 
+" UltiSnips
+set runtimepath+=~/dotfiles/vim/bundle/ultisnips
+
 " YouCompleteMe
 set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
