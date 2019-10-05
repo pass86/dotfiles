@@ -128,13 +128,13 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " Edit $MYVIMRC
-map <silent> <leader>ee :e $MYVIMRC<cr>
+map <silent> <Leader>ee :e $MYVIMRC<CR>
 
 " Load $MYVIMRC
-map <silent> <leader>ss :source $MYVIMRC<cr>
+map <silent> <Leader>ss :source $MYVIMRC<CR>
 
 " Use enter jump to tag except quickfix
-nmap <expr> <cr> &buftype ==# "quickfix" ? "<cr>" : "<c-]>"
+nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : "<C-]>"
 
 " Quick close other buffers
 function! CloseOtherBuffers()
@@ -143,7 +143,7 @@ function! CloseOtherBuffers()
   if curr > 1 | silent! execute "1," . (curr - 1) . "bd" | endif
   if curr < last | silent! execute (curr + 1) . "," . last . "bd" | endif
 endfunction
-nnoremap <leader>co :call CloseOtherBuffers()<cr>
+nnoremap <Leader>co :call CloseOtherBuffers()<CR>
 
 " A list of directories which will be searched for runtime files
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
@@ -152,7 +152,7 @@ set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 set runtimepath+=~/dotfiles/vim/bundle/a.vim
 let g:alternateExtensions_h = "cpp,cxx,cc,c"
 let g:alternateExtensions_H = "CPP,CXX,CC,C"
-map <c-g> :A<cr>
+map <C-g> :A<CR>
 
 " ack.vim
 set runtimepath+=~/dotfiles/vim/bundle/ack.vim
@@ -189,7 +189,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_mruf_exclude = MRU_Exclude_Files
 let g:ctrlp_root_markers = [ ".ctrlp" ]
-map <c-l> :CtrlPMRU<cr>
+map <C-l> :CtrlPMRU<CR>
 
 " vim-gutentags
 set runtimepath+=~/dotfiles/vim/bundle/vim-gutentags
@@ -199,7 +199,7 @@ let g:gutentags_add_default_project_roots = 0
 set runtimepath+=~/dotfiles/vim/bundle/nerdtree
 let NERDTreeShowHidden = 1
 let NERDTreeQuitOnOpen = 1
-map <c-n> :NERDTreeToggle<cr>
+map <C-n> :NERDTreeToggle<CR>
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " nerdcommenter
@@ -214,8 +214,8 @@ vmap gx <Plug>(openbrowser-smart-search)
 " supertab
 set runtimepath+=~/dotfiles/vim/bundle/supertab
 let g:SuperTabCrMapping = 1
-let g:SuperTabDefaultCompletionType = "<c-n>"
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "<C-n>"
+let g:SuperTabContextDefaultCompletionType = "<C-n>"
 
 " ShaderHighLight
 set runtimepath+=~/dotfiles/vim/bundle/ShaderHighLight
@@ -248,7 +248,7 @@ let g:bookmark_save_per_working_dir = 1
 
 " vim-reveal-in-finder
 set runtimepath+=~/dotfiles/vim/bundle/vim-reveal-in-finder
-nnoremap <leader><cr> :Reveal<cr>
+nnoremap <Leader><CR> :Reveal<CR>
 
 " vim-airline
 set runtimepath+=~/dotfiles/vim/bundle/vim-airline
@@ -270,9 +270,9 @@ let g:startify_change_to_dir = 0 " Fix autochdir failed in ctrlp
 
 " vim-youdao-translater
 set runtimepath+=~/dotfiles/vim/bundle/vim-youdao-translater
-vnoremap <silent> <c-t> :<c-u>Ydv<cr>
-nnoremap <silent> <c-t> :<c-u>Ydc<cr>
-noremap <leader>yd :<c-u>Yde<cr>
+vnoremap <silent> <C-t> :<C-u>Ydv<CR>
+nnoremap <silent> <C-t> :<C-u>Ydc<CR>
+noremap <Leader>yd :<C-u>Yde<CR>
 
 " vimwiki
 set runtimepath+=~/dotfiles/vim/bundle/vimwiki
@@ -306,4 +306,4 @@ let g:ycm_filter_diagnostics = {
   \   }
   \ }
 let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_conf.py"
-nnoremap <leader>jd :YcmCompleter GoTo<cr>
+nnoremap <Leader>jd :YcmCompleter GoTo<CR>
