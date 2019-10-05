@@ -9,6 +9,7 @@ SUBMODULES="vim/bundle/a.vim
     vim/bundle/nerdtree
     vim/bundle/open-browser.vim
     vim/bundle/supertab
+    vim/bundle/ultisnips
     vim/bundle/vim-airline
     vim/bundle/vim-airline-themes
     vim/bundle/vim-autoread
