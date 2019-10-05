@@ -114,11 +114,6 @@ elseif has("unix")
 endif
 
 if has("win32")
-  let $LANG = "en"
-  " Language to use for menu translation
-  set langmenu=en
-  " Fix console encoding messy
-  set termencoding=chinese
   " Maximize window
   autocmd GUIEnter * simalt ~x
 endif
