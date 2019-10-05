@@ -26,12 +26,6 @@ set noundofile
 " Hide buffers instead of closing them
 set hidden
 
-" Change the current working directory whenever you open a file, switch buffers, delete a buffer or open/close a window
-set autochdir
-
-" Specifies whether to use quickfix window to show cscope results
-set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
-
 " Sets the character encoding used inside Vim
 set encoding=utf-8
 
@@ -47,14 +41,11 @@ set fileformat=unix
 " A comma separated list of options for Insert mode completion
 set completeopt=longest,menu
 
+" Change the current working directory whenever you open a file, switch buffers, delete a buffer or open/close a window
+set autochdir
+
 " When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again
 set autoread
-
-" Always a status line
-set laststatus=2
-
-" Determines the content of the status line. Full path, File encoding, Line ending, File type, Line, Column, Percentage
-set statusline=%<%F\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}\ [%{&ff}]\ %y\ %k\ %-14.(%l,%c%V%)\ %P
 
 " Allow backspace
 set backspace=indent,eol,start
@@ -65,18 +56,6 @@ set tags=tags;
 " Use system clipboard
 set clipboard=unnamed,unnamedplus
 
-" Avoid the hit-enter prompts caused by file messages
-set shortmess=AF
-
-" Disable beep and flash
-set visualbell t_vb=
-
-" Hide menubar and toolbar
-set guioptions=
-
-" Set terminal's number of colors
-set t_Co=256
-
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>
 set expandtab
 
@@ -85,6 +64,24 @@ set shiftwidth=4
 
 " Number of spaces that a <Tab> in the file counts for
 set tabstop=4
+
+" Avoid the hit-enter prompts caused by file messages
+set shortmess=AF
+
+" Specifies whether to use quickfix window to show cscope results
+set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+
+" Always a status line
+set laststatus=2
+
+" Determines the content of the status line. Full path, File encoding, Line ending, File type, Line, Column, Percentage
+set statusline=%<%F\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}\ [%{&ff}]\ %y\ %k\ %-14.(%l,%c%V%)\ %P
+
+" Disable beep and flash
+set visualbell t_vb=
+
+" Set terminal's number of colors
+set t_Co=256
 
 " Smooth scroll settings
 set lazyredraw " The screen will not be redrawn while executing macros, registers and other commands that have not been typed
@@ -100,10 +97,58 @@ filetype plugin indent on
 syntax on
 
 " A list of directories which will be searched when using the gf and other commands
-set path=.,,
-if has("unix")
-  set path+=/usr/local/include
+if has("win32")
+  set path=.
+elseif has("unix")
+  set path=.,/usr/local/include,/usr/include
 endif
+
+" No GUI feature
+set guioptions=
+
+" A list of fonts which will be used for the GUI version of Vim
+if has("win32")
+  set guifont=Hack:h8,Source\ Han\ Sans\ SC:h8,Consolas:h8
+elseif has("unix")
+  set guifont=Hack:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
+endif
+
+if has("win32")
+  let $LANG = "en"
+  " Language to use for menu translation
+  set langmenu=en
+  " Fix console encoding messy
+  set termencoding=chinese
+  " Maximize window
+  autocmd GUIEnter * simalt ~x
+endif
+
+" Vim's indent
+autocmd FileType vim setlocal shiftwidth=2 tabstop=2
+
+" JavaScript's indent
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+" Return to last edit position after read
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Edit $MYVIMRC
+map <silent> <leader>ee :e $MYVIMRC<cr>
+
+" Load $MYVIMRC
+map <silent> <leader>ss :source $MYVIMRC<cr>
+
+" Use enter jump to tag except quickfix
+nmap <expr> <cr> &buftype ==# "quickfix" ? "<cr>" : "<c-]>"
+
+" Quick close other buffers
+function! CloseOtherBuffers()
+  let curr = bufnr("%")
+  let last = bufnr("$")
+  if curr > 1 | silent! execute "1," . (curr - 1) . "bd" | endif
+  if curr < last | silent! execute (curr + 1) . "," . last . "bd" | endif
+endfunction
+nnoremap <leader>co :call CloseOtherBuffers()<cr>
 
 " A list of directories which will be searched for runtime files
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
@@ -132,10 +177,10 @@ set runtimepath+=~/dotfiles/vim/bundle/auto-pairs
 
 " mru
 set runtimepath+=~/dotfiles/vim/bundle/mru
-if has("unix")
-  let MRU_Exclude_Files = '.*/.svn/.*\|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*'
-elseif has("win32")
+if has("win32")
   let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
+elseif has("unix")
+  let MRU_Exclude_Files = '.*/.svn/.*\|^/tmp/.*\|^/var/tmp/.*\|^/var/folders/.*'
 endif
 
 " ctrlp.vim
@@ -267,46 +312,3 @@ let g:ycm_filter_diagnostics = {
   \ }
 let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_conf.py"
 nnoremap <leader>jd :YcmCompleter GoTo<cr>
-
-" Vim's indent
-autocmd FileType vim setlocal shiftwidth=2 tabstop=2
-
-" JavaScript's indent
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-
-" Edit $MYVIMRC
-map <silent> <leader>ee :e $MYVIMRC<cr>
-
-" Load $MYVIMRC
-map <silent> <leader>ss :source $MYVIMRC<cr>
-
-" Use enter jump to tag except quickfix
-nmap <expr> <cr> &buftype ==# "quickfix" ? "<cr>" : "<c-]>"
-
-" Quick close other buffers
-function! CloseOtherBuffers()
-  let curr = bufnr("%")
-  let last = bufnr("$")
-  if curr > 1 | silent! execute "1," . (curr - 1) . "bd" | endif
-  if curr < last | silent! execute (curr + 1) . "," . last . "bd" | endif
-endfunction
-nnoremap <leader>co :call CloseOtherBuffers()<cr>
-
-" Return to last edit position after read
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-if has("unix")
-  "hi CursorLine cterm=NONE ctermbg=240 ctermfg=NONE
-  " A list of fonts which will be used for the GUI version of Vim
-  set guifont=Hack:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
-elseif has("win32")
-  " Maximize window
-  autocmd GUIEnter * simalt ~x
-  let $LANG = "en"
-  " Language to use for menu translation
-  set langmenu=en
-  " Fix console encoding messy
-  set termencoding=chinese
-  " A list of fonts which will be used for the GUI version of Vim
-  set guifont=Hack:h8,Source\ Han\ Sans\ SC:h8,Consolas:h8
-endif
