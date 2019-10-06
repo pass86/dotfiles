@@ -78,7 +78,7 @@ set laststatus=2
 set statusline=%<%F\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}\ [%{&ff}]\ %y\ %k\ %-14.(%l,%c%V%)\ %P
 
 " Disable beep and flash
-set visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 " Set terminal's number of colors
 set t_Co=256
