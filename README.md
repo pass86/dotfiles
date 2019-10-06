@@ -11,10 +11,12 @@ brew cask install macvim alacritty
 git clone https://github.com/pass86/dotfiles.git
 ```
 
+* macOS & Linux
 ```sh
 ~/dotfiles/bin/install.sh
 ```
 
+* Windows
 ```bat
 %USERPROFILE%\dotfiles\bin\install.bat
 ```
