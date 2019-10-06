@@ -9,7 +9,14 @@ brew cask install macvim alacritty
 # Install dotfiles
 ```sh
 git clone https://github.com/pass86/dotfiles.git
+```
+
+```sh
 ~/dotfiles/bin/install.sh
+```
+
+```bat
+%USERPROFILE%\dotfiles\bin\install.bat
 ```
 
 # Install Submodules
