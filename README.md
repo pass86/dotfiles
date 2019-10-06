@@ -2,7 +2,7 @@
 ```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-brew install vim ctags tmux the_silver_searcher reattach-to-user-namespace
+brew install vim tmux ctags the_silver_searcher reattach-to-user-namespace
 brew cask install macvim alacritty
 ```
 
