@@ -77,18 +77,15 @@ set laststatus=2
 " Determines the content of the status line. Full path, File encoding, Line ending, File type, Line, Column, Percentage
 set statusline=%<%F\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}\ [%{&ff}]\ %y\ %k\ %-14.(%l,%c%V%)\ %P
 
-" Disable beep and flash
-autocmd GUIEnter * set visualbell t_vb=
-
-" Set terminal's number of colors
-set t_Co=256
-
 " Smooth scroll settings
 set lazyredraw " The screen will not be redrawn while executing macros, registers and other commands that have not been typed
 set regexpengine=1 " Selects the default regexp engine
 set noshowcmd " Show (partial) command in the last line of the screen
 set ttyfast " Indicates a fast terminal connection
 set synmaxcol=200 " Maximum column in which to search for syntax items
+
+" Set terminal's number of colors
+set t_Co=256
 
 " Enable file type detection
 filetype plugin indent on
@@ -117,6 +114,9 @@ if has("win32")
   " Maximize window
   autocmd GUIEnter * simalt ~x
 endif
+
+" Disable beep and flash
+autocmd GUIEnter * set visualbell t_vb=
 
 " Vim's indent
 autocmd FileType vim setlocal shiftwidth=2 tabstop=2
