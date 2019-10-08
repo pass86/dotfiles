@@ -130,9 +130,6 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 " Edit $MYVIMRC
 map <silent> <Leader>ee :e $MYVIMRC<CR>
 
-" Load $MYVIMRC
-map <silent> <Leader>ss :source $MYVIMRC<CR>
-
 " Use enter jump to tag except quickfix
 nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : "<C-]>"
 
@@ -167,10 +164,10 @@ cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
 
-" auto-pairs
+" Auto Pairs
 set runtimepath+=~/dotfiles/vim/bundle/auto-pairs
 
-" mru
+" Most Recently Used (MRU)
 set runtimepath+=~/dotfiles/vim/bundle/mru
 if has("win32")
   let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
@@ -191,18 +188,18 @@ let g:ctrlp_mruf_exclude = MRU_Exclude_Files
 let g:ctrlp_root_markers = [ ".ctrlp" ]
 map <C-l> :CtrlPMRU<CR>
 
-" vim-gutentags
+" Gutentags
 set runtimepath+=~/dotfiles/vim/bundle/vim-gutentags
 let g:gutentags_add_default_project_roots = 0
 
-" nerdtree
+" NERDTree
 set runtimepath+=~/dotfiles/vim/bundle/nerdtree
 let NERDTreeShowHidden = 1
 let NERDTreeQuitOnOpen = 1
 map <C-n> :NERDTreeToggle<CR>
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" nerdcommenter
+" NERD Commenter
 set runtimepath+=~/dotfiles/vim/bundle/nerdcommenter
 
 " open-browser.vim
@@ -246,7 +243,7 @@ let g:bookmark_auto_close = 1
 let g:bookmark_disable_ctrlp = 1
 let g:bookmark_save_per_working_dir = 1
 
-" vim-reveal-in-finder
+" Reveal in Finder
 set runtimepath+=~/dotfiles/vim/bundle/vim-reveal-in-finder
 nnoremap <Leader><CR> :Reveal<CR>
 
@@ -263,7 +260,7 @@ let g:airline#extensions#tabline#fnamemod = ":t"
 set runtimepath+=~/dotfiles/vim/bundle/vim-airline-themes
 let g:airline_theme = "dark"
 
-" vim-startify
+" Startify
 set runtimepath+=~/dotfiles/vim/bundle/vim-startify
 let g:startify_skiplist = [MRU_Exclude_Files]
 let g:startify_change_to_dir = 0 " Fix autochdir failed in ctrlp
@@ -274,14 +271,14 @@ vnoremap <silent> <C-t> :<C-u>Ydv<CR>
 nnoremap <silent> <C-t> :<C-u>Ydc<CR>
 noremap <Leader>yd :<C-u>Yde<CR>
 
-" vimwiki
+" VimWiki
 set runtimepath+=~/dotfiles/vim/bundle/vimwiki
 let g:vimwiki_conceallevel = 0
 let g:vimwiki_list = [{ "path": "~/wiki/", "index": "README", "syntax": "markdown", "ext": ".md" }]
 nmap <Leader>tt <Plug>VimwikiToggleListItem
 vmap <Leader>tt <Plug>VimwikiToggleListItem
 
-" dracula-theme
+" Dracula for Vim
 set runtimepath+=~/dotfiles/vim/bundle/vim
 let g:dracula_italic = 0
 let g:dracula_colorterm = 0
