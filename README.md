@@ -2,11 +2,29 @@
 Workspace settings
 
 # Setup macOS
+* Install [Homebrew](https://brew.sh)
 ```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+* Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
+```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+* Install tools
+```sh
 brew install vim tmux ctags the_silver_searcher reattach-to-user-namespace
 brew cask install macvim alacritty
+```
+
+# Setup Windows
+* Install [babun](https://babun.github.io)
+* Update babun
+```bat
+%USERPROFILE%\.babun\update.bat
+```
+* Install tools
+```sh
+pact install ctags the_silver_searcher
 ```
 
 # Install dotfiles
