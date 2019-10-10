@@ -29,7 +29,7 @@ pact install ctags the_silver_searcher
 
 # Install dotfiles
 ```sh
-git clone https://github.com/pass86/dotfiles.git
+git clone https://github.com/pass86/dotfiles.git ~/dotfiles
 ```
 
 * macOS & Linux
