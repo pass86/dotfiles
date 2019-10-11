@@ -147,8 +147,12 @@ set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 
 " a.vim
 set runtimepath+=~/dotfiles/vim/bundle/a.vim
-let g:alternateExtensions_h = "cpp,cxx,cc,c"
-let g:alternateExtensions_H = "CPP,CXX,CC,C"
+let g:alternateExtensions_h = "cpp,cxx,cc,c,mm,m"
+let g:alternateExtensions_H = "CPP,CXX,CC,C,MM,M"
+let g:alternateExtensions_m = "h,hpp"
+let g:alternateExtensions_M = "H,HPP"
+let g:alternateExtensions_mm = "h,hpp"
+let g:alternateExtensions_MM = "H,HPP"
 map <C-g> :A<CR>
 
 " ack.vim
