@@ -1,4 +1,5 @@
 {
+    "editor.suggestSelection": "first",
     "csharp.referencesCodeLens.enabled": false,
     "editor.detectIndentation": false,
     "[javascript]": {
@@ -15,5 +16,6 @@
         "**/*.unityproj": true
     },
     "editor.minimap.enabled": false,
-    "window.restoreWindows": "none"
+    "window.restoreWindows": "none",
+    "editor.renderIndentGuides": false
 }
