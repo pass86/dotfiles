@@ -313,3 +313,6 @@ let g:ycm_filter_diagnostics = {
   \ }
 let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_conf.py"
 nnoremap <Leader>jd :YcmCompleter GoTo<CR>
+
+" killersheep
+set runtimepath+=~/dotfiles/vim/bundle/killersheep

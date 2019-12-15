@@ -88,3 +88,6 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "vim/bundle/killersheep"]
+	path = vim/bundle/killersheep
+	url = https://github.com/vim/killersheep.git
