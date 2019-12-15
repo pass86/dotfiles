@@ -4,6 +4,7 @@ SUBMODULES="vim/bundle/a.vim
     vim/bundle/ack.vim
     vim/bundle/auto-pairs
     vim/bundle/ctrlp.vim
+    vim/bundle/killersheep
     vim/bundle/mru
     vim/bundle/nerdcommenter
     vim/bundle/nerdtree
