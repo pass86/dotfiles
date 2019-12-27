@@ -8,6 +8,7 @@
         "**/*.o": true,
         "**/*.sln": true,
         "**/*.csproj": true,
+        "**/*.vs": true,
         "**/*.vscode": true,
         "**/*.meta": true
     },
