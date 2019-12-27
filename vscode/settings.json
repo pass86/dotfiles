@@ -1,21 +1,13 @@
 {
-    "editor.suggestSelection": "first",
-    "csharp.referencesCodeLens.enabled": false,
-    "editor.detectIndentation": false,
-    "[javascript]": {
-        "editor.tabSize": 2
-    },
-    "editor.lineNumbers": "off",
-    "problems.decorations.enabled": false,
-    "files.exclude": {
-        "**/.vscode": true,
-        "**/*.csproj": true,
-        "**/*.meta": true,
-        "**/*.rsp": true,
-        "**/*.sln": true,
-        "**/*.unityproj": true
-    },
     "editor.minimap.enabled": false,
     "window.restoreWindows": "none",
-    "editor.renderIndentGuides": false
+    "editor.renderIndentGuides": false,
+    "files.exclude": {
+        "**/*.la": true,
+        "**/*.lo": true,
+        "**/*.o": true,
+        "**/*.meta": true
+    },
+    "extensions.ignoreRecommendations": true,
+    "csharp.suppressDotnetInstallWarning": true
 }
