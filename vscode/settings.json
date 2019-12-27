@@ -6,6 +6,8 @@
         "**/*.la": true,
         "**/*.lo": true,
         "**/*.o": true,
+        "**/*.sln": true,
+        "**/*.csproj": true,
         "**/*.meta": true
     },
     "extensions.ignoreRecommendations": true,
