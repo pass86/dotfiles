@@ -8,6 +8,7 @@
         "**/*.o": true,
         "**/*.sln": true,
         "**/*.csproj": true,
+        "**/*.vscode": true,
         "**/*.meta": true
     },
     "extensions.ignoreRecommendations": true,
