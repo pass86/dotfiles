@@ -1,7 +1,6 @@
 {
     "editor.minimap.enabled": false,
     "window.restoreWindows": "none",
-    "editor.renderIndentGuides": false,
     "files.exclude": {
         "**/*.la": true,
         "**/*.lo": true,
