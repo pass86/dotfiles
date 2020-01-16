@@ -124,6 +124,9 @@ autocmd FileType vim setlocal shiftwidth=2 tabstop=2
 " Protocol Buffers's indent
 autocmd FileType proto setlocal shiftwidth=2 tabstop=2
 
+" HTML's indent
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+
 " JavaScript's indent
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
