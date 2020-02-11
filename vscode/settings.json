@@ -12,5 +12,6 @@
         "**/*.meta": true
     },
     "extensions.ignoreRecommendations": true,
-    "csharp.suppressDotnetInstallWarning": true
+    "csharp.suppressDotnetInstallWarning": true,
+    "git.enableSmartCommit": true
 }
