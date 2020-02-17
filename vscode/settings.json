@@ -13,5 +13,6 @@
     },
     "extensions.ignoreRecommendations": true,
     "csharp.suppressDotnetInstallWarning": true,
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "git.autofetch": true
 }
