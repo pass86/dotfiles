@@ -127,6 +127,9 @@ autocmd FileType proto setlocal shiftwidth=2 tabstop=2
 " HTML's indent
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
+" CSS's indent
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+
 " JavaScript's indent
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
