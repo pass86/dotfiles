@@ -14,5 +14,7 @@
     "extensions.ignoreRecommendations": true,
     "csharp.suppressDotnetInstallWarning": true,
     "git.enableSmartCommit": true,
-    "git.autofetch": true
+    "git.autofetch": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "go.useLanguageServer": true
 }
