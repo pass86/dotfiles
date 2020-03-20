@@ -16,5 +16,6 @@
     "git.enableSmartCommit": true,
     "git.autofetch": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "go.useLanguageServer": true
+    "go.useLanguageServer": true,
+    "window.zoomLevel": 0
 }
