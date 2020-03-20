@@ -12,7 +12,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 ```
 * Install tools
 ```sh
-brew install vim tmux ctags the_silver_searcher reattach-to-user-namespace
+brew install tmux ctags the_silver_searcher reattach-to-user-namespace
 brew cask install macvim alacritty
 ```
 
