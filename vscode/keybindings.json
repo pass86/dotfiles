@@ -15,5 +15,13 @@
     {
         "key": "ctrl+shift+-",
         "command": "-workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
     }
 ]
