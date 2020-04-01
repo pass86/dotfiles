@@ -105,7 +105,7 @@ set guioptions=
 
 " A list of fonts which will be used for the GUI version of Vim
 if has("win32")
-  set guifont=Hack:h8,Source\ Han\ Sans\ SC:h8,Consolas:h8
+  set guifont=Hack:h9,Source\ Han\ Sans\ SC:h9,Consolas:h9
 elseif has("unix")
   set guifont=Hack:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
 endif
