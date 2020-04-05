@@ -88,3 +88,6 @@
 [submodule "vim/bundle/killersheep"]
 	path = vim/bundle/killersheep
 	url = https://github.com/vim/killersheep.git
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe.git
