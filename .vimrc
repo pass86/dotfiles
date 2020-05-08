@@ -1,6 +1,3 @@
-" Only part of long lines will be displayed
-set nowrap
-
 " The case of normal letters is ignored
 set ignorecase
 
@@ -12,6 +9,9 @@ set incsearch
 
 " When there is a previous search pattern, highlight all its matches
 set hlsearch
+
+" Only part of long lines will be displayed
+set nowrap
 
 " No backup made
 set nobackup
