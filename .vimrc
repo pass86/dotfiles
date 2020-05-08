@@ -121,6 +121,12 @@ autocmd GUIEnter * set visualbell t_vb=
 " Vim's indent
 autocmd FileType vim setlocal shiftwidth=2 tabstop=2
 
+" Cpp's indent
+autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
+
+" CMake's indent
+autocmd FileType cmake setlocal shiftwidth=2 tabstop=2
+
 " Protocol Buffers's indent
 autocmd FileType proto setlocal shiftwidth=2 tabstop=2
 
