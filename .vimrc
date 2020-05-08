@@ -10,6 +10,9 @@ set incsearch
 " When there is a previous search pattern, highlight all its matches
 set hlsearch
 
+" Use system clipboard
+set clipboard=unnamed,unnamedplus
+
 " Only part of long lines will be displayed
 set nowrap
 
@@ -52,9 +55,6 @@ set backspace=indent,eol,start
 
 " Search tags upwards
 set tags=tags;
-
-" Use system clipboard
-set clipboard=unnamed,unnamedplus
 
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>
 set expandtab

@@ -9,3 +9,6 @@ set incsearch
 
 " When there is a previous search pattern, highlight all its matches
 set hlsearch
+
+" Use system clipboard
+set clipboard=unnamed,unnamedplus
