@@ -1,0 +1,2 @@
+" The case of normal letters is ignored
+set ignorecase
