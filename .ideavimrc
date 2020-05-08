@@ -1,0 +1,14 @@
+" The case of normal letters is ignored
+set ignorecase
+
+" Override the 'ignorecase' option if the search pattern contains upper case characters
+set smartcase
+
+" While typing a search command, show where the pattern, as it was typed so far, matches
+set incsearch
+
+" When there is a previous search pattern, highlight all its matches
+set hlsearch
+
+" Use system clipboard
+set clipboard=unnamed,unnamedplus
