@@ -12,3 +12,6 @@ set hlsearch
 
 " Use system clipboard
 set clipboard=unnamed,unnamedplus
+
+" Idea' join
+set ideajoin
