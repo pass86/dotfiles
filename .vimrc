@@ -76,8 +76,7 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 " Always a status line
 set laststatus=2
 
-" Determines the content of the status line. Full path, File encoding, Line ending, File type, Line, Column,
-" Percentage
+" Determines the content of the status line. Full path, File encoding, Line ending, File type, Line, Column, Percentage
 set statusline=%<%F\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}\ [%{&ff}]\ %y\ %k\ %-14.(%l,%c%V%)\ %P
 
 " Smooth scroll settings
