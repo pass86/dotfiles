@@ -35,7 +35,8 @@ set encoding=utf-8
 " A list of character encodings considered when starting to edit an existing file
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
-" Gives the end-of-line (<EOL>) formats that will be tried when starting to edit a new buffer and when reading a file into an existing buffer
+" Gives the end-of-line (<EOL>) formats that will be tried when starting to edit a new buffer and when reading a file
+" into an existing buffer
 set fileformats=unix,dos
 
 " This gives the <EOL> of the current buffer, which is used for reading/writing the buffer from/to a file
@@ -47,7 +48,8 @@ set completeopt=longest,menu
 " Change the current working directory whenever you open a file, switch buffers, delete a buffer or open/close a window
 set autochdir
 
-" When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again
+" When a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim,
+" automatically read it again
 set autoread
 
 " Allow backspace
@@ -74,7 +76,8 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 " Always a status line
 set laststatus=2
 
-" Determines the content of the status line. Full path, File encoding, Line ending, File type, Line, Column, Percentage
+" Determines the content of the status line. Full path, File encoding, Line ending, File type, Line, Column,
+" Percentage
 set statusline=%<%F\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\"}\ [%{&ff}]\ %y\ %k\ %-14.(%l,%c%V%)\ %P
 
 " Smooth scroll settings
@@ -202,7 +205,7 @@ let g:ctrlp_regexp = 1
 let g:ctrlp_max_files = 0
 let g:ctrlp_by_filename = 1
 let g:ctrlp_custom_ignore = {
-  \ "dir": '\v\.(git|hg|svn)$|build$|bin$|lib$|CMakeFiles$|Debug$|Release$|xcuserdata$|Temp$|Library$|Resources$',
+  \ "dir": '\v\.(git|hg|svn)$|build$|bin$|lib$|CMakeFiles$|Debug$|Release$|xcuserdata$|Temp$|Library$',
   \ "file": '\v\.(exe|so|dll|obj|a|o|d|meta|png|jpg|psd|prefab|mat|unity|mp3|mp4|wav|ogg|anim|fbx|asset|csproj|bytes|db|cmake|sln|filters|vcxproj|opendb|user)$|tags$|CMakeCache\.txt$',
   \ }
 let g:ctrlp_mruf_exclude = MRU_Exclude_Files
