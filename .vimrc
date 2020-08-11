@@ -111,8 +111,8 @@ elseif has("unix")
 endif
 
 if has("win32")
-  " Maximize window
-  autocmd GUIEnter * simalt ~x
+  set lines=52
+  set columns=120
 endif
 
 " Disable beep and flash
