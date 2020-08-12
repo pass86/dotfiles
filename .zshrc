@@ -53,6 +53,9 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git extract colored-man-pages web-search osx zsh-syntax-highlighting zsh-autosuggestions)
 
+# Fix "Insecure completion-dependent directories detected"
+ZSH_DISABLE_COMPFIX="true"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
