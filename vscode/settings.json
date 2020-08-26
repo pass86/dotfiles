@@ -1,21 +1,3 @@
 {
-    "editor.minimap.enabled": false,
-    "window.restoreWindows": "none",
-    "files.exclude": {
-        "**/*.la": true,
-        "**/*.lo": true,
-        "**/*.o": true,
-        "**/*.sln": true,
-        "**/*.csproj": true,
-        "**/*.vs": true,
-        "**/*.vscode": true,
-        "**/*.meta": true
-    },
-    "extensions.ignoreRecommendations": true,
-    "csharp.suppressDotnetInstallWarning": true,
-    "git.enableSmartCommit": true,
-    "git.autofetch": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "go.useLanguageServer": true,
-    "window.zoomLevel": 0
+    "cmake.configureOnOpen": true
 }
