@@ -67,11 +67,13 @@ set shiftwidth=4
 " Number of spaces that a <Tab> in the file counts for
 set tabstop=4
 
-" Avoid the hit-enter prompts caused by file messages
-set shortmess=AF
+if v:version >= 800
+  " Avoid the hit-enter prompts caused by file messages
+  set shortmess=AF
 
-" Specifies whether to use quickfix window to show cscope results
-set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+  " Specifies whether to use quickfix window to show cscope results
+  set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+endif
 
 " Always a status line
 set laststatus=2
@@ -211,9 +213,11 @@ let g:ctrlp_mruf_exclude = MRU_Exclude_Files
 let g:ctrlp_root_markers = [ ".ctrlp" ]
 map <C-l> :CtrlPMRU<CR>
 
-" Gutentags
-set runtimepath+=~/dotfiles/vim/bundle/vim-gutentags
-let g:gutentags_add_default_project_roots = 0
+if v:version >= 800
+  " Gutentags
+  set runtimepath+=~/dotfiles/vim/bundle/vim-gutentags
+  let g:gutentags_add_default_project_roots = 0
+endif
 
 " NERDTree
 set runtimepath+=~/dotfiles/vim/bundle/nerdtree
@@ -288,11 +292,13 @@ set runtimepath+=~/dotfiles/vim/bundle/vim-startify
 let g:startify_skiplist = [MRU_Exclude_Files]
 let g:startify_change_to_dir = 0 " Fix autochdir failed in ctrlp
 
-" vim-youdao-translater
-set runtimepath+=~/dotfiles/vim/bundle/vim-youdao-translater
-vnoremap <silent> <C-t> :<C-u>Ydv<CR>
-nnoremap <silent> <C-t> :<C-u>Ydc<CR>
-noremap <Leader>yd :<C-u>Yde<CR>
+if v:version >= 800
+  " vim-youdao-translater
+  set runtimepath+=~/dotfiles/vim/bundle/vim-youdao-translater
+  vnoremap <silent> <C-t> :<C-u>Ydv<CR>
+  nnoremap <silent> <C-t> :<C-u>Ydc<CR>
+  noremap <Leader>yd :<C-u>Yde<CR>
+endif
 
 " VimWiki
 set runtimepath+=~/dotfiles/vim/bundle/vimwiki
