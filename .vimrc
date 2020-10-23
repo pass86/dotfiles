@@ -86,7 +86,7 @@ set lazyredraw " The screen will not be redrawn while executing macros, register
 set regexpengine=1 " Selects the default regexp engine
 set noshowcmd " Show (partial) command in the last line of the screen
 set ttyfast " Indicates a fast terminal connection
-set synmaxcol=200 " Maximum column in which to search for syntax items
+set synmaxcol=512 " Maximum column in which to search for syntax items
 
 " Set terminal's number of colors
 set t_Co=256
