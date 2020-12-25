@@ -116,7 +116,7 @@ endif
 
 if has("win32")
   set lines=52
-  set columns=120
+  set columns=130
 endif
 
 " Disable beep and flash
