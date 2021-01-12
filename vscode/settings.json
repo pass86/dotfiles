@@ -1,4 +1,5 @@
 {
     "cmake.configureOnOpen": true,
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "files.autoGuessEncoding": true
 }
