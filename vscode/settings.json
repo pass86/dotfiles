@@ -2,5 +2,6 @@
     "cmake.configureOnOpen": true,
     "extensions.ignoreRecommendations": true,
     "files.autoGuessEncoding": true,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "vim.useSystemClipboard": true
 }
