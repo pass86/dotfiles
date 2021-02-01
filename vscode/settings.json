@@ -3,5 +3,6 @@
     "extensions.ignoreRecommendations": true,
     "files.autoGuessEncoding": true,
     "editor.wordWrap": "on",
-    "vim.useSystemClipboard": true
+    "vim.useSystemClipboard": true,
+    "window.restoreWindows": "none"
 }
