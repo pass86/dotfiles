@@ -4,5 +4,6 @@
     "files.autoGuessEncoding": true,
     "editor.wordWrap": "on",
     "vim.useSystemClipboard": true,
-    "window.restoreWindows": "none"
+    "window.restoreWindows": "none",
+    "workbench.startupEditor": "none"
 }
