@@ -10,10 +10,15 @@
     },
     {
         "key": "ctrl+l",
-        "command": "workbench.action.quickOpen"
+        "command": "workbench.action.quickOpen",
+        "when": "editorTextFocus"
     },
     {
         "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+p",
         "command": "-workbench.action.quickOpen"
     },
     {
@@ -21,11 +26,20 @@
         "command": "cmake.outline.buildAll"
     },
     {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.tasks.build"
+    },
+    {
         "key": "cmd+b",
         "command": "-workbench.action.toggleSidebarVisibility"
     },
     {
-        "key": "ctrl+shift+b",
-        "command": "-workbench.action.tasks.build"
+        "key": "ctrl+f",
+        "command": "-workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused && terminalProcessSupported || terminalFocus && terminalProcessSupported"
     }
 ]
