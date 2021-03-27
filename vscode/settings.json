@@ -1,5 +1,4 @@
 {
-    "cmake.configureOnOpen": true,
     "extensions.ignoreRecommendations": true,
     "files.autoGuessEncoding": true,
     "editor.wordWrap": "on",
