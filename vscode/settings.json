@@ -8,5 +8,6 @@
         "dev": "linux"
     },
     "workbench.editor.enablePreview": false,
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "cmake.configureOnOpen": false
 }
