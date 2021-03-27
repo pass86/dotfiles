@@ -321,6 +321,7 @@ set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 let g:ycm_filetype_whitelist = {
   \ "c": 1,
   \ "cpp": 1,
