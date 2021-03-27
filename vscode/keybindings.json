@@ -11,7 +11,7 @@
     {
         "key": "ctrl+l",
         "command": "workbench.action.quickOpen",
-        "when": "editorTextFocus"
+        "when": "!terminalFocus"
     },
     {
         "key": "cmd+p",
