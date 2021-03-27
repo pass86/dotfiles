@@ -7,5 +7,6 @@
     "remote.SSH.remotePlatform": {
         "dev": "linux"
     },
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "git.enableSmartCommit": true
 }
