@@ -17,11 +17,15 @@
         "command": "-workbench.action.quickOpen"
     },
     {
-        "key": "cmd+b",
+        "key": "ctrl+shift+b",
         "command": "cmake.outline.buildAll"
     },
     {
         "key": "cmd+b",
         "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build"
     }
 ]
