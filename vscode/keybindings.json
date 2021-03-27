@@ -31,7 +31,7 @@
     },
     {
         "key": "cmd+b",
-        "command": "-workbench.action.tasks.build"
+        "command": "cmake.outline.buildAll"
     },
     {
         "key": "cmd+b",
