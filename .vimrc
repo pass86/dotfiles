@@ -166,10 +166,10 @@ set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 
 " a.vim
 set runtimepath+=~/dotfiles/vim/bundle/a.vim
-let g:alternateExtensions_h = "cpp,cxx,cc,c,mm,m"
-let g:alternateExtensions_H = "CPP,CXX,CC,C,MM,M"
-let g:alternateExtensions_hpp = "cpp,cxx,cc,c,mm,m"
-let g:alternateExtensions_HPP = "CPP,CXX,CC,C,MM,M"
+let g:alternateExtensions_h = "cc,cpp,cxx,c,mm,m"
+let g:alternateExtensions_H = "CC,CPP,CXX,C,MM,M"
+let g:alternateExtensions_hpp = "cc,cpp,cxx,c,mm,m"
+let g:alternateExtensions_HPP = "CC,CPP,CXX,C,MM,M"
 let g:alternateExtensions_m = "h,hpp"
 let g:alternateExtensions_M = "H,HPP"
 let g:alternateExtensions_mm = "h,hpp"
