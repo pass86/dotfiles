@@ -9,5 +9,6 @@
     },
     //"workbench.editor.enablePreview": false,
     "git.enableSmartCommit": true,
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "git.confirmSync": false
 }
