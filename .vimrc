@@ -20,6 +20,9 @@ set nowrap
 set nobackup
 set nowritebackup
 
+" Display line numbers
+set number
+
 " No swapfile for the buffer
 set noswapfile
 
