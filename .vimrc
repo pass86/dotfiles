@@ -23,6 +23,9 @@ set nowritebackup
 " Display line numbers
 set number
 
+" Show column ruler
+set colorcolumn=120
+
 " No swapfile for the buffer
 set noswapfile
 
