@@ -16,17 +16,6 @@ brew install tmux ctags the_silver_searcher reattach-to-user-namespace
 brew cask install macvim alacritty
 ```
 
-# Setup Windows
-* Install [babun](https://babun.github.io)
-* Update babun
-```bat
-%USERPROFILE%\.babun\update.bat
-```
-* Install tools
-```sh
-pact install ctags the_silver_searcher
-```
-
 # Install dotfiles
 ```sh
 git clone https://github.com/pass86/dotfiles.git ~/dotfiles
