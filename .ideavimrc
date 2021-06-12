@@ -13,8 +13,8 @@ set hlsearch
 " Use system clipboard
 set clipboard=unnamed,unnamedplus,ideaput
 
-" Idea' join
-set ideajoin
-
 " Disable beep
 set visualbell
+
+" Idea' join
+set ideajoin
