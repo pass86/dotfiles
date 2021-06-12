@@ -6,7 +6,7 @@ Workspace settings
 
 * Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-* Install tools
+* Install Tools
 ```sh
 brew install tmux ctags the_silver_searcher reattach-to-user-namespace
 ```
