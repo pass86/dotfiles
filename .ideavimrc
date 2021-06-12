@@ -16,5 +16,5 @@ set clipboard=unnamed,unnamedplus,ideaput
 " Disable beep
 set visualbell
 
-" Idea' join
+" Idea's smart join
 set ideajoin
