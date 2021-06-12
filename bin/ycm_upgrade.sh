@@ -1,4 +1,4 @@
 #!/bin/bash
 
-git submodule update --remote vim/bundle/YouCompleteMe
-git submodule update --remote vim/bundle/ultisnips
+git submodule update --remote vim/plugins/YouCompleteMe
+git submodule update --remote vim/plugins/ultisnips

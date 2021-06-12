@@ -1,26 +1,26 @@
 #!/bin/bash
 
-LIST_OF_SUBMODULES="vim/bundle/a.vim
-    vim/bundle/ack.vim
-    vim/bundle/auto-pairs
-    vim/bundle/ctrlp.vim
-    vim/bundle/killersheep
-    vim/bundle/mru
-    vim/bundle/nerdcommenter
-    vim/bundle/nerdtree
-    vim/bundle/open-browser.vim
-    vim/bundle/supertab
-    vim/bundle/vim-airline
-    vim/bundle/vim-airline-themes
-    vim/bundle/vim-autoread
-    vim/bundle/vim-bookmarks
-    vim/bundle/vim-gutentags
-    vim/bundle/vim-reveal-in-finder
-    vim/bundle/vim-startify
-    vim/bundle/vimwiki
-    vim/bundle/vim
-    vim/bundle/ShaderHighLight
-    vim/bundle/vim-youdao-translater
+LIST_OF_SUBMODULES="vim/plugins/a.vim
+    vim/plugins/ack.vim
+    vim/plugins/auto-pairs
+    vim/plugins/ctrlp.vim
+    vim/plugins/killersheep
+    vim/plugins/mru
+    vim/plugins/nerdcommenter
+    vim/plugins/nerdtree
+    vim/plugins/open-browser.vim
+    vim/plugins/supertab
+    vim/plugins/vim-airline
+    vim/plugins/vim-airline-themes
+    vim/plugins/vim-autoread
+    vim/plugins/vim-bookmarks
+    vim/plugins/vim-gutentags
+    vim/plugins/vim-reveal-in-finder
+    vim/plugins/vim-startify
+    vim/plugins/vimwiki
+    vim/plugins/vim
+    vim/plugins/ShaderHighLight
+    vim/plugins/vim-youdao-translater
     tmux/plugins/tpm
     tmux/plugins/tmux-resurrect
     tmux/plugins/tmux-copycat

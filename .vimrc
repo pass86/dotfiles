@@ -167,7 +167,7 @@ nnoremap <Leader>co :call CloseOtherBuffers()<CR>
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 
 " a.vim
-set runtimepath+=~/dotfiles/vim/bundle/a.vim
+set runtimepath+=~/dotfiles/vim/plugins/a.vim
 let g:alternateExtensions_h = "cc,cpp,cxx,c,mm,m"
 let g:alternateExtensions_H = "CC,CPP,CXX,C,MM,M"
 let g:alternateExtensions_hpp = "cc,cpp,cxx,c,mm,m"
@@ -179,7 +179,7 @@ let g:alternateExtensions_MM = "H,HPP"
 map <C-g> :A<CR>
 
 " ack.vim
-set runtimepath+=~/dotfiles/vim/bundle/ack.vim
+set runtimepath+=~/dotfiles/vim/plugins/ack.vim
 let g:ackpreview = 1
 let g:ackhighlight = 1
 let g:ack_autoclose = 1
@@ -192,10 +192,10 @@ cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
 
 " Auto Pairs
-set runtimepath+=~/dotfiles/vim/bundle/auto-pairs
+set runtimepath+=~/dotfiles/vim/plugins/auto-pairs
 
 " Most Recently Used (MRU)
-set runtimepath+=~/dotfiles/vim/bundle/mru
+set runtimepath+=~/dotfiles/vim/plugins/mru
 if has("win32")
   let MRU_Exclude_Files = '.*/.svn/.*\|^C:\\Windows\\Temp\\.*'
 elseif has("unix")
@@ -203,7 +203,7 @@ elseif has("unix")
 endif
 
 " ctrlp.vim
-set runtimepath+=~/dotfiles/vim/bundle/ctrlp.vim
+set runtimepath+=~/dotfiles/vim/plugins/ctrlp.vim
 let g:ctrlp_regexp = 1
 let g:ctrlp_max_files = 0
 let g:ctrlp_by_filename = 1
@@ -217,37 +217,37 @@ map <C-l> :CtrlPMRU<CR>
 
 if v:version >= 800
   " Gutentags
-  set runtimepath+=~/dotfiles/vim/bundle/vim-gutentags
+  set runtimepath+=~/dotfiles/vim/plugins/vim-gutentags
   let g:gutentags_add_default_project_roots = 0
 endif
 
 " NERDTree
-set runtimepath+=~/dotfiles/vim/bundle/nerdtree
+set runtimepath+=~/dotfiles/vim/plugins/nerdtree
 let NERDTreeShowHidden = 1
 let NERDTreeQuitOnOpen = 1
 map <C-n> :NERDTreeToggle<CR>
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " NERD Commenter
-set runtimepath+=~/dotfiles/vim/bundle/nerdcommenter
+set runtimepath+=~/dotfiles/vim/plugins/nerdcommenter
 
 " open-browser.vim
-set runtimepath+=~/dotfiles/vim/bundle/open-browser.vim
+set runtimepath+=~/dotfiles/vim/plugins/open-browser.vim
 let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 " supertab
-set runtimepath+=~/dotfiles/vim/bundle/supertab
+set runtimepath+=~/dotfiles/vim/plugins/supertab
 let g:SuperTabCrMapping = 1
 let g:SuperTabDefaultCompletionType = "<C-n>"
 let g:SuperTabContextDefaultCompletionType = "<C-n>"
 
 " ShaderHighLight
-set runtimepath+=~/dotfiles/vim/bundle/ShaderHighLight
+set runtimepath+=~/dotfiles/vim/plugins/ShaderHighLight
 
 " vim-autoread
-set runtimepath+=~/dotfiles/vim/bundle/vim-autoread
+set runtimepath+=~/dotfiles/vim/plugins/vim-autoread
 
 " vim-bookmarks
 function! g:BMWorkDirFileLocation()
@@ -267,17 +267,17 @@ function! g:BMWorkDirFileLocation()
     return g:bookmark_auto_save_file
   endif
 endfunction
-set runtimepath+=~/dotfiles/vim/bundle/vim-bookmarks
+set runtimepath+=~/dotfiles/vim/plugins/vim-bookmarks
 let g:bookmark_auto_close = 1
 let g:bookmark_disable_ctrlp = 1
 let g:bookmark_save_per_working_dir = 1
 
 " Reveal in Finder
-set runtimepath+=~/dotfiles/vim/bundle/vim-reveal-in-finder
+set runtimepath+=~/dotfiles/vim/plugins/vim-reveal-in-finder
 nnoremap <Leader><CR> :Reveal<CR>
 
 " vim-airline
-set runtimepath+=~/dotfiles/vim/bundle/vim-airline
+set runtimepath+=~/dotfiles/vim/plugins/vim-airline
 let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
@@ -286,40 +286,40 @@ let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#fnamemod = ":t"
 
 " vim-airline-themes
-set runtimepath+=~/dotfiles/vim/bundle/vim-airline-themes
+set runtimepath+=~/dotfiles/vim/plugins/vim-airline-themes
 let g:airline_theme = "dark"
 
 " Startify
-set runtimepath+=~/dotfiles/vim/bundle/vim-startify
+set runtimepath+=~/dotfiles/vim/plugins/vim-startify
 let g:startify_skiplist = [MRU_Exclude_Files]
 let g:startify_change_to_dir = 0 " Fix autochdir failed in ctrlp
 
 if v:version >= 800
   " vim-youdao-translater
-  set runtimepath+=~/dotfiles/vim/bundle/vim-youdao-translater
+  set runtimepath+=~/dotfiles/vim/plugins/vim-youdao-translater
   vnoremap <silent> <C-t> :<C-u>Ydv<CR>
   nnoremap <silent> <C-t> :<C-u>Ydc<CR>
   noremap <Leader>yd :<C-u>Yde<CR>
 endif
 
 " VimWiki
-set runtimepath+=~/dotfiles/vim/bundle/vimwiki
+set runtimepath+=~/dotfiles/vim/plugins/vimwiki
 let g:vimwiki_conceallevel = 0
 let g:vimwiki_list = [{ "path": "~/wiki/", "index": "README", "syntax": "markdown", "ext": ".md" }]
 nmap <Leader>tt <Plug>VimwikiToggleListItem
 vmap <Leader>tt <Plug>VimwikiToggleListItem
 
 " Dracula for Vim
-set runtimepath+=~/dotfiles/vim/bundle/vim
+set runtimepath+=~/dotfiles/vim/plugins/vim
 let g:dracula_italic = 0
 let g:dracula_colorterm = 0
 color dracula
 
 " UltiSnips
-set runtimepath+=~/dotfiles/vim/bundle/ultisnips
+set runtimepath+=~/dotfiles/vim/plugins/ultisnips
 
 " YouCompleteMe
-set runtimepath+=~/dotfiles/vim/bundle/YouCompleteMe
+set runtimepath+=~/dotfiles/vim/plugins/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_highlighting = 0
@@ -341,4 +341,4 @@ let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_conf.py"
 nnoremap <Leader>jd :YcmCompleter GoTo<CR>
 
 " killersheep
-set runtimepath+=~/dotfiles/vim/bundle/killersheep
+set runtimepath+=~/dotfiles/vim/plugins/killersheep

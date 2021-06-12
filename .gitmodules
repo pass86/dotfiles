@@ -1,53 +1,53 @@
 [submodule "vim/bundle/a.vim"]
-	path = vim/bundle/a.vim
+	path = vim/plugins/a.vim
 	url = https://github.com/vim-scripts/a.vim.git
 [submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
+	path = vim/plugins/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "vim/bundle/mru"]
-	path = vim/bundle/mru
+	path = vim/plugins/mru
 	url = https://github.com/yegappan/mru.git
 [submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
+	path = vim/plugins/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
+	path = vim/plugins/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
+	path = vim/plugins/supertab
 	url = https://github.com/ervandew/supertab.git
 [submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
+	path = vim/plugins/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
 [submodule "vim/bundle/vim-bookmarks"]
-	path = vim/bundle/vim-bookmarks
+	path = vim/plugins/vim-bookmarks
 	url = https://github.com/MattesGroeger/vim-bookmarks.git
 [submodule "vim/bundle/vim-reveal-in-finder"]
-	path = vim/bundle/vim-reveal-in-finder
+	path = vim/plugins/vim-reveal-in-finder
 	url = https://github.com/henrik/vim-reveal-in-finder.git
 [submodule "vim/bundle/vim-startify"]
-	path = vim/bundle/vim-startify
+	path = vim/plugins/vim-startify
 	url = https://github.com/mhinz/vim-startify.git
 [submodule "vim/bundle/ack.vim"]
-	path = vim/bundle/ack.vim
+	path = vim/plugins/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/auto-pairs"]
-	path = vim/bundle/auto-pairs
+	path = vim/plugins/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
 [submodule "vim/bundle/vim-airline-themes"]
-	path = vim/bundle/vim-airline-themes
+	path = vim/plugins/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
 [submodule "vim/bundle/ShaderHighLight"]
-	path = vim/bundle/ShaderHighLight
+	path = vim/plugins/ShaderHighLight
 	url = https://github.com/vim-scripts/ShaderHighLight.git
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
 [submodule "vim/bundle/vimwiki"]
-	path = vim/bundle/vimwiki
+	path = vim/plugins/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
@@ -56,16 +56,16 @@
 	path = zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "vim/bundle/vim-youdao-translater"]
-	path = vim/bundle/vim-youdao-translater
+	path = vim/plugins/vim-youdao-translater
 	url = https://github.com/ianva/vim-youdao-translater.git
 [submodule "vim/bundle/open-browser.vim"]
-	path = vim/bundle/open-browser.vim
+	path = vim/plugins/open-browser.vim
 	url = https://github.com/tyru/open-browser.vim.git
 [submodule "vim/bundle/vim-autoread"]
-	path = vim/bundle/vim-autoread
+	path = vim/plugins/vim-autoread
 	url = https://github.com/djoshea/vim-autoread.git
 [submodule "vim/bundle/vim"]
-	path = vim/bundle/vim
+	path = vim/plugins/vim
 	url = https://github.com/dracula/vim.git
 [submodule "zsh/themes/zsh"]
 	path = zsh/themes/zsh
@@ -80,14 +80,14 @@
 	path = tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
 [submodule "vim/bundle/vim-gutentags"]
-	path = vim/bundle/vim-gutentags
+	path = vim/plugins/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
 [submodule "vim/bundle/killersheep"]
-	path = vim/bundle/killersheep
+	path = vim/plugins/killersheep
 	url = https://github.com/vim/killersheep.git
 [submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
+	path = vim/plugins/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
 [submodule "vim/bundle/ultisnips"]
-	path = vim/bundle/ultisnips
+	path = vim/plugins/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
