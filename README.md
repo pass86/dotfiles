@@ -8,7 +8,7 @@ Workspace settings
 
 * Install Tools
 ```sh
-brew install tmux ctags the_silver_searcher reattach-to-user-namespace
+brew install tmux ctags the_silver_searcher reattach-to-user-namespace htop pstree git-lfs
 ```
 
 # Install dotfiles
