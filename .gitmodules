@@ -91,3 +91,6 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/plugins/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "vim/plugins/editorconfig-vim"]
+	path = vim/plugins/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git

@@ -23,9 +23,6 @@ set nowritebackup
 " Display line numbers
 set number
 
-" Show column ruler
-set colorcolumn=120
-
 " No swapfile for the buffer
 set noswapfile
 
@@ -123,27 +120,6 @@ endif
 
 " Disable beep and flash
 autocmd GUIEnter * set visualbell t_vb=
-
-" Vim's indent
-autocmd FileType vim setlocal shiftwidth=2 tabstop=2
-
-" Cpp's indent
-autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
-
-" CMake's indent
-autocmd FileType cmake setlocal shiftwidth=2 tabstop=2
-
-" Protocol Buffers's indent
-autocmd FileType proto setlocal shiftwidth=2 tabstop=2
-
-" HTML's indent
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-
-" CSS's indent
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
-
-" JavaScript's indent
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " Return to last edit position after read
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -342,3 +318,6 @@ nnoremap <Leader>jd :YcmCompleter GoTo<CR>
 
 " killersheep
 set runtimepath+=~/dotfiles/vim/plugins/killersheep
+
+" editorconfig-vim
+set runtimepath+=~/dotfiles/vim/plugins/editorconfig-vim
