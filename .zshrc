@@ -70,7 +70,7 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract colored-man-pages web-search osx zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git extract colored-man-pages web-search macos zsh-syntax-highlighting zsh-autosuggestions)
 
 # Fix "Insecure completion-dependent directories detected"
 ZSH_DISABLE_COMPFIX="true"
