@@ -4,9 +4,6 @@
     "editor.wordWrap": "on",
     "vim.useSystemClipboard": true,
     "window.restoreWindows": "none",
-    "remote.SSH.remotePlatform": {
-        "dev": "linux"
-    },
     //"workbench.editor.enablePreview": false,
     "git.enableSmartCommit": true,
     "cmake.configureOnOpen": false,
