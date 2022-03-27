@@ -114,7 +114,7 @@ set guioptions=
 set guifont=Hack:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
 
 if has("win32")
-  set lines=52
+  set lines=50
   set columns=130
 endif
 
