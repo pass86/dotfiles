@@ -114,8 +114,8 @@ set guioptions=
 set guifont=Hack:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
 
 if has("win32")
-  set lines=50
-  set columns=130
+  set lines=40
+  set columns=140
 endif
 
 " Disable beep and flash
