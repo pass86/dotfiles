@@ -35,3 +35,10 @@ cd ~/dotfiles && ./bin/submodules_init.sh
 ```sh
 cd ~/dotfiles && ./bin/ycm_init.sh
 ```
+
+# YCM Windows
+1. Install Python3 32-bit & add to PATH
+2. cd .\dotfiles\vim\plugins\YouCompleteMe
+3. python install.py --clangd-completer
+4. Open `x64 Native Tools Command Prompt for VS 2022` & cd to cmake project directory
+5. cmake . -G "NMake Makefiles" -DCMAKE_EXPORT_COMPILE_COMMANDS=on
