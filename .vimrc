@@ -128,7 +128,7 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 map <silent> <Leader>ee :e $MYVIMRC<CR>
 
 " Use enter jump to tag except quickfix
-nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : "<C-]>"
+"nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : "<C-]>"
 
 " Quick close other buffers
 function! CloseOtherBuffers()
@@ -315,6 +315,7 @@ let g:ycm_filter_diagnostics = {
   \ }
 let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_conf.py"
 nnoremap <Leader>jd :YcmCompleter GoTo<CR>
+nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : ":YcmCompleter GoTo<CR>"
 
 " killersheep
 set runtimepath+=~/dotfiles/vim/plugins/killersheep
