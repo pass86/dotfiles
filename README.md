@@ -43,10 +43,3 @@ cd ~/dotfiles && ./bin/ycm_init.sh
 4. Open `x64 Native Tools Command Prompt for VS 2022` & cd to cmake project directory
 5. cmake . -G "NMake Makefiles" -DCMAKE_EXPORT_COMPILE_COMMANDS=on
 6. [clangd config](https://clangd.llvm.org/config)
-
-`
-CompileFlags:
-`
-`
-  Add: -Wno-switch
-`
