@@ -316,6 +316,7 @@ let g:ycm_filter_diagnostics = {
 let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_conf.py"
 nnoremap <Leader>jd :YcmCompleter GoTo<CR>
 nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : ":YcmCompleter GoTo<CR>"
+let g:ycm_auto_hover = ""
 
 " killersheep
 set runtimepath+=~/dotfiles/vim/plugins/killersheep
