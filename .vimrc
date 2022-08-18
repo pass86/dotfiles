@@ -153,6 +153,7 @@ let g:alternateExtensions_M = "H,HPP"
 let g:alternateExtensions_mm = "h,hpp"
 let g:alternateExtensions_MM = "H,HPP"
 map <C-g> :A<CR>
+map <F10> :A<CR>
 
 " ack.vim
 set runtimepath+=~/dotfiles/vim/plugins/ack.vim
