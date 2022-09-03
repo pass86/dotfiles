@@ -10,6 +10,7 @@ LIST_OF_SUBMODULES="vim/plugins/a.vim
     vim/plugins/nerdtree
     vim/plugins/open-browser.vim
     vim/plugins/supertab
+    vim/plugins/taglist.vim
     vim/plugins/vim-airline
     vim/plugins/vim-airline-themes
     vim/plugins/vim-autoread
