@@ -10,6 +10,9 @@ set incsearch
 " When there is a previous search pattern, highlight all its matches
 set hlsearch
 
+" Highlight the text line of the cursor with CursorLine
+set cursorline
+
 " Use system clipboard
 set clipboard=unnamed,unnamedplus
 
