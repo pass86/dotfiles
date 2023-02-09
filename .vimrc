@@ -142,6 +142,9 @@ function! CloseOtherBuffers()
 endfunction
 nnoremap <Leader>co :call CloseOtherBuffers()<CR>
 
+" Map Ctrl+E to Esc
+imap <C-E> <Esc>
+
 " A list of directories which will be searched for runtime files
 set runtimepath=~/dotfiles/vim,$VIMRUNTIME
 
