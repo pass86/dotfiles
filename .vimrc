@@ -113,6 +113,9 @@ endif
 " No GUI feature
 set guioptions=
 
+" Display English
+let $LANG='en_US'
+
 " A list of fonts which will be used for the GUI version of Vim
 set guifont=Hack:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
 
