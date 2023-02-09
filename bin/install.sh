@@ -8,8 +8,3 @@ ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
 if [ -d ~/.oh-my-zsh/themes ]; then
     ln -sf ~/dotfiles/zsh/themes/zsh/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-theme
 fi
-
-if [ -d ~/Library/Application\ Support/Code/User ]; then
-    ln -sf ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-    ln -sf ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-fi
