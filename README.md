@@ -8,7 +8,7 @@ Workspace settings
 
 * Install Tools
 ```sh
-brew install tmux ctags the_silver_searcher reattach-to-user-namespace htop pstree git-lfs
+brew install vim cmake tmux ctags the_silver_searcher reattach-to-user-namespace htop pstree git-lfs
 ```
 
 # Install dotfiles
@@ -34,6 +34,12 @@ cd ~/dotfiles && ./bin/submodules_init.sh
 # Install [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 ```sh
 cd ~/dotfiles && ./bin/ycm_init.sh
+```
+
+# YCM macOS & Linux
+```sh
+cd ~/dotfiles/vim/plugins/YouCompleteMe
+./install.py --clangd-completer --verbose
 ```
 
 # YCM Windows
