@@ -43,7 +43,7 @@ cd ~/dotfiles/vim/plugins/YouCompleteMe
 ```
 
 # YCM Windows
-1. Install Python3 32-bit & add to PATH
+1. Install Python3.10 32-bit & add to PATH
 2. `cd .\dotfiles\vim\plugins\YouCompleteMe`
 3. `python install.py --clangd-completer --msvc=17 --verbose`
 4. Open `x64 Native Tools Command Prompt for VS 2022` & cd to cmake project directory
