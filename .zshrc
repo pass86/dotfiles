@@ -109,3 +109,6 @@ fi
 
 # Fix "-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory"
 export LANG=en_US.UTF-8
+
+# Fix unicode in tmux
+export LC_ALL=en_US.UTF-8
