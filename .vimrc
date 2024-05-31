@@ -123,8 +123,8 @@ source $VIMRUNTIME/menu.vim
 set guifont=Hack:h12,Source\ Han\ Sans\ SC:h12,Consolas:h12
 
 if has("win32")
-  set lines=40
-  set columns=140
+  set lines=50
+  set columns=211
 endif
 
 " Disable beep and flash
@@ -338,6 +338,7 @@ set runtimepath+=~/dotfiles/vim/plugins/killersheep
 
 " editorconfig-vim
 set runtimepath+=~/dotfiles/vim/plugins/editorconfig-vim
+let g:EditorConfig_max_line_indicator = "none"
 
 " taglist.vim
 set runtimepath+=~/dotfiles/vim/plugins/taglist.vim
