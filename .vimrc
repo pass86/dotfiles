@@ -307,31 +307,32 @@ color dracula
 " UltiSnips
 set runtimepath+=~/dotfiles/vim/plugins/ultisnips
 
-" YouCompleteMe
-set runtimepath+=~/dotfiles/vim/plugins/YouCompleteMe
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_complete_in_comments = 1
-let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
-let g:ycm_filetype_whitelist = {
-  \ "c": 1,
-  \ "cpp": 1,
-  \ "cs": 1,
-  \ "go": 1,
-  \ "lua": 1,
-  \ "python": 1
-  \ }
-let g:ycm_filter_diagnostics = {
-  \ "cs": {
-  \   "level": "warning"
-  \   }
-  \ }
-let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_conf.py"
-nnoremap <Leader>jd :YcmCompleter GoTo<CR>
-nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : ":YcmCompleter GoTo<CR>"
-let g:ycm_auto_hover = ""
-map <F2> :YcmCompleter RefactorRename<Space>
-
+if has('python3')
+    " YouCompleteMe
+    set runtimepath+=~/dotfiles/vim/plugins/YouCompleteMe
+    let g:ycm_confirm_extra_conf = 0
+    let g:ycm_complete_in_comments = 1
+    let g:ycm_enable_diagnostic_highlighting = 0
+    let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+    let g:ycm_filetype_whitelist = {
+      \ "c": 1,
+      \ "cpp": 1,
+      \ "cs": 1,
+      \ "go": 1,
+      \ "lua": 1,
+      \ "python": 1
+      \ }
+    let g:ycm_filter_diagnostics = {
+      \ "cs": {
+      \   "level": "warning"
+      \   }
+      \ }
+    let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_conf.py"
+    nnoremap <Leader>jd :YcmCompleter GoTo<CR>
+    nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : ":YcmCompleter GoTo<CR>"
+    let g:ycm_auto_hover = ""
+    map <F2> :YcmCompleter RefactorRename<Space>
+endif
 
 " killersheep
 set runtimepath+=~/dotfiles/vim/plugins/killersheep
