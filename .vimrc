@@ -307,7 +307,7 @@ color dracula
 " UltiSnips
 set runtimepath+=~/dotfiles/vim/plugins/ultisnips
 
-if has('python3')
+if has("python3")
     " YouCompleteMe
     set runtimepath+=~/dotfiles/vim/plugins/YouCompleteMe
     let g:ycm_confirm_extra_conf = 0
