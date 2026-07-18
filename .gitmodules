@@ -97,3 +97,7 @@
 [submodule "vim/plugins/taglist.vim"]
 	path = vim/plugins/taglist.vim
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "vim/plugins/coc.nvim"]
+	path = vim/plugins/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+	branch = release

@@ -329,10 +329,10 @@ if has("python3")
       \   }
       \ }
     let g:ycm_global_ycm_extra_conf = "~/dotfiles/.ycm_conf.py"
-    nnoremap <Leader>jd :YcmCompleter GoTo<CR>
-    nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : ":YcmCompleter GoTo<CR>"
+    "nnoremap <Leader>jd :YcmCompleter GoTo<CR>
+    "nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : ":YcmCompleter GoTo<CR>"
     let g:ycm_auto_hover = ""
-    map <F2> :YcmCompleter RefactorRename<Space>
+    "map <F2> :YcmCompleter RefactorRename<Space>
 endif
 
 " killersheep
@@ -351,3 +351,13 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Display_Tag_Scope = 0
 let Tlist_GainFocus_On_ToggleOpen = 1
 map <C-y> :TlistToggle<CR>
+
+" coc.nvim
+set runtimepath+=~/dotfiles/vim/plugins/coc.nvim
+nmap <silent><nowait> gd <Plug>(coc-definition)
+nmap <silent><nowait> gy <Plug>(coc-type-definition)
+nmap <silent><nowait> gi <Plug>(coc-implementation)
+nmap <silent><nowait> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
+nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : "<Plug>(coc-definition)"
+map <F2> <Plug>(coc-rename)
