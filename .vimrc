@@ -312,6 +312,7 @@ if has("python3")
     set runtimepath+=~/dotfiles/vim/plugins/YouCompleteMe
     let g:ycm_confirm_extra_conf = 0
     let g:ycm_complete_in_comments = 1
+    let g:ycm_use_ultisnips_completer = 0
     let g:ycm_enable_diagnostic_highlighting = 0
     let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
     let g:ycm_filetype_whitelist = {
