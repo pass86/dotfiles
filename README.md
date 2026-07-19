@@ -43,5 +43,5 @@ cd ~/dotfiles && ./bin/coc_init.sh
 ```
 
 * Install [Node.js](https://nodejs.org/en/download)
- 
+
 * Install [clangd](https://github.com/clangd/clangd/releases) & Add to PATH
