@@ -361,3 +361,5 @@ nmap <silent><nowait> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : "<Plug>(coc-definition)"
 map <F2> <Plug>(coc-rename)
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
