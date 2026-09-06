@@ -32,6 +32,10 @@ cd ~/dotfiles && ./bin/submodules_init.sh
 ```
 
 # Install [coc.nvim](https://github.com/neoclide/coc.nvim.git)
+* Install [Node.js](https://nodejs.org/en/download)
+
+* Install [clangd](https://github.com/clangd/clangd/releases) & Add to PATH
+
 * Install Plugins
 ```sh
 cd ~/dotfiles && ./bin/coc_init.sh
@@ -41,7 +45,3 @@ cd ~/dotfiles && ./bin/coc_init.sh
 ```
 :CocInstall coc-clangd
 ```
-
-* Install [Node.js](https://nodejs.org/en/download)
-
-* Install [clangd](https://github.com/clangd/clangd/releases) & Add to PATH
