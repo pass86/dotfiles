@@ -73,13 +73,11 @@ set shiftwidth=4
 " Number of spaces that a <Tab> in the file counts for
 set tabstop=4
 
-if v:version >= 800
-  " Avoid the hit-enter prompts caused by file messages
-  set shortmess=AF
+" Avoid the hit-enter prompts caused by file messages
+set shortmess=AF
 
-  " Specifies whether to use quickfix window to show cscope results
-  set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
-endif
+" Specifies whether to use quickfix window to show cscope results
+set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 
 " Always a status line
 set laststatus=2
@@ -204,11 +202,9 @@ let g:ctrlp_mruf_exclude = MRU_Exclude_Files
 let g:ctrlp_root_markers = [ ".ctrlp" ]
 map <C-l> :CtrlPMRU<CR>
 
-if v:version >= 800
-  " Gutentags
-  set runtimepath+=~/dotfiles/vim/plugins/vim-gutentags
-  let g:gutentags_add_default_project_roots = 0
-endif
+" Gutentags
+set runtimepath+=~/dotfiles/vim/plugins/vim-gutentags
+let g:gutentags_add_default_project_roots = 0
 
 " NERDTree
 set runtimepath+=~/dotfiles/vim/plugins/nerdtree
@@ -283,13 +279,21 @@ set runtimepath+=~/dotfiles/vim/plugins/vim-startify
 let g:startify_skiplist = [MRU_Exclude_Files]
 let g:startify_change_to_dir = 0 " Fix autochdir failed in ctrlp
 
-if v:version >= 800
-  " vim-youdao-translater
-  set runtimepath+=~/dotfiles/vim/plugins/vim-youdao-translater
-  nnoremap <silent> <leader>yt :<C-u>Ydc<CR>
-  vnoremap <silent> <leader>yt :<C-u>Ydv<CR>
-  noremap <leader>yd :<C-u>Yde<CR>
-endif
+" vim-translator
+set runtimepath+=~/dotfiles/vim/plugins/vim-translator
+" google times out here, and the plugin reports that timeout as an error
+let g:translator_default_engines = ['bing', 'haici']
+" Echo translation in the cmdline
+nmap <silent> <Leader>t <Plug>Translate
+vmap <silent> <Leader>t <Plug>TranslateV
+" Display translation in a window
+nmap <silent> <Leader>w <Plug>TranslateW
+vmap <silent> <Leader>w <Plug>TranslateWV
+" Replace the text with translation
+nmap <silent> <Leader>r <Plug>TranslateR
+vmap <silent> <Leader>r <Plug>TranslateRV
+" Translate the text in clipboard
+nmap <silent> <Leader>x <Plug>TranslateX
 
 " VimWiki
 set runtimepath+=~/dotfiles/vim/plugins/vimwiki

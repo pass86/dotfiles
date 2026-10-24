@@ -21,7 +21,7 @@ LIST_OF_SUBMODULES="vim/plugins/a.vim
     vim/plugins/vimwiki
     vim/plugins/vim
     vim/plugins/ShaderHighLight
-    vim/plugins/vim-youdao-translater
+    vim/plugins/vim-translator
     vim/plugins/editorconfig-vim
     tmux/plugins/tpm
     tmux/plugins/tmux-resurrect
