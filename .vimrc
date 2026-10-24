@@ -286,9 +286,9 @@ let g:startify_change_to_dir = 0 " Fix autochdir failed in ctrlp
 if v:version >= 800
   " vim-youdao-translater
   set runtimepath+=~/dotfiles/vim/plugins/vim-youdao-translater
-  vnoremap <silent> <C-t> :<C-u>Ydv<CR>
-  nnoremap <silent> <C-t> :<C-u>Ydc<CR>
-  noremap <Leader>yd :<C-u>Yde<CR>
+  nnoremap <silent> <leader>yt :<C-u>Ydc<CR>
+  vnoremap <silent> <leader>yt :<C-u>Ydv<CR>
+  noremap <leader>yd :<C-u>Yde<CR>
 endif
 
 " VimWiki
@@ -363,3 +363,4 @@ nmap <expr> <CR> &buftype ==# "quickfix" ? "<CR>" : "<Plug>(coc-definition)"
 map <F2> <Plug>(coc-rename)
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+nnoremap <silent><nowait> <C-t> :<C-u>CocList -I symbols<cr>
