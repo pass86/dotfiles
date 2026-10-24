@@ -281,8 +281,25 @@ let g:startify_change_to_dir = 0 " Fix autochdir failed in ctrlp
 
 " vim-translator
 set runtimepath+=~/dotfiles/vim/plugins/vim-translator
+" job_start() runs python3 directly, not through a shell. The Windows Store
+" python3 alias is on PATH and does not start. Copy the real python.exe to
+" python3.exe so the plugin finds a working executable.
+if has('win32')
+  let s:translator_shim_dir = expand('~/dotfiles/bin/python-shim')
+  let s:translator_shim = s:translator_shim_dir . '\python3.exe'
+  if !filereadable(s:translator_shim)
+    let s:python_exe = exepath('python')
+    if !empty(s:python_exe)
+      call mkdir(s:translator_shim_dir, 'p')
+      call writefile(readfile(s:python_exe, 'b'), s:translator_shim, 'b')
+    endif
+  endif
+  if filereadable(s:translator_shim)
+    let $PATH = s:translator_shim_dir . ';' . $PATH
+  endif
+endif
 " google times out here, and the plugin reports that timeout as an error
-let g:translator_default_engines = ['bing', 'haici']
+let g:translator_default_engines = ['bing']
 " Echo translation in the cmdline
 nmap <silent> <Leader>t <Plug>Translate
 vmap <silent> <Leader>t <Plug>TranslateV
