@@ -55,9 +55,6 @@
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "vim/bundle/vim-youdao-translater"]
-	path = vim/plugins/vim-youdao-translater
-	url = https://github.com/ianva/vim-youdao-translater.git
 [submodule "vim/bundle/open-browser.vim"]
 	path = vim/plugins/open-browser.vim
 	url = https://github.com/tyru/open-browser.vim.git
@@ -101,3 +98,6 @@
 	path = vim/plugins/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
 	branch = release
+[submodule "vim/plugins/vim-translator"]
+	path = vim/plugins/vim-translator
+	url = https://github.com/voldikss/vim-translator.git
