@@ -41,7 +41,12 @@ cd ~/dotfiles && ./bin/submodules_init.sh
 cd ~/dotfiles && ./bin/coc_init.sh
 ```
 
-* Install coc-clangd Extension
+* Install C++ Extension
 ```
 :CocInstall coc-clangd
+```
+
+* Install Python Extension
+```
+:CocInstall coc-pyright
 ```
