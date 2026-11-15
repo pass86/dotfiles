@@ -299,7 +299,7 @@ if has('win32')
   endif
 endif
 " google times out here, and the plugin reports that timeout as an error
-let g:translator_default_engines = ['bing']
+let g:translator_default_engines = ['google']
 " Echo translation in the cmdline
 nmap <silent> <Leader>t <Plug>Translate
 vmap <silent> <Leader>t <Plug>TranslateV
